@@ -95,11 +95,11 @@
   .grid3 .art .ph{height:360px}
 
   /* CEO feature (typographic interview opener, no empty box) */
-  .ceo-quote{font-family:var(--sans);font-weight:300;font-size:clamp(28px,4.2vw,58px);line-height:1.36;letter-spacing:-.012em;max-width:1010px}
-  .ceo-foot{display:flex;justify-content:space-between;align-items:flex-start;gap:54px;margin-top:58px;border-top:1px solid var(--line);padding-top:34px;flex-wrap:wrap}
-  .ceo-name{font-family:var(--serif);font-weight:700;font-size:34px;letter-spacing:.02em;white-space:nowrap}
-  .ceo-name span{display:block;font-family:var(--geo);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);margin-top:9px}
-  .ceo-desc{font-size:15px;color:var(--grey);line-height:1.95;max-width:520px}
+  .ceo-quote{font-family:var(--sans);font-weight:300;font-size:clamp(22px,2.5vw,33px);line-height:1.58;letter-spacing:-.005em;max-width:720px;color:#27221e}
+  .ceo-foot{display:flex;justify-content:space-between;align-items:flex-start;gap:54px;margin-top:50px;border-top:1px solid var(--line);padding-top:30px;flex-wrap:wrap}
+  .ceo-name{font-family:var(--serif);font-weight:700;font-size:29px;letter-spacing:.02em;white-space:nowrap}
+  .ceo-name span{display:block;font-family:var(--geo);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);margin-top:10px}
+  .ceo-desc{font-size:14.5px;color:var(--grey);line-height:1.95;max-width:520px}
 
   /* Gallery asymmetric */
   .gal{display:grid;grid-template-columns:1.5fr 1fr;gap:24px}
@@ -129,39 +129,53 @@
   @keyframes hu{to{opacity:1;transform:none}}
   @media(prefers-reduced-motion:reduce){html.js .rv,html.js .wipe img,html.js .hero-cap h1,html.js .hero-cap .hsub{opacity:1!important;transform:none!important;clip-path:none!important;animation:none!important}.hero-bg img{animation:none!important}}
 
+  /* Tablet & mobile */
   @media(max-width:900px){
-    .wrap{padding:0 22px}
+    .wrap{padding:0 24px}
     .topbar{display:none}
     .masthead{padding:20px 0 14px}
-    .masthead .mk{font-size:34px}
-    .nav-toggle{display:block;right:22px}
+    .masthead .mk{font-size:clamp(36px,9vw,54px)}
+    .masthead .mk-sub{font-size:10px;letter-spacing:.42em}
+    .nav-toggle{display:block;right:24px}
     nav ul{display:none;flex-direction:column}
     nav ul.open{display:flex}
     nav>ul>li{position:static}
-    nav>ul>li>a{padding:13px 2px;border-bottom:1px solid var(--line)}
+    nav>ul>li>a{padding:13px 2px;border-bottom:1px solid var(--line);letter-spacing:.14em}
     nav .sub{position:static;transform:none;opacity:1;visibility:visible;translate:0 0;border:0;box-shadow:none;padding:2px 0 10px;min-width:0}
     nav .sub li a{padding:8px 0 8px 14px;color:var(--grey)}
-    .hero{height:64vh;min-height:420px}
-    .hero-cap h1{font-size:clamp(44px,14vw,80px)}
-    .hero-cap .hsub{font-size:11px;letter-spacing:.4em}
-    .sec{padding:72px 0}
-    .sec-head{margin-bottom:34px}
-    .ed-grid{grid-template-columns:1fr;gap:30px}
-    .ed-grid .feat .ph{height:380px}
-    .ed-grid .side{grid-template-columns:1fr 1fr;gap:24px 16px}
-    .ed-grid .side .art .ph{height:180px}
-    .band{height:60vh;min-height:380px}
-    .band p{font-size:clamp(20px,5vw,30px)}
+    .hero{height:62vh;min-height:400px}
+    .hero-cap h1{font-size:clamp(44px,15vw,84px);line-height:1}
+    .hero-cap .hsub{font-size:11px;letter-spacing:.36em;margin-top:16px}
+    .sec{padding:64px 0}
+    .sec-head{display:block;padding-bottom:14px;margin-bottom:30px}
+    .sec-head h2{font-size:clamp(28px,8vw,40px)}
+    .sec-head .sub{display:block;text-align:left;white-space:normal;margin-top:9px;padding-bottom:0;font-size:12.5px;color:#6f685f}
+    .ed-grid{grid-template-columns:1fr;gap:28px}
+    .ed-grid .feat .ph{height:auto;aspect-ratio:4/3}
+    .ed-grid .feat .meta h3{font-size:21px}
+    .ed-grid .side{grid-template-columns:1fr 1fr;gap:26px 16px}
+    .ed-grid .side .art:nth-child(1) .ph,.ed-grid .side .art:nth-child(2) .ph,.ed-grid .side .art:nth-child(3) .ph,.ed-grid .side .art:nth-child(4) .ph{height:auto;aspect-ratio:1/1}
+    .band{height:56vh;min-height:360px}
+    .band p{font-size:clamp(19px,5vw,28px)}
     .biz-grid{grid-template-columns:1fr;gap:0}
     .biz-grid .cell{padding:26px 0;border-top:1px solid var(--line)}
     .biz-grid .cell:first-child{border-top:1px solid var(--ink)}
-    .grid3{grid-template-columns:1fr;gap:34px}
-    .grid3 .art .ph{height:auto;aspect-ratio:16/10}
-    .ceo{grid-template-columns:1fr;gap:30px}
-    .ceo .ph{max-width:320px;aspect-ratio:4/5}
+    .grid3{grid-template-columns:1fr;gap:30px}
+    .grid3 .art .ph{height:auto;aspect-ratio:4/3}
+    .ceo-quote{font-size:clamp(20px,5.4vw,27px);line-height:1.55}
+    .ceo-foot{flex-direction:column;gap:20px;margin-top:34px;padding-top:26px}
     .gal{grid-template-columns:1fr;gap:14px}
+    .gal .col{gap:14px}
     .gal .big,.gal .col .ph{height:auto;aspect-ratio:4/3}
-    footer .fmk{font-size:24px}
+    footer .ft{flex-direction:column;gap:24px}
+    footer .fmk{font-size:26px}
+  }
+  /* Small phones */
+  @media(max-width:480px){
+    .ed-grid .side{grid-template-columns:1fr;gap:24px}
+    .ed-grid .side .art:nth-child(n) .ph{aspect-ratio:4/3}
+    .sec-head h2{font-size:30px}
+    .hero-cap h1{font-size:clamp(40px,16vw,68px)}
   }
 </style>
 </head>
