@@ -4,152 +4,182 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>CMK IMAGE KOREA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 <style>
   :root{
-    --ink:#1c1a18; --ink-soft:#6b645d; --line:#e7e2db;
-    --rose:#C58B82; --rose-deep:#B2766C; --black:#161311;
+    --ink:#1d1a17; --ink-soft:#7a7268; --line:#e8e3dc;
+    --rose:#C58B82; --rose-deep:#Af7064; --cream:#faf7f3; --black:#15110f;
     --sans:'Pretendard',-apple-system,sans-serif;
+    --serif:'Cormorant Garamond',serif;
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth;overflow-x:hidden}
-  body{font-family:var(--sans);color:var(--ink);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;word-break:keep-all}
+  html{overflow-x:hidden}
+  body{font-family:var(--sans);color:var(--ink);background:#fff;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;word-break:keep-all}
   a{color:inherit;text-decoration:none}
   img{display:block;width:100%;height:100%;object-fit:cover}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 40px}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 44px}
+  .eyebrow{font-family:var(--serif);font-style:italic;font-size:21px;color:var(--rose-deep);letter-spacing:.01em}
 
   /* Header */
-  header{padding:30px 0 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);z-index:50}
+  header{padding:30px 0 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.93);backdrop-filter:blur(10px);z-index:50}
   .bar{position:relative}
-  .logo{text-align:center;font-weight:800;font-size:22px;letter-spacing:.26em;padding-left:.26em}
-  .nav-toggle{display:none;position:absolute;right:0;top:0;background:none;border:0;font-size:24px;line-height:1;color:var(--ink);cursor:pointer;padding:4px 6px}
+  .logo{text-align:center;font-weight:800;font-size:21px;letter-spacing:.3em;padding-left:.3em}
+  .nav-toggle{display:none;position:absolute;right:0;top:-2px;background:none;border:0;font-size:24px;color:var(--ink);cursor:pointer;padding:4px 6px}
   nav ul.menu{display:flex;justify-content:center;list-style:none;margin-top:18px}
   nav ul.menu > li{position:relative}
-  nav ul.menu > li > a{display:block;padding:16px 24px;font-size:13px;font-weight:600;letter-spacing:.1em;color:#3a352f;transition:color .2s;white-space:nowrap}
+  nav ul.menu > li > a{display:block;padding:16px 24px;font-size:13px;font-weight:600;letter-spacing:.12em;color:#3a352f;transition:color .25s;white-space:nowrap;cursor:pointer}
   nav ul.menu > li > a:hover{color:var(--rose-deep)}
-  /* highlight 기업 컨설팅 */
   nav li.lead > a{color:var(--rose-deep)}
-  nav li.lead > a::after{content:"";position:absolute;left:24px;right:24px;bottom:9px;height:1.5px;background:var(--rose-deep);opacity:.55}
-  /* dropdown */
-  nav .sub{position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:190px;background:#fff;border:1px solid var(--line);box-shadow:0 14px 34px rgba(40,30,26,.08);padding:8px 0;list-style:none;opacity:0;visibility:hidden;translate:0 6px;transition:opacity .2s,visibility .2s,translate .2s;z-index:60}
+  nav li.lead > a::after{content:"";position:absolute;left:24px;right:24px;bottom:9px;height:1.5px;background:var(--rose-deep);opacity:.5}
+  nav .sub{position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:200px;background:#fff;border:1px solid var(--line);box-shadow:0 18px 40px rgba(40,30,26,.09);padding:10px 0;list-style:none;opacity:0;visibility:hidden;translate:0 8px;transition:opacity .28s,visibility .28s,translate .28s;z-index:60}
   nav li.has-sub:hover .sub{opacity:1;visibility:visible;translate:0 0}
-  nav .sub li a{display:block;padding:11px 24px;font-size:12.5px;font-weight:500;color:#4a443e;white-space:nowrap;letter-spacing:.01em;transition:background .15s,color .15s}
-  nav .sub li a:hover{background:#faf6f1;color:var(--rose-deep)}
+  nav .sub li a{display:block;padding:11px 26px;font-size:12.5px;font-weight:500;color:#4a443e;white-space:nowrap;transition:background .15s,color .15s;cursor:pointer}
+  nav .sub li a:hover{background:var(--cream);color:var(--rose-deep)}
 
-  /* Hero */
-  .hero{position:relative;height:76vh;min-height:540px;overflow:hidden;background:#bfb6ab}
-  .hero > img{position:absolute;inset:0;object-position:center 45%}
-  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,16,.36),rgba(20,18,16,.2) 45%,rgba(20,18,16,.5))}
-  .hero .inner{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;padding:0 24px}
-  .hero .line1{display:flex;justify-content:space-between;width:min(680px,90%);font-weight:800;font-size:clamp(26px,4.6vw,54px);letter-spacing:.1em;text-shadow:0 2px 26px rgba(0,0,0,.4)}
-  .hero .line2{font-weight:800;font-size:clamp(24px,4vw,48px);letter-spacing:.12em;margin-top:8px;text-shadow:0 2px 26px rgba(0,0,0,.4)}
+  /* Hero (magazine) */
+  .hero{position:relative;height:88vh;min-height:600px;overflow:hidden;background:#bdb4a8}
+  .hero-bg{position:absolute;inset:0;overflow:hidden}
+  .hero-bg img{object-position:center 44%;transform:scale(1.05);animation:kb 16s ease-out forwards}
+  @keyframes kb{to{transform:scale(1.16)}}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,17,15,.42),rgba(21,17,15,.16) 42%,rgba(21,17,15,.55));z-index:1}
+  .hero .inner{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;padding:0 24px}
+  .hero .eyebrow{color:rgba(255,255,255,.9);font-size:clamp(17px,2vw,23px)}
+  .hero h1{font-family:var(--serif);font-weight:500;font-style:italic;font-size:clamp(54px,9.5vw,128px);line-height:.98;letter-spacing:.01em;margin:14px 0 20px;text-shadow:0 4px 40px rgba(0,0,0,.35)}
+  .hero .rule{width:64px;height:1px;background:rgba(255,255,255,.65);margin-bottom:22px}
+  .hero .sub{font-size:clamp(13px,1.5vw,16px);letter-spacing:.46em;text-transform:uppercase;font-weight:600;padding-left:.46em}
+  .scrolldot{position:absolute;left:50%;bottom:34px;transform:translateX(-50%);z-index:3;width:1px;height:48px;background:linear-gradient(rgba(255,255,255,.7),transparent);animation:dot 2.4s ease-in-out infinite}
+  @keyframes dot{0%,100%{opacity:.25;transform:translateX(-50%) scaleY(.6)}50%{opacity:.8;transform:translateX(-50%) scaleY(1)}}
 
   /* Section */
-  .sec{padding:110px 0}
-  .h-center{text-align:center;font-weight:800;font-size:clamp(24px,3vw,34px);line-height:1.4}
-  .h-left{font-weight:800;font-size:clamp(24px,3vw,34px);line-height:1.35}
-  .sub-center{text-align:center;color:var(--ink-soft);font-size:15px;margin-top:14px;font-weight:400}
+  .sec{padding:140px 0}
+  .lead-head{text-align:center;margin-bottom:70px}
+  .lead-head .eyebrow{display:block;margin-bottom:18px}
+  .lead-head h2{font-weight:800;font-size:clamp(26px,3.2vw,38px);line-height:1.38;letter-spacing:-.01em}
+  .lead-head .sub{color:var(--ink-soft);font-size:15px;margin-top:16px;font-weight:400}
 
   /* 네 가지 길 collage */
-  .collage{display:grid;grid-template-columns:.85fr 1.2fr .95fr;gap:24px;margin-top:58px;align-items:start}
+  .collage{display:grid;grid-template-columns:.85fr 1.2fr .95fr;gap:26px;align-items:start}
   .collage .ph{overflow:hidden;background:#eee;position:relative}
-  .collage .ph img{transition:transform .9s cubic-bezier(.2,.7,.2,1)}
-  .collage .ph:hover img{transform:scale(1.05)}
-  .col-l .ph{height:262px}
-  .col-l .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(0,0,0,.5))}
-  .col-l .label{position:absolute;left:20px;bottom:18px;z-index:2;color:#fff;font-weight:700;font-size:15px}
-  .col-c{margin-top:54px}
-  .col-c .ph{height:560px}
-  .col-r{display:grid;gap:24px}
-  .col-r .ph{height:268px}
+  .collage .ph img{transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+  .collage .ph:hover img{transform:scale(1.06)}
+  .col-l .ph{height:266px}
+  .col-l .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 42%,rgba(0,0,0,.5))}
+  .col-l .label{position:absolute;left:22px;bottom:20px;z-index:2;color:#fff;font-weight:600;font-size:15px;letter-spacing:.02em}
+  .col-c{margin-top:58px}
+  .col-c .ph{height:580px}
+  .col-r{display:grid;gap:26px}
+  .col-r .ph{height:277px}
 
-  /* B2B corporate section */
-  .biz{background:#faf6f2;padding:104px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .biz .kick{text-align:center;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--rose-deep);font-weight:700;margin-bottom:14px}
-  .biz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:52px}
-  .biz-grid .cell{background:#faf6f2;padding:48px 34px;text-align:center}
-  .biz-grid .ax{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--rose-deep);font-weight:600}
-  .biz-grid b{display:block;font-size:23px;font-weight:800;margin:10px 0 14px}
-  .biz-grid p{font-size:14px;color:#6b645d;line-height:1.8;font-weight:400}
-  .biz-cta{text-align:center;margin-top:52px}
-  .biz-cta a{display:inline-block;background:var(--rose-deep);color:#fff;font-weight:700;font-size:14px;letter-spacing:.06em;padding:18px 46px;transition:background .2s}
-  .biz-cta a:hover{background:var(--ink)}
+  /* B2B editorial */
+  .biz{background:var(--cream);padding:140px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .biz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:56px;margin-top:64px}
+  .biz-grid .cell{border-top:1px solid var(--ink);padding-top:30px}
+  .biz-grid .no{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--rose-deep);margin-bottom:18px}
+  .biz-grid .ax{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+  .biz-grid b{display:block;font-size:27px;font-weight:800;margin:6px 0 18px;letter-spacing:-.01em}
+  .biz-grid p{font-size:14.5px;color:var(--ink-soft);line-height:1.9;font-weight:400}
+  .biz-cta{margin-top:70px;text-align:center}
+  .biz-cta a{display:inline-block;border:1px solid var(--ink);color:var(--ink);font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;padding:19px 50px;transition:all .3s;cursor:pointer}
+  .biz-cta a:hover{background:var(--ink);color:#fff}
 
-  /* Rose band with photo */
-  .rose{position:relative;overflow:hidden;background:radial-gradient(130% 130% at 25% 30%,var(--rose),var(--rose-deep));color:#fff;padding:130px 24px;text-align:center}
-  .rose > img{position:absolute;right:0;top:0;width:56%;height:100%;object-fit:cover;object-position:center 30%;opacity:.9}
-  .rose::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--rose-deep) 22%,rgba(178,118,108,.55) 48%,rgba(178,118,108,.25) 100%)}
-  .rose p{position:relative;z-index:2;font-size:clamp(17px,2.1vw,25px);font-weight:500;line-height:1.85;max-width:760px;margin:0 auto;letter-spacing:.01em;text-shadow:0 1px 12px rgba(120,70,62,.4)}
+  /* Rose band */
+  .rose{position:relative;overflow:hidden;background:radial-gradient(135% 135% at 22% 26%,var(--rose),var(--rose-deep));color:#fff;padding:150px 24px;text-align:center}
+  .rose-img{position:absolute;right:0;top:0;width:56%;height:100%;overflow:hidden}
+  .rose-img img{object-position:center 28%;opacity:.92}
+  .rose::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--rose-deep) 20%,rgba(175,112,100,.5) 46%,rgba(175,112,100,.18) 100%);z-index:1}
+  .rose .txt{position:relative;z-index:2;max-width:780px;margin:0 auto}
+  .rose .eyebrow{color:rgba(255,255,255,.92);display:block;margin-bottom:24px}
+  .rose p{font-size:clamp(18px,2.2vw,27px);font-weight:500;line-height:1.8;letter-spacing:.01em;text-shadow:0 1px 14px rgba(110,62,54,.4)}
   .rose p b{font-weight:800}
 
-  /* research 3 */
-  .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:58px}
+  /* research */
+  .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
   .cards3 .ph{aspect-ratio:1/1;overflow:hidden;background:#eee}
-  .cards3 .ph img{transition:transform .9s cubic-bezier(.2,.7,.2,1)}
-  .cards3 a:hover .ph img{transform:scale(1.05)}
-  .cards3 .cap{margin-top:16px;font-weight:700;font-size:16px}
+  .cards3 .ph img{transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+  .cards3 a:hover .ph img{transform:scale(1.06)}
+  .cards3 .cap{margin-top:20px;font-weight:600;font-size:16px;letter-spacing:.01em}
+  .cards3 .cap small{display:block;font-family:var(--serif);font-style:italic;font-weight:400;font-size:14px;color:var(--rose-deep);margin-top:3px}
 
   /* CEO */
-  .ceo-head{display:flex;align-items:center;gap:20px;font-weight:800;font-size:clamp(22px,2.6vw,30px)}
-  .ceo-head .arr{font-weight:400}
-  .ceo-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;margin-top:48px;align-items:start}
-  .ceo-photo{aspect-ratio:4/5;overflow:hidden;background:#eee}
-  .ceo-body .name{font-weight:800;font-size:clamp(30px,3.6vw,44px);letter-spacing:.28em;padding-left:.28em}
-  .ceo-body .role{margin-top:14px;font-size:13px;letter-spacing:.14em;color:var(--rose-deep);font-weight:600;text-transform:uppercase}
-  .ceo-body p{margin-top:26px;color:#4a443e;font-size:15.5px;line-height:1.95}
+  .ceo-head{display:flex;align-items:center;gap:22px;font-weight:800;font-size:clamp(22px,2.6vw,30px)}
+  .ceo-head .arr{font-weight:300;color:var(--rose-deep)}
+  .ceo-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:64px;margin-top:54px;align-items:center}
+  .ceo-photo{aspect-ratio:4/5;background:linear-gradient(150deg,#efe8df,#e2d6c8);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;position:relative}
+  .ceo-photo::before{content:"";position:absolute;inset:16px;border:1px solid rgba(29,26,23,.12)}
+  .ceo-photo .ph-cap{font-family:var(--serif);font-style:italic;font-size:18px;color:rgba(29,26,23,.32)}
+  .ceo-body .name{font-weight:800;font-size:clamp(32px,3.8vw,46px);letter-spacing:.3em;padding-left:.3em}
+  .ceo-body .role{margin-top:16px;font-family:var(--serif);font-style:italic;font-size:18px;color:var(--rose-deep)}
+  .ceo-body p{margin-top:30px;color:#4a443e;font-size:16px;line-height:2.05;max-width:480px}
   .ceo-body p b{color:var(--rose-deep);font-weight:700}
-  .ceo-desk{aspect-ratio:16/9;overflow:hidden;background:#eee;margin-top:30px;grid-column:1/3}
 
   /* Gallery */
-  .gallery{background:var(--black);color:#fff;padding:100px 0}
-  .gallery .h-left{color:#fff}
-  .gal-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px}
-  .gal-row .ph{aspect-ratio:4/3;overflow:hidden;background:#2a2522}
-  .gal-row .ph img{filter:grayscale(.1);transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .5s}
-  .gal-row .ph:hover img{transform:scale(1.05);filter:none}
+  .gallery{background:var(--black);color:#fff;padding:130px 0}
+  .gallery .lead-head{text-align:left;margin-bottom:50px}
+  .gallery .lead-head .eyebrow{color:var(--rose)}
+  .gallery .lead-head h2{color:#fff}
+  .gal-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .gal-row .ph{aspect-ratio:4/3;overflow:hidden;background:#241f1c}
+  .gal-row .ph img{filter:grayscale(.12);transition:transform 1.1s cubic-bezier(.2,.7,.2,1),filter .6s}
+  .gal-row .ph:hover img{transform:scale(1.06);filter:none}
 
   /* Footer */
-  footer{padding:64px 0;border-top:1px solid var(--line);background:#fafafa;color:var(--ink-soft);font-size:13.5px;line-height:2}
-  footer .fl{font-weight:800;color:var(--ink);letter-spacing:.06em;margin-bottom:10px;font-size:15px}
+  footer{padding:70px 0;border-top:1px solid var(--line);background:#fafafa;color:var(--ink-soft);font-size:13.5px;line-height:2.05}
+  footer .fl{font-weight:800;color:var(--ink);letter-spacing:.1em;margin-bottom:12px;font-size:15px}
   footer b{color:#3a352f;font-weight:600}
-  footer .copy{margin-top:18px;font-size:12px;color:#9a948d}
+  footer .copy{margin-top:20px;font-size:12px;color:#a9a39b;letter-spacing:.04em}
 
-  /* reveal */
-  html.js .rv{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+  /* ===== Reveals (progressive enhancement) ===== */
+  html.js .rv{opacity:0;transform:translateY(30px);transition:opacity 1.1s ease,transform 1.1s cubic-bezier(.19,1,.22,1)}
   html.js .rv.in{opacity:1;transform:none}
-  html.js .rv.d1{transition-delay:.08s}html.js .rv.d2{transition-delay:.16s}html.js .rv.d3{transition-delay:.24s}
-  @media (prefers-reduced-motion:reduce){html.js .rv{opacity:1!important;transform:none!important}}
+  html.js .d1{transition-delay:.1s}html.js .d2{transition-delay:.2s}html.js .d3{transition-delay:.3s}
+  html.js .wipe img,html.js .wipe.ph img{clip-path:inset(0 0 100% 0);transition:clip-path 1.25s cubic-bezier(.76,0,.24,1)}
+  html.js .wipe.in img{clip-path:inset(0 0 0 0)}
+  html.js .hero .inner > *{opacity:0;transform:translateY(26px);animation:heroup 1.3s cubic-bezier(.19,1,.22,1) forwards}
+  html.js .hero .eyebrow{animation-delay:.25s}
+  html.js .hero h1{animation-delay:.42s}
+  html.js .hero .rule{animation-delay:.6s}
+  html.js .hero .sub{animation-delay:.74s}
+  @keyframes heroup{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){
+    html.js .rv,html.js .wipe img,html.js .hero .inner > *{opacity:1!important;transform:none!important;clip-path:none!important;animation:none!important}
+    .hero-bg img{animation:none!important;transform:none!important}
+  }
 
   @media (max-width:860px){
     .wrap{padding:0 22px}
-    .logo{font-size:15px;letter-spacing:.12em;padding-left:.12em}
+    .logo{font-size:15px;letter-spacing:.16em;padding-left:.16em}
     .nav-toggle{display:block}
     nav ul.menu{display:none;flex-direction:column;margin-top:14px;border-top:1px solid var(--line)}
     nav ul.menu.open{display:flex}
     nav ul.menu > li{position:static}
-    nav ul.menu > li > a{padding:13px 2px;font-size:13px;letter-spacing:.04em;border-bottom:1px solid var(--line)}
+    nav ul.menu > li > a{padding:13px 2px;font-size:13px;border-bottom:1px solid var(--line)}
     nav li.lead > a::after{display:none}
-    nav .sub{position:static;transform:none;opacity:1;visibility:visible;translate:0 0;border:0;box-shadow:none;padding:4px 0 10px;min-width:0;background:transparent}
+    nav .sub{position:static;transform:none;opacity:1;visibility:visible;translate:0 0;border:0;box-shadow:none;padding:4px 0 10px;min-width:0}
     nav .sub li a{padding:8px 0 8px 16px;color:var(--ink-soft);font-size:12.5px}
-    .hero{height:62vh;min-height:430px}
-    .hero .line1{font-size:clamp(20px,5.6vw,34px);letter-spacing:.04em;width:min(420px,92%)}
-    .hero .line2{font-size:clamp(17px,4.6vw,26px);letter-spacing:.05em}
-    .sec{padding:64px 0}
-    .collage{grid-template-columns:1fr 1fr;gap:14px;margin-top:38px}
+    .hero{height:66vh;min-height:440px}
+    .hero h1{font-size:clamp(40px,15vw,80px)}
+    .sec{padding:74px 0}
+    .lead-head{margin-bottom:44px}
+    .collage{grid-template-columns:1fr 1fr;gap:14px}
     .col-c{margin-top:0;grid-column:1/3}
-    .col-l .ph,.col-r .ph{height:200px}
-    .col-c .ph{height:320px}
-    .biz{padding:64px 0}
-    .biz-grid{grid-template-columns:1fr;margin-top:34px}
-    .biz-grid .cell{padding:32px 20px}
-    .rose{padding:90px 22px}
-    .rose > img{width:100%;opacity:.5}
-    .rose::after{background:linear-gradient(180deg,rgba(178,118,108,.55),rgba(178,118,108,.55))}
-    .cards3{grid-template-columns:1fr;gap:30px}
-    .cards3 .ph{aspect-ratio:16/10}
-    .ceo-grid{grid-template-columns:1fr;gap:28px}
-    .ceo-desk{grid-column:auto}
-    .gal-row{grid-template-columns:1fr 1fr;gap:12px}
+    .col-l .ph,.col-r .ph{height:210px}
+    .col-c .ph{height:330px}
+    .biz{padding:74px 0}
+    .biz-grid{grid-template-columns:1fr;gap:0}
+    .biz-grid .cell{padding:28px 0;border-top:1px solid var(--line)}
+    .biz-grid .cell:first-child{border-top:1px solid var(--ink)}
+    .rose{padding:96px 22px}
+    .rose-img{width:100%;opacity:.42}
+    .rose::after{background:rgba(175,112,100,.5)}
+    .cards3{grid-template-columns:1fr;gap:36px}
+    .cards3 .ph{aspect-ratio:16/11}
+    .ceo-grid{grid-template-columns:1fr;gap:32px}
+    .ceo-photo{aspect-ratio:4/3;max-width:340px}
+    .gallery{padding:78px 0}
+    .gal-row{grid-template-columns:1fr;gap:14px}
   }
 </style>
 </head>
@@ -158,37 +188,37 @@
 <header>
   <div class="wrap bar">
     <div class="logo">CMK IMAGE KOREA</div>
-    <button class="nav-toggle" aria-label="메뉴 열기">&#9776;</button>
+    <button class="nav-toggle" aria-label="메뉴">&#9776;</button>
     <nav>
       <ul class="menu">
-        <li><a href="#">ABOUT</a></li>
+        <li><a>ABOUT</a></li>
         <li class="has-sub lead">
-          <a href="#corporate">기업 컨설팅</a>
+          <a>기업 컨설팅</a>
           <ul class="sub">
-            <li><a href="#corporate">기업 · 금융 PI</a></li>
-            <li><a href="#corporate">기관 이미지</a></li>
-            <li><a href="#corporate">출강 · 강연</a></li>
+            <li><a>기업 · 금융 PI</a></li>
+            <li><a>기관 이미지</a></li>
+            <li><a>출강 · 강연</a></li>
           </ul>
         </li>
         <li class="has-sub">
-          <a href="#services">개인 컨설팅</a>
+          <a>개인 컨설팅</a>
           <ul class="sub">
-            <li><a href="#services">VVIP 1:1</a></li>
-            <li><a href="#services">미디어 이미지</a></li>
-            <li><a href="#services">퍼스널 스타일</a></li>
+            <li><a>VVIP 1:1</a></li>
+            <li><a>미디어 이미지</a></li>
+            <li><a>퍼스널 스타일</a></li>
           </ul>
         </li>
         <li class="has-sub">
-          <a href="#">ACADEMY</a>
+          <a>ACADEMY</a>
           <ul class="sub">
-            <li><a href="#">Taste Image Scale</a></li>
-            <li><a href="#">이미지컨설턴트 전략과정</a></li>
-            <li><a href="#">퍼스널컬러 진단과정</a></li>
-            <li><a href="#">메이크업 과정</a></li>
+            <li><a>Taste Image Scale</a></li>
+            <li><a>이미지컨설턴트 전략과정</a></li>
+            <li><a>퍼스널컬러 진단과정</a></li>
+            <li><a>메이크업 과정</a></li>
           </ul>
         </li>
-        <li><a href="#lab">IMAGE LAB</a></li>
-        <li><a href="#contact">CONTACT</a></li>
+        <li><a>IMAGE LAB</a></li>
+        <li><a>CONTACT</a></li>
       </ul>
     </nav>
   </div>
@@ -196,95 +226,111 @@
 
 <!-- HERO -->
 <section class="hero">
-  <img src="img/hero.jpg" alt="" />
+  <div class="hero-bg"><img src="img/hero.jpg" alt="" /></div>
   <div class="inner">
-    <div class="line1"><span>CREATIVE</span><span>PARTNER</span></div>
-    <div class="line2">CMK IMAGE KOREA</div>
+    <span class="eyebrow">Image Consulting · Since 2008</span>
+    <h1>Creative Partner</h1>
+    <span class="rule"></span>
+    <span class="sub">CMK Image Korea</span>
   </div>
+  <span class="scrolldot"></span>
 </section>
 
-<!-- 네 가지 길 (collage) -->
-<section class="sec" id="services">
+<!-- 네 가지 길 -->
+<section class="sec">
   <div class="wrap">
-    <h2 class="h-center rv">CMK가 제안하는<br/>네 가지 길</h2>
+    <div class="lead-head">
+      <span class="eyebrow rv">Our Consulting</span>
+      <h2 class="rv">CMK가 제안하는 네 가지 길</h2>
+    </div>
     <div class="collage">
       <div class="col-l rv">
-        <div class="ph"><img src="img/corp_card.jpg" alt=""/><span class="label">기업 · 금융 이미지</span></div>
+        <div class="ph wipe"><img src="img/corp_card.jpg" alt=""/><span class="label">기업 · 금융 이미지</span></div>
       </div>
       <div class="col-c rv d1">
-        <div class="ph"><img src="img/suit_big.jpg" alt=""/></div>
+        <div class="ph wipe"><img src="img/suit_big.jpg" alt=""/></div>
       </div>
-      <div class="col-r rv d2">
-        <div class="ph"><img src="img/suit_detail.jpg" alt=""/></div>
-        <div class="ph"><img src="img/suit_rack.jpg" alt=""/></div>
+      <div class="col-r">
+        <div class="ph wipe rv d1"><img src="img/suit_detail.jpg" alt=""/></div>
+        <div class="ph wipe rv d2"><img src="img/suit_rack.jpg" alt=""/></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- B2B CORPORATE -->
-<section class="biz" id="corporate">
+<!-- B2B -->
+<section class="biz">
   <div class="wrap">
-    <p class="kick rv">Corporate Identity</p>
-    <h2 class="h-center rv">기업 컨설팅</h2>
-    <p class="sub-center rv">기업 · 금융 · 기관 임원을 위한 이미지 전략 · 외모, 행동, 커뮤니케이션을 하나로</p>
+    <div class="lead-head">
+      <span class="eyebrow rv">For Business</span>
+      <h2 class="rv">기업 컨설팅</h2>
+      <p class="sub rv">기업 · 금융 · 기관 임원을 위한 이미지 전략</p>
+    </div>
     <div class="biz-grid">
-      <div class="cell rv"><span class="ax">Appearance</span><b>외모</b><p>매력적인 외모는 사람의 마음을 사로잡아 호감을 느끼게 합니다.</p></div>
-      <div class="cell rv d1"><span class="ax">Behavior</span><b>행동</b><p>매력적인 행동은 사람의 마음을 사로잡아 오랫동안 기억하게 합니다.</p></div>
-      <div class="cell rv d2"><span class="ax">Communication</span><b>커뮤니케이션</b><p>매력적인 커뮤니케이션은 사람의 마음을 사로잡아 감동하게 합니다.</p></div>
+      <div class="cell rv"><div class="no">I</div><span class="ax">Appearance</span><b>외모</b><p>매력적인 외모는 사람의 마음을 사로잡아 호감을 느끼게 합니다.</p></div>
+      <div class="cell rv d1"><div class="no">II</div><span class="ax">Behavior</span><b>행동</b><p>매력적인 행동은 사람의 마음을 사로잡아 오랫동안 기억하게 합니다.</p></div>
+      <div class="cell rv d2"><div class="no">III</div><span class="ax">Communication</span><b>커뮤니케이션</b><p>매력적인 커뮤니케이션은 사람의 마음을 사로잡아 감동하게 합니다.</p></div>
     </div>
-    <div class="biz-cta rv"><a href="#contact">기업 컨설팅 문의</a></div>
+    <div class="biz-cta rv"><a>기업 컨설팅 문의</a></div>
   </div>
 </section>
 
-<!-- ROSE BAND -->
+<!-- ROSE -->
 <section class="rose">
-  <img src="img/rose_people.jpg" alt="" />
-  <p class="rv"><b>CMK이미지 코리아</b>는 20여 년간의 현장 컨설팅과 노하우를 바탕으로<br/>이미지에 관련된 맞춤형 컨설팅 및 전문가 교육프로그램을 제공하는 컨설팅 기업입니다.</p>
+  <div class="rose-img wipe"><img src="img/rose_people.jpg" alt="" /></div>
+  <div class="txt">
+    <span class="eyebrow rv">What We Do</span>
+    <p class="rv d1"><b>CMK이미지 코리아</b>는 20여 년간의 현장 컨설팅과 노하우를 바탕으로, 이미지에 관련된 맞춤형 컨설팅 및 전문가 교육프로그램을 제공합니다.</p>
+  </div>
 </section>
 
-<!-- 이미지 코리아 (research) -->
-<section class="sec" id="lab">
+<!-- 연구 -->
+<section class="sec">
   <div class="wrap">
-    <h2 class="h-center rv">CMK 이미지 코리아</h2>
-    <p class="sub-center rv">어울림의 원리를 연구하는 이미지 연구소</p>
+    <div class="lead-head">
+      <span class="eyebrow rv">Image Lab</span>
+      <h2 class="rv">CMK 이미지 코리아</h2>
+    </div>
     <div class="cards3">
-      <a class="rv"><div class="ph"><img src="img/res_color.jpg" alt=""/></div><div class="cap">퍼스널 컬러 연구</div></a>
-      <a class="rv d1"><div class="ph"><img src="img/res_hair.jpg" alt=""/></div><div class="cap">골격과 헤어 연구</div></a>
-      <a class="rv d2"><div class="ph"><img src="img/res_style.jpg" alt=""/></div><div class="cap">스타일 연구</div></a>
+      <a class="rv"><div class="ph wipe"><img src="img/res_color.jpg" alt=""/></div><div class="cap">퍼스널 컬러 연구<small>Personal Color</small></div></a>
+      <a class="rv d1"><div class="ph wipe"><img src="img/res_hair.jpg" alt=""/></div><div class="cap">골격과 헤어 연구<small>Frame &amp; Hair</small></div></a>
+      <a class="rv d2"><div class="ph wipe"><img src="img/res_style.jpg" alt=""/></div><div class="cap">스타일 연구<small>Style</small></div></a>
     </div>
   </div>
 </section>
 
-<!-- CEO STORY -->
-<section class="sec" style="padding-top:20px">
+<!-- CEO -->
+<section class="sec" style="padding-top:30px">
   <div class="wrap">
     <div class="ceo-head rv">CMK CEO STORY <span class="arr">&rarr;</span></div>
     <div class="ceo-grid">
-      <div class="ceo-photo rv"><img src="img/ceo.jpg" alt="대표 조미경"/></div>
+      <div class="ceo-photo rv"><span class="ph-cap">Portrait</span></div>
       <div class="ceo-body rv d1">
         <div class="name">조 미 경</div>
-        <div class="role">CEO · Founder</div>
-        <p>사람들은 대개 이미지메이킹을 떠올리면 정치인이나 연예인 등 특별한 사람들만의 것이라고 생각하는 경우가 많습니다. 그러나 개인의 이미지(Personal Identity)는 <b>현대인 모두에게 필요한 매커니즘</b>으로서 개인의 삶의 질을 높여줍니다.</p>
+        <div class="role">Cho Mi-kyung · Founder</div>
+        <p>사람들은 대개 이미지메이킹을 떠올리면 특별한 사람들만의 것이라고 생각합니다. 그러나 개인의 이미지(Personal Identity)는 <b>현대인 모두에게 필요한 전략</b>으로서, 삶의 질을 높여줍니다.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- GALLERY -->
-<section class="gallery" id="gallery">
+<section class="gallery">
   <div class="wrap">
-    <h2 class="h-left rv">CMK 갤러리</h2>
+    <div class="lead-head">
+      <span class="eyebrow rv">Field</span>
+      <h2 class="rv">CMK 갤러리</h2>
+    </div>
     <div class="gal-row">
-      <div class="ph rv"><img src="img/gal1.jpg" alt=""/></div>
-      <div class="ph rv d1"><img src="img/gal2.jpg" alt=""/></div>
-      <div class="ph rv d2"><img src="img/gal3.jpg" alt=""/></div>
+      <div class="ph wipe rv"><img src="img/gal1.jpg" alt=""/></div>
+      <div class="ph wipe rv d1"><img src="img/gal2.jpg" alt=""/></div>
+      <div class="ph wipe rv d2"><img src="img/gal3.jpg" alt=""/></div>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer id="contact">
+<footer>
   <div class="wrap">
     <div class="fl">CMK IMAGE KOREA</div>
     <div>대표 조미경 &nbsp;|&nbsp; 주소 경기 용인시 기흥구 탑실로 116, 탑실마을 대주 피오레 2단지 215동 303호</div>
@@ -295,10 +341,12 @@
 
 <script>
   document.documentElement.classList.add('js');
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
-  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
-  var navToggle=document.querySelector('.nav-toggle'), navMenu=document.querySelector('.menu');
-  if(navToggle){ navToggle.addEventListener('click',function(){ navMenu.classList.toggle('open'); }); }
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.14,rootMargin:'0px 0px -7% 0px'});
+  document.querySelectorAll('.rv,.wipe').forEach(function(el){io.observe(el);});
+  // menu = IA only (no landing-page scroll)
+  document.querySelectorAll('nav a, .biz-cta a').forEach(function(a){ a.addEventListener('click',function(e){ e.preventDefault(); }); });
+  var t=document.querySelector('.nav-toggle'), m=document.querySelector('.menu');
+  if(t){ t.addEventListener('click',function(){ m.classList.toggle('open'); }); }
 </script>
 </body>
 </html>
