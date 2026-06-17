@@ -7,20 +7,16 @@
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 <style>
   :root{
-    --ink:#1c1a18;
-    --ink-soft:#6b645d;
-    --line:#e7e2db;
-    --rose:#C58B82;
-    --rose-deep:#B2766C;
-    --black:#161311;
-    --sans:'Pretendard', -apple-system, sans-serif;
+    --ink:#1c1a18; --ink-soft:#6b645d; --line:#e7e2db;
+    --rose:#C58B82; --rose-deep:#B2766C; --black:#161311;
+    --sans:'Pretendard',-apple-system,sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth;overflow-x:hidden}
   body{font-family:var(--sans);color:var(--ink);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;word-break:keep-all}
   a{color:inherit;text-decoration:none}
   img{display:block;width:100%;height:100%;object-fit:cover}
-  .wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 40px}
 
   /* Header */
   header{padding:30px 0 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);z-index:50}
@@ -30,58 +26,63 @@
   nav li a:hover{color:var(--rose-deep)}
 
   /* Hero */
-  .hero{position:relative;height:74vh;min-height:520px;overflow:hidden;background:#cfc7bd}
-  .hero > img{position:absolute;inset:0;object-position:center 40%}
-  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,26,24,.34),rgba(28,26,24,.16) 45%,rgba(28,26,24,.46))}
-  .hero .inner{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;padding:0 24px}
-  .hero h1{font-weight:800;font-size:clamp(30px,5.2vw,62px);letter-spacing:.16em;line-height:1.1;text-shadow:0 2px 24px rgba(0,0,0,.3)}
-  .hero h1 .sp{display:inline-block;min-width:.6em}
-  .hero h2{font-weight:800;font-size:clamp(26px,4.4vw,52px);letter-spacing:.14em;margin-top:10px;text-shadow:0 2px 24px rgba(0,0,0,.3)}
+  .hero{position:relative;height:76vh;min-height:540px;overflow:hidden;background:#bfb6ab}
+  .hero > img{position:absolute;inset:0;object-position:center 45%}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,16,.36),rgba(20,18,16,.2) 45%,rgba(20,18,16,.5))}
+  .hero .inner{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;padding:0 24px}
+  .hero .line1{display:flex;justify-content:space-between;width:min(680px,90%);font-weight:800;font-size:clamp(26px,4.6vw,54px);letter-spacing:.1em;text-shadow:0 2px 26px rgba(0,0,0,.4)}
+  .hero .line2{font-weight:800;font-size:clamp(24px,4vw,48px);letter-spacing:.12em;margin-top:8px;text-shadow:0 2px 26px rgba(0,0,0,.4)}
 
-  /* Section heading */
+  /* Section */
   .sec{padding:110px 0}
-  .h-center{text-align:center;font-weight:800;font-size:clamp(24px,3vw,34px);letter-spacing:.01em;line-height:1.4}
-  .h-left{font-weight:800;font-size:clamp(24px,3vw,34px);letter-spacing:.01em;line-height:1.35}
+  .h-center{text-align:center;font-weight:800;font-size:clamp(24px,3vw,34px);line-height:1.4}
+  .h-left{font-weight:800;font-size:clamp(24px,3vw,34px);line-height:1.35}
   .sub-center{text-align:center;color:var(--ink-soft);font-size:15px;margin-top:14px;font-weight:400}
 
-  /* 4 service cards */
-  .cards4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:60px}
-  .card{position:relative}
-  .card .ph{aspect-ratio:3/4;overflow:hidden;background:#eee}
-  .card .ph img{transition:transform .9s cubic-bezier(.2,.7,.2,1)}
-  .card:hover .ph img{transform:scale(1.05)}
-  .card .cap{margin-top:16px;font-weight:700;font-size:15px}
-  .card .cap small{display:block;color:var(--ink-soft);font-weight:400;font-size:13px;margin-top:4px;letter-spacing:.02em}
+  /* 네 가지 길 collage */
+  .collage{display:grid;grid-template-columns:.85fr 1.2fr .95fr;gap:24px;margin-top:58px;align-items:start}
+  .collage .ph{overflow:hidden;background:#eee;position:relative}
+  .collage .ph img{transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+  .collage .ph:hover img{transform:scale(1.05)}
+  .col-l .ph{height:262px}
+  .col-l .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(0,0,0,.5))}
+  .col-l .label{position:absolute;left:20px;bottom:18px;z-index:2;color:#fff;font-weight:700;font-size:15px}
+  .col-c{margin-top:54px}
+  .col-c .ph{height:560px}
+  .col-r{display:grid;gap:24px}
+  .col-r .ph{height:268px}
 
-  /* Rose band */
-  .rose{background:radial-gradient(120% 120% at 50% 0%,var(--rose) 0%,var(--rose-deep) 100%);color:#fff;padding:120px 24px;text-align:center}
-  .rose p{font-size:clamp(17px,2.1vw,25px);font-weight:500;line-height:1.85;max-width:860px;margin:0 auto;letter-spacing:.01em}
+  /* Rose band with photo */
+  .rose{position:relative;overflow:hidden;background:radial-gradient(130% 130% at 25% 30%,var(--rose),var(--rose-deep));color:#fff;padding:130px 24px;text-align:center}
+  .rose > img{position:absolute;right:0;top:0;width:56%;height:100%;object-fit:cover;object-position:center 30%;opacity:.9}
+  .rose::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--rose-deep) 22%,rgba(178,118,108,.55) 48%,rgba(178,118,108,.25) 100%)}
+  .rose p{position:relative;z-index:2;font-size:clamp(17px,2.1vw,25px);font-weight:500;line-height:1.85;max-width:760px;margin:0 auto;letter-spacing:.01em;text-shadow:0 1px 12px rgba(120,70,62,.4)}
   .rose p b{font-weight:800}
 
   /* research 3 */
-  .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:60px}
-  .cards3 .ph{aspect-ratio:4/3;overflow:hidden;background:#eee}
+  .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:58px}
+  .cards3 .ph{aspect-ratio:1/1;overflow:hidden;background:#eee}
   .cards3 .ph img{transition:transform .9s cubic-bezier(.2,.7,.2,1)}
   .cards3 a:hover .ph img{transform:scale(1.05)}
   .cards3 .cap{margin-top:16px;font-weight:700;font-size:16px}
 
   /* CEO */
-  .ceo-head{display:flex;align-items:center;gap:20px;font-weight:800;font-size:clamp(22px,2.6vw,30px);letter-spacing:.02em}
+  .ceo-head{display:flex;align-items:center;gap:20px;font-weight:800;font-size:clamp(22px,2.6vw,30px)}
   .ceo-head .arr{font-weight:400}
-  .ceo-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;margin-top:50px;align-items:start}
+  .ceo-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;margin-top:48px;align-items:start}
   .ceo-photo{aspect-ratio:4/5;overflow:hidden;background:#eee}
   .ceo-body .name{font-weight:800;font-size:clamp(30px,3.6vw,44px);letter-spacing:.28em;padding-left:.28em}
   .ceo-body .role{margin-top:14px;font-size:13px;letter-spacing:.14em;color:var(--rose-deep);font-weight:600;text-transform:uppercase}
   .ceo-body p{margin-top:26px;color:#4a443e;font-size:15.5px;line-height:1.95}
   .ceo-body p b{color:var(--rose-deep);font-weight:700}
-  .ceo-desk{aspect-ratio:16/10;overflow:hidden;background:#eee;margin-top:30px;grid-column:1/3}
+  .ceo-desk{aspect-ratio:16/9;overflow:hidden;background:#eee;margin-top:30px;grid-column:1/3}
 
-  /* Gallery black */
+  /* Gallery */
   .gallery{background:var(--black);color:#fff;padding:100px 0}
   .gallery .h-left{color:#fff}
   .gal-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:46px}
   .gal-row .ph{aspect-ratio:3/4;overflow:hidden;background:#2a2522}
-  .gal-row .ph img{filter:grayscale(.15);transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .5s}
+  .gal-row .ph img{filter:grayscale(.1);transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .5s}
   .gal-row .ph:hover img{transform:scale(1.05);filter:none}
 
   /* Footer */
@@ -90,7 +91,7 @@
   footer b{color:#3a352f;font-weight:600}
   footer .copy{margin-top:18px;font-size:12px;color:#9a948d}
 
-  /* reveal (visible by default) */
+  /* reveal */
   html.js .rv{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
   html.js .rv.in{opacity:1;transform:none}
   html.js .rv.d1{transition-delay:.08s}html.js .rv.d2{transition-delay:.16s}html.js .rv.d3{transition-delay:.24s}
@@ -101,22 +102,22 @@
     .logo{font-size:15px;letter-spacing:.12em;padding-left:.12em}
     nav ul{flex-wrap:wrap;margin-top:12px}
     nav li a{padding:11px 12px;font-size:11.5px;letter-spacing:.04em}
-    .hero{height:60vh;min-height:420px}
-    .hero h1{font-size:clamp(18px,5.6vw,34px);letter-spacing:.02em}
-    .hero h1 .sp{min-width:.3em}
-    .hero h2{font-size:clamp(15px,4.4vw,26px);letter-spacing:.03em}
+    .hero{height:62vh;min-height:430px}
+    .hero .line1{font-size:clamp(20px,5.6vw,34px);letter-spacing:.04em;width:min(420px,92%)}
+    .hero .line2{font-size:clamp(17px,4.6vw,26px);letter-spacing:.05em}
     .sec{padding:64px 0}
-    .cards4{grid-template-columns:1fr 1fr;gap:16px}
+    .collage{grid-template-columns:1fr 1fr;gap:14px;margin-top:38px}
+    .col-c{margin-top:0;grid-column:1/3}
+    .col-l .ph,.col-r .ph{height:200px}
+    .col-c .ph{height:320px}
+    .rose{padding:90px 22px}
+    .rose > img{width:100%;opacity:.5}
+    .rose::after{background:linear-gradient(180deg,rgba(178,118,108,.55),rgba(178,118,108,.55))}
     .cards3{grid-template-columns:1fr;gap:30px}
     .cards3 .ph{aspect-ratio:16/10}
-    .rose{padding:74px 22px}
-    .ceo-grid{grid-template-columns:1fr;gap:30px}
+    .ceo-grid{grid-template-columns:1fr;gap:28px}
     .ceo-desk{grid-column:auto}
     .gal-row{grid-template-columns:1fr 1fr;gap:12px}
-  }
-  @media (max-width:480px){
-    .cards4{grid-template-columns:1fr}
-    .card .ph{aspect-ratio:4/3}
   }
 </style>
 </head>
@@ -125,43 +126,48 @@
 <header>
   <div class="wrap">
     <div class="logo">CMK IMAGE KOREA</div>
-    <nav>
-      <ul>
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="#services">CONSULTING</a></li>
-        <li><a href="#academy">ACADEMY</a></li>
-        <li><a href="#lab">IMAGE LAB</a></li>
-        <li><a href="#gallery">COMMUNITY</a></li>
-        <li><a href="#contact">CONTACT</a></li>
-      </ul>
-    </nav>
+    <nav><ul>
+      <li><a href="#">ABOUT</a></li>
+      <li><a href="#services">CONSULTING</a></li>
+      <li><a href="#academy">ACADEMY</a></li>
+      <li><a href="#lab">IMAGE LAB</a></li>
+      <li><a href="#gallery">COMMUNITY</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul></nav>
   </div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-  <img src="img/hero_flatlay.jpg" alt="" />
+  <img src="img/hero.jpg" alt="" />
   <div class="inner">
-    <h1>CREATIVE<span class="sp"></span>PARTNER</h1>
-    <h2>CMK IMAGE KOREA</h2>
+    <div class="line1"><span>CREATIVE</span><span>PARTNER</span></div>
+    <div class="line2">CMK IMAGE KOREA</div>
   </div>
 </section>
 
-<!-- 네 가지 길 -->
+<!-- 네 가지 길 (collage) -->
 <section class="sec" id="services">
   <div class="wrap">
     <h2 class="h-center rv">CMK가 제안하는<br/>네 가지 길</h2>
-    <div class="cards4">
-      <a class="card rv"><div class="ph"><img src="img/suit_man.jpg" alt=""/></div><div class="cap">기업 · 금융 이미지<small>Corporate PI</small></div></a>
-      <a class="card rv d1"><div class="ph"><img src="img/tailoring.jpg" alt=""/></div><div class="cap">임원 · VVIP 컨설팅<small>Executive</small></div></a>
-      <a class="card rv d2"><div class="ph"><img src="img/woman_present.jpg" alt=""/></div><div class="cap">미디어 이미지<small>Media</small></div></a>
-      <a class="card rv d3"><div class="ph"><img src="img/suit_rack.jpg" alt=""/></div><div class="cap">퍼스널 스타일<small>Personal</small></div></a>
+    <div class="collage">
+      <div class="col-l rv">
+        <div class="ph"><img src="img/corp_card.jpg" alt=""/><span class="label">기업 · 금융 이미지</span></div>
+      </div>
+      <div class="col-c rv d1">
+        <div class="ph"><img src="img/suit_big.jpg" alt=""/></div>
+      </div>
+      <div class="col-r rv d2">
+        <div class="ph"><img src="img/suit_detail.jpg" alt=""/></div>
+        <div class="ph"><img src="img/suit_rack.jpg" alt=""/></div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ROSE BAND -->
 <section class="rose">
+  <img src="img/rose_people.jpg" alt="" />
   <p class="rv"><b>CMK이미지 코리아</b>는 20여 년간의 현장 컨설팅과 노하우를 바탕으로<br/>이미지에 관련된 맞춤형 컨설팅 및 전문가 교육프로그램을 제공하는 컨설팅 기업입니다.</p>
 </section>
 
@@ -171,9 +177,9 @@
     <h2 class="h-center rv">CMK 이미지 코리아</h2>
     <p class="sub-center rv">어울림의 원리를 연구하는 이미지 연구소</p>
     <div class="cards3">
-      <a class="rv"><div class="ph"><img src="img/perfume_desk.jpg" alt=""/></div><div class="cap">퍼스널 컬러 연구</div></a>
-      <a class="rv d1"><div class="ph"><img src="img/neck_back.jpg" alt=""/></div><div class="cap">골격과 헤어 연구</div></a>
-      <a class="rv d2"><div class="ph"><img src="img/swatch_book.jpg" alt=""/></div><div class="cap">스타일 연구</div></a>
+      <a class="rv"><div class="ph"><img src="img/res_color.jpg" alt=""/></div><div class="cap">퍼스널 컬러 연구</div></a>
+      <a class="rv d1"><div class="ph"><img src="img/res_hair.jpg" alt=""/></div><div class="cap">골격과 헤어 연구</div></a>
+      <a class="rv d2"><div class="ph"><img src="img/res_style.jpg" alt=""/></div><div class="cap">스타일 연구</div></a>
     </div>
   </div>
 </section>
@@ -183,13 +189,13 @@
   <div class="wrap">
     <div class="ceo-head rv">CMK CEO STORY <span class="arr">&rarr;</span></div>
     <div class="ceo-grid">
-      <div class="ceo-photo rv"><img src="img/woman_present.jpg" alt="대표 조미경"/></div>
+      <div class="ceo-photo rv"><img src="img/ceo.jpg" alt="대표 조미경"/></div>
       <div class="ceo-body rv d1">
         <div class="name">조 미 경</div>
         <div class="role">CEO · Founder</div>
         <p>사람들은 대개 이미지메이킹을 떠올리면 정치인이나 연예인 등 특별한 사람들만의 것이라고 생각하는 경우가 많습니다. 그러나 개인의 이미지(Personal Identity)는 <b>현대인 모두에게 필요한 매커니즘</b>으로서 개인의 삶의 질을 높여줍니다.</p>
       </div>
-      <div class="ceo-desk rv d2"><img src="img/desk_flatlay.jpg" alt=""/></div>
+      <div class="ceo-desk rv d2"><img src="img/ceo_desk.jpg" alt=""/></div>
     </div>
   </div>
 </section>
@@ -199,10 +205,10 @@
   <div class="wrap">
     <h2 class="h-left rv">CMK 갤러리</h2>
     <div class="gal-row">
-      <div class="ph rv"><img src="img/seminar2.jpg" alt=""/></div>
-      <div class="ph rv d1"><img src="img/seminar3.jpg" alt=""/></div>
-      <div class="ph rv d2"><img src="img/seminar1.jpg" alt=""/></div>
-      <div class="ph rv d3"><img src="img/couple_brown.jpg" alt=""/></div>
+      <div class="ph rv"><img src="img/gal1.jpg" alt=""/></div>
+      <div class="ph rv d1"><img src="img/gal2.jpg" alt=""/></div>
+      <div class="ph rv d2"><img src="img/gal3.jpg" alt=""/></div>
+      <div class="ph rv d3"><img src="img/gal4.jpg" alt=""/></div>
     </div>
   </div>
 </section>
