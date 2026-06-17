@@ -63,6 +63,18 @@
   .col-r{display:grid;gap:24px}
   .col-r .ph{height:268px}
 
+  /* B2B corporate section */
+  .biz{background:#faf6f2;padding:104px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .biz .kick{text-align:center;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--rose-deep);font-weight:700;margin-bottom:14px}
+  .biz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:52px}
+  .biz-grid .cell{background:#faf6f2;padding:48px 34px;text-align:center}
+  .biz-grid .ax{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--rose-deep);font-weight:600}
+  .biz-grid b{display:block;font-size:23px;font-weight:800;margin:10px 0 14px}
+  .biz-grid p{font-size:14px;color:#6b645d;line-height:1.8;font-weight:400}
+  .biz-cta{text-align:center;margin-top:52px}
+  .biz-cta a{display:inline-block;background:var(--rose-deep);color:#fff;font-weight:700;font-size:14px;letter-spacing:.06em;padding:18px 46px;transition:background .2s}
+  .biz-cta a:hover{background:var(--ink)}
+
   /* Rose band with photo */
   .rose{position:relative;overflow:hidden;background:radial-gradient(130% 130% at 25% 30%,var(--rose),var(--rose-deep));color:#fff;padding:130px 24px;text-align:center}
   .rose > img{position:absolute;right:0;top:0;width:56%;height:100%;object-fit:cover;object-position:center 30%;opacity:.9}
@@ -91,8 +103,8 @@
   /* Gallery */
   .gallery{background:var(--black);color:#fff;padding:100px 0}
   .gallery .h-left{color:#fff}
-  .gal-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:46px}
-  .gal-row .ph{aspect-ratio:3/4;overflow:hidden;background:#2a2522}
+  .gal-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px}
+  .gal-row .ph{aspect-ratio:4/3;overflow:hidden;background:#2a2522}
   .gal-row .ph img{filter:grayscale(.1);transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .5s}
   .gal-row .ph:hover img{transform:scale(1.05);filter:none}
 
@@ -148,11 +160,11 @@
       <ul class="menu">
         <li><a href="#">ABOUT</a></li>
         <li class="has-sub lead">
-          <a href="#services">기업 컨설팅</a>
+          <a href="#corporate">기업 컨설팅</a>
           <ul class="sub">
-            <li><a href="#services">기업 · 금융 PI</a></li>
-            <li><a href="#services">기관 이미지</a></li>
-            <li><a href="#services">출강 · 강연</a></li>
+            <li><a href="#corporate">기업 · 금융 PI</a></li>
+            <li><a href="#corporate">기관 이미지</a></li>
+            <li><a href="#corporate">출강 · 강연</a></li>
           </ul>
         </li>
         <li class="has-sub">
@@ -207,6 +219,21 @@
   </div>
 </section>
 
+<!-- B2B CORPORATE -->
+<section class="biz" id="corporate">
+  <div class="wrap">
+    <p class="kick rv">Corporate Identity</p>
+    <h2 class="h-center rv">기업 컨설팅</h2>
+    <p class="sub-center rv">기업 · 금융 · 기관 임원을 위한 이미지 전략 · 외모, 행동, 커뮤니케이션을 하나로</p>
+    <div class="biz-grid">
+      <div class="cell rv"><span class="ax">Appearance</span><b>외모</b><p>매력적인 외모는 사람의 마음을 사로잡아 호감을 느끼게 합니다.</p></div>
+      <div class="cell rv d1"><span class="ax">Behavior</span><b>행동</b><p>매력적인 행동은 사람의 마음을 사로잡아 오랫동안 기억하게 합니다.</p></div>
+      <div class="cell rv d2"><span class="ax">Communication</span><b>커뮤니케이션</b><p>매력적인 커뮤니케이션은 사람의 마음을 사로잡아 감동하게 합니다.</p></div>
+    </div>
+    <div class="biz-cta rv"><a href="#contact">기업 컨설팅 문의</a></div>
+  </div>
+</section>
+
 <!-- ROSE BAND -->
 <section class="rose">
   <img src="img/rose_people.jpg" alt="" />
@@ -237,7 +264,6 @@
         <div class="role">CEO · Founder</div>
         <p>사람들은 대개 이미지메이킹을 떠올리면 정치인이나 연예인 등 특별한 사람들만의 것이라고 생각하는 경우가 많습니다. 그러나 개인의 이미지(Personal Identity)는 <b>현대인 모두에게 필요한 매커니즘</b>으로서 개인의 삶의 질을 높여줍니다.</p>
       </div>
-      <div class="ceo-desk rv d2"><img src="img/ceo_desk.jpg" alt=""/></div>
     </div>
   </div>
 </section>
@@ -250,7 +276,6 @@
       <div class="ph rv"><img src="img/gal1.jpg" alt=""/></div>
       <div class="ph rv d1"><img src="img/gal2.jpg" alt=""/></div>
       <div class="ph rv d2"><img src="img/gal3.jpg" alt=""/></div>
-      <div class="ph rv d3"><img src="img/gal4.jpg" alt=""/></div>
     </div>
   </div>
 </section>
