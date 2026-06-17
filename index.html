@@ -45,12 +45,10 @@
   .hero-bg{position:absolute;inset:0;overflow:hidden}
   .hero-bg img{object-position:center 44%;transform:scale(1.05);animation:kb 16s ease-out forwards}
   @keyframes kb{to{transform:scale(1.16)}}
-  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,17,15,.42),rgba(21,17,15,.16) 42%,rgba(21,17,15,.55));z-index:1}
-  .hero .inner{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;padding:0 24px}
-  .hero .eyebrow{color:rgba(255,255,255,.9);font-size:clamp(17px,2vw,23px)}
-  .hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(56px,10vw,134px);line-height:1;letter-spacing:.005em;margin:0 0 24px;text-shadow:0 4px 40px rgba(0,0,0,.35)}
-  .hero .rule{width:60px;height:1px;background:rgba(255,255,255,.6);margin-bottom:24px}
-  .hero .sub{font-size:clamp(12px,1.4vw,15px);letter-spacing:.5em;text-transform:uppercase;font-weight:600;padding-left:.5em}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,16,.12) 0%,transparent 32%,rgba(20,18,16,.68) 100%);z-index:1}
+  .hero-cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding-bottom:64px;color:#fff}
+  .hero-cap .tag{display:inline-block;font-family:var(--geo);font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;margin-bottom:20px;opacity:.95}
+  .hero-cap h1{font-family:var(--sans);font-weight:800;font-size:clamp(34px,5vw,66px);line-height:1.26;letter-spacing:-.015em;text-shadow:0 2px 26px rgba(0,0,0,.45)}
   .scrolldot{position:absolute;left:50%;bottom:34px;transform:translateX(-50%);z-index:3;width:1px;height:48px;background:linear-gradient(rgba(255,255,255,.7),transparent);animation:dot 2.4s ease-in-out infinite}
   @keyframes dot{0%,100%{opacity:.25;transform:translateX(-50%) scaleY(.6)}50%{opacity:.8;transform:translateX(-50%) scaleY(1)}}
 
@@ -139,14 +137,12 @@
   html.js .d1{transition-delay:.1s}html.js .d2{transition-delay:.2s}html.js .d3{transition-delay:.3s}
   html.js .wipe img,html.js .wipe.ph img{clip-path:inset(0 0 100% 0);transition:clip-path 1.25s cubic-bezier(.76,0,.24,1)}
   html.js .wipe.in img{clip-path:inset(0 0 0 0)}
-  html.js .hero .inner > *{opacity:0;transform:translateY(26px);animation:heroup 1.3s cubic-bezier(.19,1,.22,1) forwards}
-  html.js .hero .eyebrow{animation-delay:.25s}
-  html.js .hero h1{animation-delay:.42s}
-  html.js .hero .rule{animation-delay:.6s}
-  html.js .hero .sub{animation-delay:.74s}
+  html.js .hero-cap .tag,html.js .hero-cap h1{opacity:0;transform:translateY(28px);animation:heroup 1.3s cubic-bezier(.19,1,.22,1) forwards}
+  html.js .hero-cap .tag{animation-delay:.32s}
+  html.js .hero-cap h1{animation-delay:.5s}
   @keyframes heroup{to{opacity:1;transform:none}}
   @media (prefers-reduced-motion:reduce){
-    html.js .rv,html.js .wipe img,html.js .hero .inner > *{opacity:1!important;transform:none!important;clip-path:none!important;animation:none!important}
+    html.js .rv,html.js .wipe img,html.js .hero-cap .tag,html.js .hero-cap h1{opacity:1!important;transform:none!important;clip-path:none!important;animation:none!important}
     .hero-bg img{animation:none!important;transform:none!important}
   }
 
@@ -162,7 +158,8 @@
     nav .sub{position:static;transform:none;opacity:1;visibility:visible;translate:0 0;border:0;box-shadow:none;padding:4px 0 10px;min-width:0}
     nav .sub li a{padding:8px 0 8px 16px;color:var(--ink-soft);font-size:12.5px}
     .hero{height:66vh;min-height:440px}
-    .hero h1{font-size:clamp(40px,15vw,80px)}
+    .hero-cap{padding-bottom:42px}
+    .hero-cap h1{font-size:clamp(27px,7.4vw,46px)}
     .sec{padding:74px 0}
     .lead-head{margin-bottom:44px}
     .collage{grid-template-columns:1fr 1fr;gap:14px}
@@ -197,7 +194,7 @@
       <ul class="menu">
         <li><a>ABOUT</a></li>
         <li class="has-sub lead">
-          <a>기업 컨설팅</a>
+          <a>CORPORATE</a>
           <ul class="sub">
             <li><a>기업 · 금융 PI</a></li>
             <li><a>기관 이미지</a></li>
@@ -205,7 +202,7 @@
           </ul>
         </li>
         <li class="has-sub">
-          <a>개인 컨설팅</a>
+          <a>PERSONAL</a>
           <ul class="sub">
             <li><a>VVIP 1:1</a></li>
             <li><a>미디어 이미지</a></li>
@@ -231,10 +228,11 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"><img src="img/hero.jpg" alt="" /></div>
-  <div class="inner">
-    <h1>Creative Partner</h1>
-    <span class="rule"></span>
-    <span class="sub">CMK Image Korea</span>
+  <div class="hero-cap">
+    <div class="wrap">
+      <span class="tag">Image Consulting <span style="opacity:.6">·</span> Since 2008</span>
+      <h1>이미지의 차이가<br/>성패를 좌우합니다</h1>
+    </div>
   </div>
   <span class="scrolldot"></span>
 </section>
@@ -272,7 +270,6 @@
       <div class="cell rv d1"><b>행동</b><p>매력적인 행동은 사람의 마음을 사로잡아 오랫동안 기억하게 합니다.</p></div>
       <div class="cell rv d2"><b>커뮤니케이션</b><p>매력적인 커뮤니케이션은 사람의 마음을 사로잡아 감동하게 합니다.</p></div>
     </div>
-    <div class="biz-cta rv"><a>기업 컨설팅 문의 &nbsp;&rarr;</a></div>
   </div>
 </section>
 
