@@ -47,16 +47,16 @@
   .hero-bg{position:absolute;inset:0;overflow:hidden}
   .hero-bg img{object-position:center 42%;transform:scale(1.04);animation:kb 18s ease-out forwards}
   @keyframes kb{to{transform:scale(1.14)}}
-  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,10,.1),transparent 34%,rgba(15,12,10,.66));z-index:1}
-  .hero-cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding-bottom:62px;color:#fff}
-  .hero-cap .tag{color:#fff;display:inline-block;font-size:14px;letter-spacing:.3em;margin-bottom:22px}
-  .hero-cap h1{font-weight:300;font-size:clamp(27px,3.6vw,52px);line-height:1.38;letter-spacing:.01em;text-shadow:0 2px 30px rgba(0,0,0,.45)}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,10,.3),rgba(15,12,10,.12) 45%,rgba(15,12,10,.42));z-index:1}
+  .hero-cap{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;padding:0 24px}
+  .hero-cap h1{font-family:var(--serif);font-weight:700;font-size:clamp(52px,9vw,126px);line-height:.98;letter-spacing:.01em;text-shadow:0 4px 46px rgba(0,0,0,.42)}
+  .hero-cap .hsub{margin-top:22px;font-family:var(--geo);font-size:clamp(12px,1.4vw,15px);letter-spacing:.52em;text-transform:uppercase;padding-left:.52em;color:rgba(255,255,255,.95)}
 
   /* ===== Section frame ===== */
   .sec{padding:98px 0}
   .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;border-bottom:2px solid var(--ink);padding-bottom:18px;margin-bottom:48px}
   .sec-head h2{font-family:var(--serif);font-weight:700;font-size:clamp(30px,3.6vw,46px);letter-spacing:.01em;line-height:1}
-  .sec-head .sub{font-family:var(--sans);font-size:14px;color:#6f685f;font-weight:400;padding-bottom:5px}
+  .sec-head .sub{font-family:var(--sans);font-size:13px;color:#5f5952;font-weight:400;padding-bottom:5px;white-space:nowrap;text-align:right;flex-shrink:0}
 
   /* article card */
   .art .ph{overflow:hidden;background:#efece7;position:relative}
@@ -76,34 +76,30 @@
   .ed-grid .side .art:nth-child(3) .ph,.ed-grid .side .art:nth-child(4) .ph{height:204px}
 
   /* Feature band (statement over image) */
-  .band{position:relative;height:78vh;min-height:520px;overflow:hidden;background:#2a2420}
-  .band img{position:absolute;inset:0;object-position:center 30%;filter:brightness(.62)}
+  .band{position:relative;height:78vh;min-height:520px;overflow:hidden;background:#15120f}
+  .band img{position:absolute;inset:0;object-position:center 26%;filter:grayscale(1) brightness(.52) contrast(1.06)}
   .band .inner{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:center;color:#fff}
   .band .inner .wrap{max-width:1280px}
-  .band .tag{color:rgba(255,255,255,.85);display:block;margin-bottom:22px}
-  .band p{font-family:var(--serif);font-weight:500;font-size:clamp(24px,3vw,42px);line-height:1.4;letter-spacing:.005em;max-width:860px}
+  .band .tag{color:rgba(255,255,255,.8);display:block;margin-bottom:24px;font-size:12px;letter-spacing:.24em}
+  .band p{font-family:var(--sans);font-weight:300;font-size:clamp(23px,2.7vw,38px);line-height:1.6;letter-spacing:.01em;max-width:820px}
 
   /* B2B editorial */
   .biz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:54px;margin-top:54px}
   .biz-grid .cell{border-top:1px solid var(--ink);padding-top:26px}
   .biz-grid b{display:block;font-size:23px;font-weight:600;margin-bottom:14px;letter-spacing:-.005em}
-  .biz-grid .en{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--grey);margin-bottom:14px;display:block}
+  .biz-grid .en{font-family:var(--geo);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);margin-bottom:14px;display:block}
   .biz-grid p{font-size:14.5px;color:var(--grey);line-height:1.9}
 
   /* research grid 3 */
   .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
   .grid3 .art .ph{height:360px}
 
-  /* CEO feature */
-  .ceo{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center}
-  .ceo .ph{aspect-ratio:4/5;background:linear-gradient(150deg,#f1ece5,#e4dace);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;position:relative}
-  .ceo .ph::before{content:"";position:absolute;inset:15px;border:1px solid rgba(19,17,15,.1)}
-  .ceo .ph .cap{font-family:var(--geo);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(19,17,15,.3)}
-  .ceo .body .tag{display:block;margin-bottom:20px}
-  .ceo .body .name{font-family:var(--serif);font-weight:700;font-size:clamp(40px,5vw,68px);line-height:1;letter-spacing:.01em}
-  .ceo .body .role{margin-top:14px;font-family:var(--geo);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey)}
-  .ceo .body .quote{margin-top:34px;font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(20px,2.2vw,28px);line-height:1.6;letter-spacing:.005em}
-  .ceo .body .desc{margin-top:24px;font-size:15px;color:var(--grey);line-height:1.95;max-width:460px}
+  /* CEO feature (typographic interview opener, no empty box) */
+  .ceo-quote{font-family:var(--sans);font-weight:300;font-size:clamp(28px,4.2vw,58px);line-height:1.36;letter-spacing:-.012em;max-width:1010px}
+  .ceo-foot{display:flex;justify-content:space-between;align-items:flex-start;gap:54px;margin-top:58px;border-top:1px solid var(--line);padding-top:34px;flex-wrap:wrap}
+  .ceo-name{font-family:var(--serif);font-weight:700;font-size:34px;letter-spacing:.02em;white-space:nowrap}
+  .ceo-name span{display:block;font-family:var(--geo);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);margin-top:9px}
+  .ceo-desc{font-size:15px;color:var(--grey);line-height:1.95;max-width:520px}
 
   /* Gallery asymmetric */
   .gal{display:grid;grid-template-columns:1.5fr 1fr;gap:24px}
@@ -128,10 +124,10 @@
   html.js .d1{transition-delay:.09s}html.js .d2{transition-delay:.18s}html.js .d3{transition-delay:.27s}
   html.js .wipe img{clip-path:inset(0 0 100% 0);transition:clip-path 1.2s cubic-bezier(.76,0,.24,1)}
   html.js .wipe.in img{clip-path:inset(0 0 0 0)}
-  html.js .hero-cap .tag,html.js .hero-cap h1{opacity:0;transform:translateY(28px);animation:hu 1.3s cubic-bezier(.19,1,.22,1) forwards}
-  html.js .hero-cap .tag{animation-delay:.3s}html.js .hero-cap h1{animation-delay:.48s}
+  html.js .hero-cap h1,html.js .hero-cap .hsub{opacity:0;transform:translateY(24px);animation:hu 1.4s cubic-bezier(.19,1,.22,1) forwards}
+  html.js .hero-cap h1{animation-delay:.35s}html.js .hero-cap .hsub{animation-delay:.62s}
   @keyframes hu{to{opacity:1;transform:none}}
-  @media(prefers-reduced-motion:reduce){html.js .rv,html.js .wipe img,html.js .hero-cap .tag,html.js .hero-cap h1{opacity:1!important;transform:none!important;clip-path:none!important;animation:none!important}.hero-bg img{animation:none!important}}
+  @media(prefers-reduced-motion:reduce){html.js .rv,html.js .wipe img,html.js .hero-cap h1,html.js .hero-cap .hsub{opacity:1!important;transform:none!important;clip-path:none!important;animation:none!important}.hero-bg img{animation:none!important}}
 
   @media(max-width:900px){
     .wrap{padding:0 22px}
@@ -146,7 +142,8 @@
     nav .sub{position:static;transform:none;opacity:1;visibility:visible;translate:0 0;border:0;box-shadow:none;padding:2px 0 10px;min-width:0}
     nav .sub li a{padding:8px 0 8px 14px;color:var(--grey)}
     .hero{height:64vh;min-height:420px}
-    .hero-cap h1{font-size:clamp(26px,7vw,42px)}
+    .hero-cap h1{font-size:clamp(44px,14vw,80px)}
+    .hero-cap .hsub{font-size:11px;letter-spacing:.4em}
     .sec{padding:72px 0}
     .sec-head{margin-bottom:34px}
     .ed-grid{grid-template-columns:1fr;gap:30px}
@@ -195,10 +192,10 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"><img src="img/hero.jpg" alt="" /></div>
-  <div class="hero-cap"><div class="wrap">
-    <span class="tag">Image Consulting</span>
-    <h1>이미지의 차이가<br/>성패를 좌우합니다</h1>
-  </div></div>
+  <div class="hero-cap">
+    <h1>Creative Partner</h1>
+    <span class="hsub">CMK Image Korea</span>
+  </div>
 </section>
 
 <!-- CONSULTING -->
@@ -208,7 +205,7 @@
     <div class="ed-grid">
       <article class="art feat rv wipe">
         <div class="ph"><img src="img/suit_big.jpg" alt=""/></div>
-        <div class="meta"><span class="tag">Corporate</span><h3>기업 · 금융 PI<span class="en">Corporate Identity</span></h3></div>
+        <div class="meta"><span class="tag">Corporate</span><h3>기업 · 금융 PI</h3></div>
       </article>
       <div class="side">
         <article class="art rv wipe d1"><div class="ph"><img src="img/suit_detail.jpg" alt=""/></div><div class="meta"><span class="tag">Executive</span><h3>임원 컨설팅</h3></div></article>
@@ -256,15 +253,11 @@
 <!-- CEO -->
 <section class="sec">
   <div class="wrap">
-    <div class="ceo">
-      <div class="ph rv"><span class="cap">Portrait</span></div>
-      <div class="body rv d1">
-        <span class="tag">CEO Story</span>
-        <div class="name">조미경</div>
-        <div class="role">CMK Image Korea · Founder</div>
-        <p class="quote">"개인의 이미지는 특별한 사람들만의 것이 아닙니다."</p>
-        <p class="desc">사람들은 대개 이미지메이킹을 떠올리면 특별한 사람들만의 것이라고 생각합니다. 그러나 개인의 이미지(Personal Identity)는 현대인 모두에게 필요한 전략으로서, 삶의 질을 높여줍니다.</p>
-      </div>
+    <div class="sec-head rv"><h2>CEO Story</h2><span class="sub">CMK 창업자 · 조미경</span></div>
+    <p class="ceo-quote rv">개인의 이미지는 특별한 사람들만의 것이 아닙니다.<br/>현대인 모두에게 필요한 전략입니다.</p>
+    <div class="ceo-foot rv d1">
+      <div class="ceo-name">조미경<span>Cho Mi-kyung · Founder</span></div>
+      <p class="ceo-desc">사람들은 대개 이미지메이킹을 떠올리면 특별한 사람들만의 것이라고 생각합니다. 그러나 개인의 이미지(Personal Identity)는 현대인 모두에게 필요한 전략으로서, 삶의 질을 높여줍니다.</p>
     </div>
   </div>
 </section>
