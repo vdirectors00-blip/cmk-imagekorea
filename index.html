@@ -4,531 +4,223 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>CMK IMAGE KOREA</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+KR:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 <style>
   :root{
-    --cream:#F7F3EE;        /* base 70% */
-    --cream-2:#EFE7DD;      /* warm panel */
-    --nude:#E4D8CB;         /* tone slot */
-    --nude-2:#D8C8B6;
-    --espresso:#2A211C;     /* text 20% */
-    --espresso-soft:#5B4F46;
-    --rose:#C9A6A0;         /* accent 10% */
-    --rose-deep:#B5897F;
-    --line:rgba(42,33,28,.16);
-    --serif-en:'Cormorant Garamond', serif;
-    --serif-kr:'Noto Serif KR', serif;
+    --ink:#1c1a18;
+    --ink-soft:#6b645d;
+    --line:#e7e2db;
+    --rose:#C58B82;
+    --rose-deep:#B2766C;
+    --black:#161311;
     --sans:'Pretendard', -apple-system, sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth;overflow-x:hidden}
-  body{font-family:var(--sans);background:var(--cream);color:var(--espresso);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;word-break:keep-all}
+  body{font-family:var(--sans);color:var(--ink);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;word-break:keep-all}
   a{color:inherit;text-decoration:none}
-  img{display:block;max-width:100%}
-  .wrap{max-width:1320px;margin:0 auto;padding:0 48px}
-  .corp-grid > *,.svc-row > *,.lab-grid > *,.acad-grid > *,.stats > *,.gal-row > *{min-width:0}
+  img{display:block;width:100%;height:100%;object-fit:cover}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 40px}
 
-  /* film grain overlay */
-  body::after{
-    content:"";position:fixed;inset:0;z-index:9000;pointer-events:none;opacity:.045;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-
-  .kicker{font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--rose-deep);font-weight:600}
-  .h-kr{font-family:var(--serif-kr);font-weight:300;letter-spacing:-.005em;line-height:1.4}
-  .h-en{font-family:var(--serif-en);font-weight:500;letter-spacing:.02em}
-
-  /* tone slot (empty photo plate, intentional editorial placeholder) */
-  .slot{position:relative;overflow:hidden;background:linear-gradient(140deg,#DCCBB6 0%,#CDB89F 52%,#C2AB90 100%)}
-  .slot::before{content:"";position:absolute;inset:13px;border:1px solid rgba(42,33,28,.28)}
-  .slot::after{content:"";position:absolute;left:50%;top:calc(50% - 28px);transform:translateX(-50%);width:26px;height:1px;background:rgba(42,33,28,.4);box-shadow:0 9px 0 rgba(42,33,28,.0)}
-  .slot .cap{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--serif-en);font-style:italic;font-size:17px;color:rgba(42,33,28,.5);letter-spacing:.05em}
-  .slot .cap::after{content:"이미지 영역";display:block;text-align:center;font-family:var(--sans);font-style:normal;font-size:9.5px;letter-spacing:.28em;color:rgba(42,33,28,.4);margin-top:9px}
-  .slot.dark{background:linear-gradient(140deg,#3a302a 0%,#2c2420 60%,#231c18 100%)}
-  .slot.dark::before{border-color:rgba(247,243,238,.22)}
-  .slot.dark::after{background:rgba(247,243,238,.34)}
-  .slot.dark .cap{color:rgba(247,243,238,.5)}
-  .slot.dark .cap::after{color:rgba(247,243,238,.4)}
-
-  /* ===== Header ===== */
-  .util{border-bottom:1px solid var(--line)}
-  .util .wrap{display:flex;justify-content:space-between;align-items:center;height:40px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--espresso-soft)}
-  .util a{margin-left:18px;transition:color .2s}.util a:hover{color:var(--rose-deep)}
-  .util .lang .on{color:var(--espresso)}
-  header.mast{text-align:center;padding:32px 0 24px}
-  .mast .mark{font-family:var(--serif-en);font-size:clamp(40px,6vw,72px);font-weight:500;letter-spacing:.18em;line-height:.9;padding-left:.18em}
-  .mast .mark-sub{margin-top:8px;font-size:11px;letter-spacing:.62em;text-transform:uppercase;color:var(--espresso-soft);padding-left:.62em}
-  nav{position:sticky;top:0;z-index:50;background:rgba(247,243,238,.92);backdrop-filter:blur(8px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  nav ul{display:flex;justify-content:center;list-style:none;flex-wrap:wrap}
-  nav li a{display:block;padding:17px 30px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;transition:color .25s}
+  /* Header */
+  header{padding:30px 0 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);z-index:50}
+  .logo{text-align:center;font-weight:800;font-size:22px;letter-spacing:.26em;padding-left:.26em}
+  nav ul{display:flex;justify-content:center;list-style:none;flex-wrap:wrap;margin-top:20px}
+  nav li a{display:block;padding:16px 26px;font-size:13px;font-weight:600;letter-spacing:.12em;color:#3a352f;transition:color .2s}
   nav li a:hover{color:var(--rose-deep)}
-  nav li a.lead{color:var(--rose-deep)}
 
-  /* ===== Hero (typographic cover) ===== */
-  .hero{position:relative;padding:90px 0 80px;overflow:hidden}
-  .hero .ghost{position:absolute;right:-2%;top:6%;font-family:var(--serif-en);font-size:clamp(200px,34vw,460px);line-height:.8;color:rgba(42,33,28,.04);font-weight:500;pointer-events:none;user-select:none}
-  .hero .wrap{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
-  .hero .wrap > *{min-width:0}
-  .hero .lead-col .kicker{display:block;margin-bottom:30px}
-  .hero h1{font-family:var(--serif-kr);font-weight:200;font-size:clamp(38px,5vw,66px);line-height:1.34;letter-spacing:-.01em}
-  .hero h1 .em{color:var(--rose-deep);font-weight:300}
-  .hero .sub{margin-top:30px;max-width:440px;font-size:15px;color:var(--espresso-soft);font-weight:300;line-height:1.9}
-  .hero .meta{margin-top:40px;display:flex;flex-wrap:wrap;gap:14px 28px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--espresso-soft)}
-  .hero .meta span{position:relative;padding-left:18px}
-  .hero .meta span::before{content:"";position:absolute;left:0;top:50%;width:7px;height:1px;background:var(--rose-deep)}
-  .hero .visual{aspect-ratio:4/5}
-  .hero .visual .cap{font-size:13px}
-  .scrollcue{margin-top:64px;text-align:center;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--espresso-soft)}
-  .scrollcue::after{content:"";display:block;width:1px;height:40px;margin:12px auto 0;background:linear-gradient(var(--rose-deep),transparent)}
+  /* Hero */
+  .hero{position:relative;height:74vh;min-height:520px;overflow:hidden;background:#cfc7bd}
+  .hero > img{position:absolute;inset:0;object-position:center 40%}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,26,24,.34),rgba(28,26,24,.16) 45%,rgba(28,26,24,.46))}
+  .hero .inner{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;padding:0 24px}
+  .hero h1{font-weight:800;font-size:clamp(30px,5.2vw,62px);letter-spacing:.16em;line-height:1.1;text-shadow:0 2px 24px rgba(0,0,0,.3)}
+  .hero h1 .sp{display:inline-block;min-width:.6em}
+  .hero h2{font-weight:800;font-size:clamp(26px,4.4vw,52px);letter-spacing:.14em;margin-top:10px;text-shadow:0 2px 24px rgba(0,0,0,.3)}
 
-  /* ===== Statement band ===== */
-  .statement{position:relative;background:var(--espresso);color:var(--cream);padding:130px 0;text-align:center;overflow:hidden}
-  .statement::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 0%,rgba(201,166,160,.22),transparent 60%)}
-  .statement .wrap{position:relative}
-  .statement .kicker{color:var(--rose);display:block;margin-bottom:34px}
-  .statement p{font-family:var(--serif-kr);font-weight:200;font-size:clamp(22px,2.7vw,36px);line-height:1.7;max-width:920px;margin:0 auto;letter-spacing:-.01em}
-  .statement p b{font-weight:400;color:var(--rose)}
+  /* Section heading */
+  .sec{padding:110px 0}
+  .h-center{text-align:center;font-weight:800;font-size:clamp(24px,3vw,34px);letter-spacing:.01em;line-height:1.4}
+  .h-left{font-weight:800;font-size:clamp(24px,3vw,34px);letter-spacing:.01em;line-height:1.35}
+  .sub-center{text-align:center;color:var(--ink-soft);font-size:15px;margin-top:14px;font-weight:400}
 
-  /* ===== Section head ===== */
-  .sec{padding:130px 0}
-  .sec-head{margin-bottom:64px}
-  .sec-head .kicker{display:block;margin-bottom:18px}
-  .sec-head h2{font-family:var(--serif-en);font-weight:500;font-size:clamp(34px,4.4vw,58px);letter-spacing:.01em;line-height:1.05}
-  .sec-head .ko{font-family:var(--serif-kr);font-weight:300;color:var(--espresso-soft);font-size:16px;margin-top:14px}
-  .sec-head.center{text-align:center}
-  .sec-head.center .kicker{margin-left:0}
+  /* 4 service cards */
+  .cards4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:60px}
+  .card{position:relative}
+  .card .ph{aspect-ratio:3/4;overflow:hidden;background:#eee}
+  .card .ph img{transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+  .card:hover .ph img{transform:scale(1.05)}
+  .card .cap{margin-top:16px;font-weight:700;font-size:15px}
+  .card .cap small{display:block;color:var(--ink-soft);font-weight:400;font-size:13px;margin-top:4px;letter-spacing:.02em}
 
-  /* index rule */
-  .idxrule{display:flex;align-items:baseline;gap:18px;border-top:1px solid var(--line);padding-top:18px;margin-bottom:42px}
-  .idxrule .no{font-family:var(--serif-en);font-style:italic;font-size:17px;color:var(--rose-deep)}
-  .idxrule .t{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--espresso-soft)}
+  /* Rose band */
+  .rose{background:radial-gradient(120% 120% at 50% 0%,var(--rose) 0%,var(--rose-deep) 100%);color:#fff;padding:120px 24px;text-align:center}
+  .rose p{font-size:clamp(17px,2.1vw,25px);font-weight:500;line-height:1.85;max-width:860px;margin:0 auto;letter-spacing:.01em}
+  .rose p b{font-weight:800}
 
-  /* ===== CORPORATE (priority, collage) ===== */
-  .corp-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:minmax(40px,auto);gap:26px}
-  .corp-grid .card{position:relative}
-  .corp-grid .c1{grid-column:1/7;grid-row:span 2}
-  .corp-grid .c2{grid-column:7/13}
-  .corp-grid .c3{grid-column:7/13}
-  .card .slot{width:100%;height:100%;min-height:230px}
-  .card.tall .slot{min-height:520px}
-  .card .body{padding:22px 4px 0}
-  .card .body .en{font-family:var(--serif-en);font-size:25px;font-weight:500;letter-spacing:.02em}
-  .card .body .ko{font-family:var(--serif-kr);font-weight:400;font-size:15px;color:var(--espresso-soft);margin-top:5px}
-  .card .body .desc{font-size:13.5px;color:var(--espresso-soft);font-weight:300;margin-top:12px;max-width:420px;line-height:1.85}
+  /* research 3 */
+  .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:60px}
+  .cards3 .ph{aspect-ratio:4/3;overflow:hidden;background:#eee}
+  .cards3 .ph img{transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+  .cards3 a:hover .ph img{transform:scale(1.05)}
+  .cards3 .cap{margin-top:16px;font-weight:700;font-size:16px}
 
-  /* ===== Partner / trust ===== */
-  .trust{background:var(--cream-2);padding:120px 0}
-  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:80px}
-  .stats .s{background:var(--cream-2);padding:44px 30px;text-align:center}
-  .stats .num{font-family:var(--serif-en);font-size:clamp(40px,5vw,64px);font-weight:500;line-height:1;color:var(--espresso)}
-  .stats .num .u{font-size:.42em;color:var(--rose-deep);margin-left:4px}
-  .stats .lab{margin-top:14px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--espresso-soft)}
-  .logos .kicker{display:block;text-align:center;margin-bottom:40px}
-  .logo-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-  .logo-grid .lg{background:var(--cream-2);aspect-ratio:5/2;display:flex;align-items:center;justify-content:center;font-family:var(--serif-kr);font-weight:400;font-size:15px;color:var(--espresso-soft);letter-spacing:.02em;transition:color .25s,background .25s;text-align:center;padding:8px}
-  .logo-grid .lg:hover{color:var(--espresso);background:var(--cream)}
-  .logo-note{text-align:center;margin-top:24px;font-size:12px;color:var(--espresso-soft);font-weight:300;font-style:italic}
+  /* CEO */
+  .ceo-head{display:flex;align-items:center;gap:20px;font-weight:800;font-size:clamp(22px,2.6vw,30px);letter-spacing:.02em}
+  .ceo-head .arr{font-weight:400}
+  .ceo-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;margin-top:50px;align-items:start}
+  .ceo-photo{aspect-ratio:4/5;overflow:hidden;background:#eee}
+  .ceo-body .name{font-weight:800;font-size:clamp(30px,3.6vw,44px);letter-spacing:.28em;padding-left:.28em}
+  .ceo-body .role{margin-top:14px;font-size:13px;letter-spacing:.14em;color:var(--rose-deep);font-weight:600;text-transform:uppercase}
+  .ceo-body p{margin-top:26px;color:#4a443e;font-size:15.5px;line-height:1.95}
+  .ceo-body p b{color:var(--rose-deep);font-weight:700}
+  .ceo-desk{aspect-ratio:16/10;overflow:hidden;background:#eee;margin-top:30px;grid-column:1/3}
 
-  /* ===== Consulting (secondary) ===== */
-  .svc-row{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
-  .svc{position:relative}
-  .svc .slot{aspect-ratio:3/4;width:100%}
-  .svc .t{font-family:var(--serif-en);font-size:23px;font-weight:500;margin-top:20px}
-  .svc .ko{font-family:var(--serif-kr);font-size:14px;color:var(--espresso-soft);margin-top:4px;font-weight:300}
+  /* Gallery black */
+  .gallery{background:var(--black);color:#fff;padding:100px 0}
+  .gallery .h-left{color:#fff}
+  .gal-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:46px}
+  .gal-row .ph{aspect-ratio:3/4;overflow:hidden;background:#2a2522}
+  .gal-row .ph img{filter:grayscale(.15);transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .5s}
+  .gal-row .ph:hover img{transform:scale(1.05);filter:none}
 
-  /* ===== Academy ===== */
-  .acad{border-top:1px solid var(--line)}
-  .acad-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-  .acad-grid .a{padding:44px 30px 44px 0;border-right:1px solid var(--line)}
-  .acad-grid .a:last-child{border-right:0;padding-right:0}
-  .acad-grid .no{font-family:var(--serif-en);font-style:italic;font-size:18px;color:var(--rose-deep);margin-bottom:20px}
-  .acad-grid h4{font-family:var(--serif-kr);font-weight:500;font-size:18px;line-height:1.5;margin-bottom:12px}
-  .acad-grid p{font-size:13px;color:var(--espresso-soft);font-weight:300;line-height:1.8}
+  /* Footer */
+  footer{padding:64px 0;border-top:1px solid var(--line);background:#fafafa;color:var(--ink-soft);font-size:13.5px;line-height:2}
+  footer .fl{font-weight:800;color:var(--ink);letter-spacing:.06em;margin-bottom:10px;font-size:15px}
+  footer b{color:#3a352f;font-weight:600}
+  footer .copy{margin-top:18px;font-size:12px;color:#9a948d}
 
-  /* ===== Image Lab ===== */
-  .lab{background:var(--cream-2)}
-  .lab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
-  .lab .slot{aspect-ratio:1/1}
-  .lab .t{font-family:var(--serif-kr);font-weight:500;font-size:17px;margin-top:18px}
-  .lab .d{font-size:13px;color:var(--espresso-soft);font-weight:300;margin-top:6px;line-height:1.75}
-
-  /* ===== Gallery (black) ===== */
-  .gallery{background:#211a16;color:var(--cream);padding:120px 0}
-  .gallery .sec-head h2{color:var(--cream)}
-  .gallery .sec-head .ko{color:rgba(247,243,238,.55)}
-  .gal-row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-  .gallery .slot{aspect-ratio:3/4}
-
-  /* ===== CEO (text-forward, no photo) ===== */
-  .ceo{padding:140px 0}
-  .ceo .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:center}
-  .ceo .name{font-family:var(--serif-kr);font-weight:300;font-size:clamp(44px,5.5vw,76px);letter-spacing:.18em;line-height:1}
-  .ceo .role{margin-top:20px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--rose-deep)}
-  .ceo .sign{margin-top:28px;font-family:var(--serif-en);font-style:italic;font-size:30px;color:var(--espresso-soft)}
-  .ceo .quote{font-family:var(--serif-kr);font-weight:300;font-size:clamp(19px,2.1vw,26px);line-height:1.85;letter-spacing:-.01em}
-  .ceo .quote b{color:var(--rose-deep);font-weight:400}
-  .ceo .more{display:inline-block;margin-top:38px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;border-bottom:1px solid var(--rose-deep);padding-bottom:6px;color:var(--rose-deep)}
-
-  /* ===== CTA ===== */
-  .cta{background:var(--espresso);color:var(--cream);padding:140px 0;text-align:center;position:relative;overflow:hidden}
-  .cta::before{content:"";position:absolute;inset:0;background:radial-gradient(100% 100% at 50% 100%,rgba(201,166,160,.18),transparent 60%)}
-  .cta .wrap{position:relative}
-  .cta .kicker{color:var(--rose);display:block;margin-bottom:26px}
-  .cta h2{font-family:var(--serif-kr);font-weight:200;font-size:clamp(28px,3.6vw,48px);line-height:1.4;margin-bottom:50px}
-  .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-  .cta-btns a{font-size:12px;letter-spacing:.18em;text-transform:uppercase;padding:18px 42px;border:1px solid rgba(247,243,238,.4);transition:all .25s}
-  .cta-btns a:hover{background:var(--cream);color:var(--espresso);border-color:var(--cream)}
-  .cta-btns a.fill{background:var(--rose);border-color:var(--rose);color:var(--espresso)}
-  .cta-btns a.fill:hover{background:var(--cream);border-color:var(--cream)}
-
-  /* ===== Footer ===== */
-  footer{background:#1b1511;color:rgba(247,243,238,.62);padding:84px 0 54px;font-weight:300}
-  .foot-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:36px;padding-bottom:46px;border-bottom:1px solid rgba(247,243,238,.13)}
-  .foot-top .mark{font-family:var(--serif-en);font-size:34px;letter-spacing:.16em;color:var(--cream);padding-left:.16em}
-  .foot-top .mark span{display:block;font-size:10px;letter-spacing:.5em;color:var(--rose);margin-top:7px}
-  .foot-sns a{font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-left:22px;transition:color .2s}
-  .foot-sns a:hover{color:var(--rose)}
-  .foot-info{margin-top:36px;font-size:12.5px;line-height:2.05}
-  .foot-info .dim{color:rgba(247,243,238,.42)}
-  .foot-info b{color:var(--cream);font-weight:400}
-  .foot-copy{margin-top:28px;font-size:11px;letter-spacing:.08em;color:rgba(247,243,238,.34)}
-
-  .draft-note{position:fixed;right:16px;bottom:16px;z-index:9500;background:rgba(42,33,28,.9);color:var(--cream);font-size:11px;letter-spacing:.03em;padding:9px 15px;font-weight:300}
-
-  /* ===== Reveal animations (progressive enhancement: visible by default) ===== */
-  .lines .ln{display:block;overflow:hidden}
-  html.js .lines .ln > span{display:block;transform:translateY(112%);transition:transform 1.05s cubic-bezier(.19,1,.22,1)}
-  html.js .lines.in .ln > span{transform:none}
-  html.js .lines.in .ln:nth-child(2) > span{transition-delay:.09s}
-  html.js .lines.in .ln:nth-child(3) > span{transition-delay:.18s}
-  html.js .lines.in .ln:nth-child(4) > span{transition-delay:.27s}
-
-  html.js .rv{opacity:0;transform:translateY(26px);transition:opacity 1.1s ease,transform 1.1s cubic-bezier(.19,1,.22,1)}
+  /* reveal (visible by default) */
+  html.js .rv{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
   html.js .rv.in{opacity:1;transform:none}
-  .rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}
+  html.js .rv.d1{transition-delay:.08s}html.js .rv.d2{transition-delay:.16s}html.js .rv.d3{transition-delay:.24s}
+  @media (prefers-reduced-motion:reduce){html.js .rv{opacity:1!important;transform:none!important}}
 
-  html.js .clip{clip-path:inset(100% 0 0 0);transition:clip-path 1.2s cubic-bezier(.77,0,.18,1)}
-  html.js .clip.in{clip-path:inset(0 0 0 0)}
-  html.js .clip > .inner-z{transition:transform 1.4s cubic-bezier(.77,0,.18,1);transform:scale(1.12)}
-  html.js .clip.in > .inner-z{transform:scale(1)}
-
-  @media (prefers-reduced-motion: reduce){
-    html.js .lines .ln>span,html.js .rv,html.js .clip,html.js .clip>.inner-z{transition:none!important;transform:none!important;opacity:1!important;clip-path:none!important}
-  }
-
-  /* ===== Responsive ===== */
-  @media (max-width:920px){
-    .wrap{padding:0 24px}
-    nav ul{flex-wrap:wrap;width:auto;justify-content:center}
-    nav li a{padding:12px 14px;font-size:10.5px;letter-spacing:.12em}
-    .hero{padding:54px 0 60px}
-    .hero .wrap{grid-template-columns:1fr;gap:40px}
-    .hero .visual{aspect-ratio:4/3;order:-1}
-    .hero .ghost{display:none}
-    .statement{padding:90px 0}
-    .sec{padding:84px 0}
-    .sec-head{margin-bottom:44px}
-    .corp-grid{grid-template-columns:1fr;gap:36px}
-    .corp-grid .c1,.corp-grid .c2,.corp-grid .c3{grid-column:auto;grid-row:auto}
-    .card.tall .slot{min-height:360px}
-    .stats{grid-template-columns:1fr;margin-bottom:54px}
-    .logo-grid{grid-template-columns:repeat(3,1fr)}
-    .svc-row{grid-template-columns:1fr;gap:40px}
-    .svc .slot{aspect-ratio:4/3}
-    .acad-grid{grid-template-columns:1fr 1fr}
-    .acad-grid .a{padding:30px 20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
-    .acad-grid .a:nth-child(2n){border-right:0}
-    .lab-grid{grid-template-columns:1fr;gap:36px}
-    .lab .slot{aspect-ratio:4/3}
-    .gal-row{grid-template-columns:1fr 1fr;gap:14px}
-    .ceo{padding:90px 0}.ceo .wrap{grid-template-columns:1fr;gap:40px}
-    .cta{padding:90px 0}
-    .foot-top{flex-direction:column;gap:22px}.foot-sns a{margin:0 22px 0 0}
+  @media (max-width:860px){
+    .wrap{padding:0 22px}
+    .logo{font-size:15px;letter-spacing:.12em;padding-left:.12em}
+    nav ul{flex-wrap:wrap;margin-top:12px}
+    nav li a{padding:11px 12px;font-size:11.5px;letter-spacing:.04em}
+    .hero{height:60vh;min-height:420px}
+    .hero h1{font-size:clamp(18px,5.6vw,34px);letter-spacing:.02em}
+    .hero h1 .sp{min-width:.3em}
+    .hero h2{font-size:clamp(15px,4.4vw,26px);letter-spacing:.03em}
+    .sec{padding:64px 0}
+    .cards4{grid-template-columns:1fr 1fr;gap:16px}
+    .cards3{grid-template-columns:1fr;gap:30px}
+    .cards3 .ph{aspect-ratio:16/10}
+    .rose{padding:74px 22px}
+    .ceo-grid{grid-template-columns:1fr;gap:30px}
+    .ceo-desk{grid-column:auto}
+    .gal-row{grid-template-columns:1fr 1fr;gap:12px}
   }
   @media (max-width:480px){
-    .logo-grid{grid-template-columns:repeat(2,1fr)}
-    .acad-grid{grid-template-columns:1fr}
-    .acad-grid .a{border-right:0}
+    .cards4{grid-template-columns:1fr}
+    .card .ph{aspect-ratio:4/3}
   }
 </style>
 </head>
 <body>
 
-<!-- ===== HEADER ===== -->
-<div class="util">
+<header>
   <div class="wrap">
-    <div><a href="#corporate">기업 컨설팅 문의</a><a href="https://www.cmkstyle.co.kr" target="_blank">SHOP</a></div>
-    <div class="lang"><span class="on">KOR</span> · <span>CHN</span></div>
+    <div class="logo">CMK IMAGE KOREA</div>
+    <nav>
+      <ul>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#services">CONSULTING</a></li>
+        <li><a href="#academy">ACADEMY</a></li>
+        <li><a href="#lab">IMAGE LAB</a></li>
+        <li><a href="#gallery">COMMUNITY</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </nav>
   </div>
-</div>
-<header class="mast">
-  <div class="mark">CMK</div>
-  <div class="mark-sub">Image Korea</div>
 </header>
-<nav>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a class="lead" href="#corporate">Corporate</a></li>
-    <li><a href="#consulting">Consulting</a></li>
-    <li><a href="#academy">Academy</a></li>
-    <li><a href="#lab">Image Lab</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
 
-<!-- ===== HERO ===== -->
-<section class="hero" id="about">
-  <div class="ghost">CMK</div>
-  <div class="wrap">
-    <div class="lead-col">
-      <span class="kicker rv">Image Consulting · Since 2008</span>
-      <h1 class="lines">
-        <span class="ln"><span>보이는 것이,</span></span>
-        <span class="ln"><span>곧 <em class="em">전해지는 것</em>입니다</span></span>
-      </h1>
-      <p class="sub rv d2">20여 년의 현장에서 쌓아온 컨설팅과 노하우로, 개인과 기업의 이미지를 하나의 전략으로 설계합니다.</p>
-      <div class="meta rv d3">
-        <span>Corporate PI</span>
-        <span>Executive</span>
-        <span>Academy</span>
-      </div>
-    </div>
-    <div class="visual slot clip" aria-label="브랜드 비주얼 영역">
-      <div class="inner-z"></div>
-      <div class="cap">CMK Visual</div>
-    </div>
-  </div>
-  <div class="scrollcue">Scroll</div>
-</section>
-
-<!-- ===== STATEMENT ===== -->
-<section class="statement">
-  <div class="wrap">
-    <span class="kicker rv">What We Do</span>
-    <p class="rv d1">CMK이미지코리아는 20여 년간의 현장 컨설팅과 노하우를 바탕으로, 이미지에 관련된 <b>맞춤형 컨설팅</b>과 <b>전문가 교육프로그램</b>을 제공하는 컨설팅 기업입니다.</p>
+<!-- HERO -->
+<section class="hero">
+  <img src="img/hero_flatlay.jpg" alt="" />
+  <div class="inner">
+    <h1>CREATIVE<span class="sp"></span>PARTNER</h1>
+    <h2>CMK IMAGE KOREA</h2>
   </div>
 </section>
 
-<!-- ===== CORPORATE (priority) ===== -->
-<section class="sec" id="corporate">
+<!-- 네 가지 길 -->
+<section class="sec" id="services">
   <div class="wrap">
-    <div class="idxrule"><span class="no">01</span><span class="t">For Business</span></div>
-    <div class="sec-head">
-      <span class="kicker">Corporate Identity</span>
-      <h2>Corporate &amp; Public</h2>
-      <div class="ko">기업·금융·기관을 위한 PI 이미지 전략과 출강</div>
-    </div>
-    <div class="corp-grid">
-      <div class="card tall c1 rv">
-        <div class="slot clip" style="height:100%"><div class="inner-z"></div><div class="cap">Corporate PI</div></div>
-        <div class="body">
-          <div class="en">Corporate PI</div>
-          <div class="ko">기업·금융 임원 이미지 전략</div>
-          <div class="desc">Appearance · Behavior · Communication 세 축을 통합해, 신뢰를 만드는 임원의 이미지를 설계합니다. CEO 1:1 코칭부터 조직 단위 출강까지.</div>
-        </div>
-      </div>
-      <div class="card c2 rv d1">
-        <div class="slot clip"><div class="inner-z"></div><div class="cap">Public</div></div>
-        <div class="body">
-          <div class="en">Public</div>
-          <div class="ko">공공·관공서 기관 이미지</div>
-        </div>
-      </div>
-      <div class="card c3 rv d2">
-        <div class="slot clip"><div class="inner-z"></div><div class="cap">Executive</div></div>
-        <div class="body">
-          <div class="en">Executive</div>
-          <div class="ko">VVIP 1:1 임원 컨설팅</div>
-        </div>
-      </div>
+    <h2 class="h-center rv">CMK가 제안하는<br/>네 가지 길</h2>
+    <div class="cards4">
+      <a class="card rv"><div class="ph"><img src="img/suit_man.jpg" alt=""/></div><div class="cap">기업 · 금융 이미지<small>Corporate PI</small></div></a>
+      <a class="card rv d1"><div class="ph"><img src="img/tailoring.jpg" alt=""/></div><div class="cap">임원 · VVIP 컨설팅<small>Executive</small></div></a>
+      <a class="card rv d2"><div class="ph"><img src="img/woman_present.jpg" alt=""/></div><div class="cap">미디어 이미지<small>Media</small></div></a>
+      <a class="card rv d3"><div class="ph"><img src="img/suit_rack.jpg" alt=""/></div><div class="cap">퍼스널 스타일<small>Personal</small></div></a>
     </div>
   </div>
 </section>
 
-<!-- ===== TRUST / PARTNERS ===== -->
-<section class="trust">
+<!-- ROSE BAND -->
+<section class="rose">
+  <p class="rv"><b>CMK이미지 코리아</b>는 20여 년간의 현장 컨설팅과 노하우를 바탕으로<br/>이미지에 관련된 맞춤형 컨설팅 및 전문가 교육프로그램을 제공하는 컨설팅 기업입니다.</p>
+</section>
+
+<!-- 이미지 코리아 (research) -->
+<section class="sec" id="lab">
   <div class="wrap">
-    <div class="stats">
-      <div class="s rv"><div class="num">20<span class="u">+</span></div><div class="lab">Years of Field</div></div>
-      <div class="s rv d1"><div class="num">2008</div><div class="lab">Since</div></div>
-      <div class="s rv d2"><div class="num">100<span class="u">+</span></div><div class="lab">Partner Consultants</div></div>
-    </div>
-    <div class="logos">
-      <span class="kicker rv">Trusted By</span>
-      <div class="logo-grid rv d1">
-        <div class="lg">검찰청</div>
-        <div class="lg">경기도</div>
-        <div class="lg">경찰청</div>
-        <div class="lg">아모레퍼시픽</div>
-        <div class="lg">GUCCI</div>
-        <div class="lg">금융권</div>
-      </div>
-      <p class="logo-note rv d2">실제 협력·출강 기업 로고로 교체 예정</p>
+    <h2 class="h-center rv">CMK 이미지 코리아</h2>
+    <p class="sub-center rv">어울림의 원리를 연구하는 이미지 연구소</p>
+    <div class="cards3">
+      <a class="rv"><div class="ph"><img src="img/perfume_desk.jpg" alt=""/></div><div class="cap">퍼스널 컬러 연구</div></a>
+      <a class="rv d1"><div class="ph"><img src="img/neck_back.jpg" alt=""/></div><div class="cap">골격과 헤어 연구</div></a>
+      <a class="rv d2"><div class="ph"><img src="img/swatch_book.jpg" alt=""/></div><div class="cap">스타일 연구</div></a>
     </div>
   </div>
 </section>
 
-<!-- ===== CONSULTING (secondary) ===== -->
-<section class="sec" id="consulting">
+<!-- CEO STORY -->
+<section class="sec" style="padding-top:20px">
   <div class="wrap">
-    <div class="idxrule"><span class="no">02</span><span class="t">For Personal</span></div>
-    <div class="sec-head">
-      <span class="kicker">Personal &amp; Media</span>
-      <h2>Consulting</h2>
-      <div class="ko">개인·VVIP·미디어를 위한 1:1 이미지 컨설팅</div>
-    </div>
-    <div class="svc-row">
-      <div class="svc rv">
-        <div class="slot clip"><div class="inner-z"></div><div class="cap">VVIP</div></div>
-        <div class="t">VVIP &amp; Personal</div>
-        <div class="ko">1:1 코칭 · 소수 그룹</div>
+    <div class="ceo-head rv">CMK CEO STORY <span class="arr">&rarr;</span></div>
+    <div class="ceo-grid">
+      <div class="ceo-photo rv"><img src="img/woman_present.jpg" alt="대표 조미경"/></div>
+      <div class="ceo-body rv d1">
+        <div class="name">조 미 경</div>
+        <div class="role">CEO · Founder</div>
+        <p>사람들은 대개 이미지메이킹을 떠올리면 정치인이나 연예인 등 특별한 사람들만의 것이라고 생각하는 경우가 많습니다. 그러나 개인의 이미지(Personal Identity)는 <b>현대인 모두에게 필요한 매커니즘</b>으로서 개인의 삶의 질을 높여줍니다.</p>
       </div>
-      <div class="svc rv d1">
-        <div class="slot clip"><div class="inner-z"></div><div class="cap">Media</div></div>
-        <div class="t">Media</div>
-        <div class="ko">방송 · 면접 · 보이스 전략</div>
-      </div>
-      <div class="svc rv d2">
-        <div class="slot clip"><div class="inner-z"></div><div class="cap">Event</div></div>
-        <div class="t">Event</div>
-        <div class="ko">초청 강연 · 행사</div>
-      </div>
+      <div class="ceo-desk rv d2"><img src="img/desk_flatlay.jpg" alt=""/></div>
     </div>
   </div>
 </section>
 
-<!-- ===== ACADEMY ===== -->
-<section class="sec acad" id="academy">
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
   <div class="wrap">
-    <div class="idxrule"><span class="no">03</span><span class="t">Education</span></div>
-    <div class="sec-head">
-      <span class="kicker">CMK Academy</span>
-      <h2>Become a Consultant</h2>
-      <div class="ko">현장의 기준을 그대로 배우는 정규 자격 과정</div>
-    </div>
-    <div class="acad-grid">
-      <div class="a rv"><div class="no">01</div><h4>Taste<br/>Image Scale</h4><p>감성 이미지 통계 기반 진단 과정</p></div>
-      <div class="a rv d1"><div class="no">02</div><h4>이미지컨설턴트<br/>전략과정</h4><p>현장 컨설팅 실무 전 과정</p></div>
-      <div class="a rv d2"><div class="no">03</div><h4>퍼스널컬러<br/>진단과정</h4><p>4계절 16타입 컬러 진단</p></div>
-      <div class="a rv d3"><div class="no">04</div><h4>메이크업<br/>과정</h4><p>이미지 메이크업 전문 과정</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== IMAGE LAB ===== -->
-<section class="sec lab" id="lab">
-  <div class="wrap">
-    <div class="sec-head center">
-      <span class="kicker">Image Lab</span>
-      <h2>CMK 이미지 연구</h2>
-      <div class="ko">어울림의 원리를 데이터로 풀어내는 연구소</div>
-    </div>
-    <div class="lab-grid">
-      <div class="rv">
-        <div class="slot clip"><div class="inner-z"></div><div class="cap">Personal Color</div></div>
-        <div class="t">퍼스널 컬러 연구</div>
-        <div class="d">자연 색채 조화로 사람에게 어울리는 색을 진단하는 프로그램.</div>
-      </div>
-      <div class="rv d1">
-        <div class="slot clip"><div class="inner-z"></div><div class="cap">Frame &amp; Hair</div></div>
-        <div class="t">골격과 헤어 연구</div>
-        <div class="d">얼굴형과 골격에 따라 헤어 스타일과 연출을 설계하는 프로그램.</div>
-      </div>
-      <div class="rv d2">
-        <div class="slot clip"><div class="inner-z"></div><div class="cap">Style</div></div>
-        <div class="t">스타일 연구</div>
-        <div class="d">바디 타입 진단으로 어울리는 소재·실루엣·패턴을 찾는 시스템.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== GALLERY ===== -->
-<section class="gallery">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="kicker" style="color:var(--rose)">Field</span>
-      <h2>CMK Gallery</h2>
-      <div class="ko">컨설팅과 교육의 현장</div>
-    </div>
+    <h2 class="h-left rv">CMK 갤러리</h2>
     <div class="gal-row">
-      <div class="slot dark clip rv"><div class="inner-z"></div><div class="cap">Field 01</div></div>
-      <div class="slot dark clip rv d1"><div class="inner-z"></div><div class="cap">Field 02</div></div>
-      <div class="slot dark clip rv d2"><div class="inner-z"></div><div class="cap">Field 03</div></div>
-      <div class="slot dark clip rv d3"><div class="inner-z"></div><div class="cap">Field 04</div></div>
+      <div class="ph rv"><img src="img/seminar2.jpg" alt=""/></div>
+      <div class="ph rv d1"><img src="img/seminar3.jpg" alt=""/></div>
+      <div class="ph rv d2"><img src="img/seminar1.jpg" alt=""/></div>
+      <div class="ph rv d3"><img src="img/couple_brown.jpg" alt=""/></div>
     </div>
   </div>
 </section>
 
-<!-- ===== CEO ===== -->
-<section class="ceo">
+<!-- FOOTER -->
+<footer id="contact">
   <div class="wrap">
-    <div class="rv">
-      <div class="name">조미경</div>
-      <div class="role">CEO · Founder</div>
-      <div class="sign">Cho Mi-kyung</div>
-    </div>
-    <div class="rv d1">
-      <p class="quote">개인의 이미지(Personal Identity)는 특별한 사람들만의 것이 아닙니다. <b>현대인 모두에게 필요한 전략</b>으로서, 이미지의 차이 하나가 삶의 질과 성패를 좌우합니다.</p>
-      <a class="more" href="#">About CMK</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CTA ===== -->
-<section class="cta" id="contact">
-  <div class="wrap">
-    <span class="kicker">Start With CMK</span>
-    <h2>당신의 이미지, 지금 설계하세요</h2>
-    <div class="cta-btns">
-      <a class="fill" href="#">기업 출강 문의</a>
-      <a href="#">개인 상담</a>
-      <a href="#">Academy 문의</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
-<footer>
-  <div class="wrap">
-    <div class="foot-top">
-      <div class="mark">CMK<span>Image Korea</span></div>
-      <div class="foot-sns">
-        <a href="https://blog.naver.com/cmkimage" target="_blank">Blog</a>
-        <a href="https://www.instagram.com/cmkimagekorea/" target="_blank">Instagram</a>
-        <a href="https://www.facebook.com/cmk.cho" target="_blank">Facebook</a>
-        <a href="https://www.youtube.com/channel/UCSl1lcjrHqWx8_QezQO5BTg" target="_blank">YouTube</a>
-      </div>
-    </div>
-    <div class="foot-info">
-      <div><b>CMK IMAGE KOREA</b> &nbsp;|&nbsp; 대표 조미경</div>
-      <div class="dim">사업자등록번호 107-91-45820</div>
-      <div class="dim">경기 용인시 기흥구 탑실로 116, 탑실마을 대주 피오레 2단지 215동 303호</div>
-      <div>Tel <b>031-284-2566</b> &nbsp;|&nbsp; Mobile <b>010-7269-8836</b> &nbsp;|&nbsp; cmkimage@hanmail.net</div>
-    </div>
-    <div class="foot-copy">COPYRIGHT 2008 CMK IMAGE KOREA. ALL RIGHTS RESERVED.</div>
+    <div class="fl">CMK IMAGE KOREA</div>
+    <div>대표 조미경 &nbsp;|&nbsp; 주소 경기 용인시 기흥구 탑실로 116, 탑실마을 대주 피오레 2단지 215동 303호</div>
+    <div>사업자등록번호 107-91-45820 &nbsp;|&nbsp; 고객센터 <b>031-284-2566</b> &nbsp;|&nbsp; 이메일 cmkimage@hanmail.net</div>
+    <div class="copy">COPYRIGHT &copy; CMK IMAGE KOREA. ALL RIGHTS RESERVED.</div>
   </div>
 </footer>
 
-<div class="draft-note">시안 v2 · 사진 영역은 실제 자산으로 교체 예정</div>
-
 <script>
   document.documentElement.classList.add('js');
-  const els = document.querySelectorAll('.lines,.rv,.clip');
-  // #still : reveal everything instantly (for static capture / no-motion review)
-  if(location.hash === '#still' || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    els.forEach(el=>el.classList.add('in'));
-  } else {
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-      });
-    },{threshold:.12, rootMargin:'0px 0px -6% 0px'});
-    els.forEach(el=>io.observe(el));
-  }
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
 </script>
 </body>
 </html>
