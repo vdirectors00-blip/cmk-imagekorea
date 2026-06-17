@@ -20,10 +20,21 @@
 
   /* Header */
   header{padding:30px 0 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);z-index:50}
+  .bar{position:relative}
   .logo{text-align:center;font-weight:800;font-size:22px;letter-spacing:.26em;padding-left:.26em}
-  nav ul{display:flex;justify-content:center;list-style:none;flex-wrap:wrap;margin-top:20px}
-  nav li a{display:block;padding:16px 26px;font-size:13px;font-weight:600;letter-spacing:.12em;color:#3a352f;transition:color .2s}
-  nav li a:hover{color:var(--rose-deep)}
+  .nav-toggle{display:none;position:absolute;right:0;top:0;background:none;border:0;font-size:24px;line-height:1;color:var(--ink);cursor:pointer;padding:4px 6px}
+  nav ul.menu{display:flex;justify-content:center;list-style:none;margin-top:18px}
+  nav ul.menu > li{position:relative}
+  nav ul.menu > li > a{display:block;padding:16px 24px;font-size:13px;font-weight:600;letter-spacing:.1em;color:#3a352f;transition:color .2s;white-space:nowrap}
+  nav ul.menu > li > a:hover{color:var(--rose-deep)}
+  /* highlight 기업 컨설팅 */
+  nav li.lead > a{color:var(--rose-deep)}
+  nav li.lead > a::after{content:"";position:absolute;left:24px;right:24px;bottom:9px;height:1.5px;background:var(--rose-deep);opacity:.55}
+  /* dropdown */
+  nav .sub{position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:190px;background:#fff;border:1px solid var(--line);box-shadow:0 14px 34px rgba(40,30,26,.08);padding:8px 0;list-style:none;opacity:0;visibility:hidden;translate:0 6px;transition:opacity .2s,visibility .2s,translate .2s;z-index:60}
+  nav li.has-sub:hover .sub{opacity:1;visibility:visible;translate:0 0}
+  nav .sub li a{display:block;padding:11px 24px;font-size:12.5px;font-weight:500;color:#4a443e;white-space:nowrap;letter-spacing:.01em;transition:background .15s,color .15s}
+  nav .sub li a:hover{background:#faf6f1;color:var(--rose-deep)}
 
   /* Hero */
   .hero{position:relative;height:76vh;min-height:540px;overflow:hidden;background:#bfb6ab}
@@ -100,8 +111,14 @@
   @media (max-width:860px){
     .wrap{padding:0 22px}
     .logo{font-size:15px;letter-spacing:.12em;padding-left:.12em}
-    nav ul{flex-wrap:wrap;margin-top:12px}
-    nav li a{padding:11px 12px;font-size:11.5px;letter-spacing:.04em}
+    .nav-toggle{display:block}
+    nav ul.menu{display:none;flex-direction:column;margin-top:14px;border-top:1px solid var(--line)}
+    nav ul.menu.open{display:flex}
+    nav ul.menu > li{position:static}
+    nav ul.menu > li > a{padding:13px 2px;font-size:13px;letter-spacing:.04em;border-bottom:1px solid var(--line)}
+    nav li.lead > a::after{display:none}
+    nav .sub{position:static;transform:none;opacity:1;visibility:visible;translate:0 0;border:0;box-shadow:none;padding:4px 0 10px;min-width:0;background:transparent}
+    nav .sub li a{padding:8px 0 8px 16px;color:var(--ink-soft);font-size:12.5px}
     .hero{height:62vh;min-height:430px}
     .hero .line1{font-size:clamp(20px,5.6vw,34px);letter-spacing:.04em;width:min(420px,92%)}
     .hero .line2{font-size:clamp(17px,4.6vw,26px);letter-spacing:.05em}
@@ -124,16 +141,41 @@
 <body>
 
 <header>
-  <div class="wrap">
+  <div class="wrap bar">
     <div class="logo">CMK IMAGE KOREA</div>
-    <nav><ul>
-      <li><a href="#">ABOUT</a></li>
-      <li><a href="#services">CONSULTING</a></li>
-      <li><a href="#academy">ACADEMY</a></li>
-      <li><a href="#lab">IMAGE LAB</a></li>
-      <li><a href="#gallery">COMMUNITY</a></li>
-      <li><a href="#contact">CONTACT</a></li>
-    </ul></nav>
+    <button class="nav-toggle" aria-label="메뉴 열기">&#9776;</button>
+    <nav>
+      <ul class="menu">
+        <li><a href="#">ABOUT</a></li>
+        <li class="has-sub lead">
+          <a href="#services">기업 컨설팅</a>
+          <ul class="sub">
+            <li><a href="#services">기업 · 금융 PI</a></li>
+            <li><a href="#services">기관 이미지</a></li>
+            <li><a href="#services">출강 · 강연</a></li>
+          </ul>
+        </li>
+        <li class="has-sub">
+          <a href="#services">개인 컨설팅</a>
+          <ul class="sub">
+            <li><a href="#services">VVIP 1:1</a></li>
+            <li><a href="#services">미디어 이미지</a></li>
+            <li><a href="#services">퍼스널 스타일</a></li>
+          </ul>
+        </li>
+        <li class="has-sub">
+          <a href="#">ACADEMY</a>
+          <ul class="sub">
+            <li><a href="#">Taste Image Scale</a></li>
+            <li><a href="#">이미지컨설턴트 전략과정</a></li>
+            <li><a href="#">퍼스널컬러 진단과정</a></li>
+            <li><a href="#">메이크업 과정</a></li>
+          </ul>
+        </li>
+        <li><a href="#lab">IMAGE LAB</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
@@ -227,6 +269,8 @@
   document.documentElement.classList.add('js');
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
   document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+  var navToggle=document.querySelector('.nav-toggle'), navMenu=document.querySelector('.menu');
+  if(navToggle){ navToggle.addEventListener('click',function(){ navMenu.classList.toggle('open'); }); }
 </script>
 </body>
 </html>
