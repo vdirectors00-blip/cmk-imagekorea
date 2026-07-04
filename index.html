@@ -349,6 +349,13 @@
 
 <script>
 (function () {
+  // --- header nav: not a one-page landing, so menu clicks must NOT scroll to
+  //     in-page sections (each will link to its own page later). Disable for now.
+  document.querySelectorAll('.navlink, .navcontact').forEach(function (a) {
+    a.addEventListener('click', function (e) { e.preventDefault(); });
+    a.style.cursor = 'default';
+  });
+
   // --- header scroll state ---
   var header = document.getElementById('siteHeader');
   function onScroll() {
