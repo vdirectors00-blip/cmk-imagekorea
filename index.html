@@ -50,12 +50,10 @@
   .imgzoom { overflow:hidden; }
   .imgzoom:hover img { transform:scale(1.05); filter:saturate(1.04) brightness(1.02); }
   .portrait-swap { position:relative; }
-  .portrait-swap .ps-hover { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity 1s ease, transform 1.3s cubic-bezier(.16,.72,.28,1); }
+  .portrait-swap .ps-hover { position:absolute; inset:0; background:url('assets/founder-cho.jpg') center center/cover no-repeat; opacity:0; transition:opacity 1s ease; }
   .portrait-swap:hover .ps-hover { opacity:1; }
   .portrait-swap:hover .ps-base { opacity:0; }
   .portrait-swap .ps-base { transition:opacity 1s ease, transform 1.3s cubic-bezier(.16,.72,.28,1), filter 1.3s ease; }
-  .ps-cue { position:absolute; left:16px; bottom:16px; z-index:2; display:inline-flex; align-items:center; gap:7px; padding:7px 13px; background:rgba(19,16,13,.5); backdrop-filter:blur(6px); color:#EDE7DA; font-size:11px; font-weight:400; letter-spacing:.1em; transition:opacity .6s ease; pointer-events:none; }
-  .portrait-swap:hover .ps-cue { opacity:0; }
   .btn-outline { transition:background .3s,color .3s,border-color .3s; }
   .btn-outline:hover { background:#211C17; border-color:#211C17; color:#E5DDCB; }
   .ulink { transition:opacity .3s; }
@@ -117,8 +115,7 @@
     <div class="grid-2" style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(40px,6vw,96px);align-items:center;">
       <div class="imgzoom portrait-swap">
         <img src="assets/about-studio-modern.jpg" alt="CMK Image Korea 스튜디오" class="ps-base" style="display:block;width:100%;aspect-ratio:4/5;object-fit:cover;">
-        <img src="assets/founder-cho.jpg" alt="조미경 대표" class="ps-hover" style="object-position:60% 58%;">
-        <span class="ps-cue">조미경 대표</span>
+        <div class="ps-hover" aria-hidden="true"></div>
       </div>
       <div>
         <div style="font-size:11px;font-weight:500;letter-spacing:.2em;color:#8A8276;">ABOUT</div>
