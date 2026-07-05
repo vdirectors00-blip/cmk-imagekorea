@@ -66,10 +66,20 @@
   .social:hover { background:#211C17; color:#E5DDCB; transform:translateY(-3px); }
   .cinfo:hover { opacity:.6; }
 
+  /* mobile hamburger menu */
+  .menu-toggle { display:none; }
+  .mobile-menu { position:fixed; inset:0; z-index:80; background:rgba(14,11,7,.98); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:22px; opacity:0; visibility:hidden; transition:opacity .35s ease; }
+  .mobile-menu.open { opacity:1; visibility:visible; }
+  .mobile-menu .m-link { color:#EDE7DA; text-decoration:none; font-size:25px; font-weight:500; letter-spacing:.01em; transition:opacity .25s; }
+  .mobile-menu .m-link:active { opacity:.5; }
+  .menu-close { position:absolute; top:24px; right:22px; background:none; border:none; color:#EDE7DA; padding:8px; cursor:pointer; }
+
   /* responsive: collapse two/three-column grids on tablet & phone */
   @media (max-width: 900px) {
     .grid-2, .grid-3 { grid-template-columns:1fr !important; }
     #siteNav { display:none !important; }
+    .menu-toggle { display:inline-flex !important; }
+    .navcontact { display:none !important; }
   }
 </style>
 </head>
@@ -90,9 +100,28 @@
         <a href="#lab" class="navlink" style="color:inherit;text-decoration:none;font-size:14px;font-weight:400;letter-spacing:.02em;">Image Lab</a>
         <a href="#community" class="navlink" style="color:inherit;text-decoration:none;font-size:14px;font-weight:400;letter-spacing:.02em;">News</a>
       </nav>
-      <a href="#contact" class="navcontact" style="justify-self:end;color:inherit;text-decoration:none;font-size:14px;font-weight:400;letter-spacing:.02em;padding-bottom:2px;border-bottom:1px solid currentColor;">Contact</a>
+      <div style="justify-self:end;display:flex;align-items:center;gap:20px;">
+        <a href="#contact" class="navcontact" style="color:inherit;text-decoration:none;font-size:14px;font-weight:400;letter-spacing:.02em;padding-bottom:2px;border-bottom:1px solid currentColor;">Contact</a>
+        <button id="menuToggle" class="menu-toggle" aria-label="메뉴 열기" style="background:none;border:none;color:inherit;padding:4px;cursor:pointer;align-items:center;justify-content:center;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+        </button>
+      </div>
     </div>
   </header>
+
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+    <button id="menuClose" class="menu-close" aria-label="메뉴 닫기">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+    </button>
+    <a href="#about" class="m-link">About</a>
+    <a href="#corporate" class="m-link">Corporate</a>
+    <a href="#personal" class="m-link">Personal</a>
+    <a href="#academy" class="m-link">Academy</a>
+    <a href="#lab" class="m-link">Image Lab</a>
+    <a href="#community" class="m-link">News</a>
+    <a href="#contact" class="m-link">Contact</a>
+  </div>
 
   <!-- HERO -->
   <section id="top" data-screen-label="Hero" style="position:relative;height:100svh;min-height:620px;background:#0E0B07;overflow:hidden;">
@@ -379,6 +408,16 @@
     a.addEventListener('click', function (e) { e.preventDefault(); });
     a.style.cursor = 'default';
   });
+
+  // --- mobile hamburger menu (single page이므로 섹션 스크롤 동작) ---
+  var mToggle = document.getElementById('menuToggle');
+  var mMenu = document.getElementById('mobileMenu');
+  var mClose = document.getElementById('menuClose');
+  function openM() { mMenu.classList.add('open'); mMenu.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; }
+  function closeM() { mMenu.classList.remove('open'); mMenu.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; }
+  if (mToggle) mToggle.addEventListener('click', openM);
+  if (mClose) mClose.addEventListener('click', closeM);
+  if (mMenu) mMenu.querySelectorAll('.m-link').forEach(function (a) { a.addEventListener('click', closeM); });
 
   // --- header scroll state ---
   var header = document.getElementById('siteHeader');
