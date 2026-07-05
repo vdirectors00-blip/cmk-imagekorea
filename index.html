@@ -49,8 +49,7 @@
   .navcontact:hover { opacity:.55; }
   .imgzoom { overflow:hidden; position:relative; }
   .imgzoom:hover img { transform:scale(1.05); filter:saturate(1.04) brightness(1.02); }
-  /* 브라우저(엣지 비주얼검색 등) 이미지 호버 아이콘 차단용 투명 오버레이 — 줌/크로스페이드는 유지 */
-  .imgzoom::after, .swap-wrap::after { content:""; position:absolute; inset:0; z-index:5; background:transparent; }
+  .swap-wrap { position:relative; }
   .portrait-swap { position:relative; }
   .portrait-swap .ps-hover { position:absolute; inset:0; background:url('assets/founder-cho.jpg') center center/cover no-repeat; opacity:0; transition:opacity 1s ease; }
   .portrait-swap:hover .ps-hover { opacity:1; }
@@ -367,6 +366,13 @@
 
 <script>
 (function () {
+  // --- 브라우저(엣지 비주얼검색 등) 이미지 호버 아이콘 차단: 각 호버 이미지 위에
+  //     실제 div 방패를 덮어 브라우저가 <img> 대신 이 div를 인식하게 함(줌 효과 유지) ---
+  document.querySelectorAll('.imgzoom, .swap-wrap').forEach(function (el) {
+    var shield = document.createElement('div');
+    shield.style.cssText = 'position:absolute;inset:0;z-index:5;';
+    el.appendChild(shield);
+  });
   // --- header nav: not a one-page landing, so menu clicks must NOT scroll to
   //     in-page sections (each will link to its own page later). Disable for now.
   document.querySelectorAll('.navlink, .navcontact').forEach(function (a) {
