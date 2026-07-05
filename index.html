@@ -80,6 +80,8 @@
     #siteNav { display:none !important; }
     .menu-toggle { display:inline-flex !important; position:absolute; top:0; right:clamp(20px,5vw,60px); height:88px; z-index:61; }
     .navcontact { display:none !important; }
+    /* 모바일 1단 배치 시 데스크탑 지그재그(order)가 순서를 뒤섞음 → 전 섹션 사진 먼저로 통일 */
+    .grid-2 .swap-wrap { order:-1 !important; }
   }
 </style>
 </head>
