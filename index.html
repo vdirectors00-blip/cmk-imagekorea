@@ -38,6 +38,17 @@
   }
   @keyframes cmkFall { 0% { transform: translateY(0); opacity:.8 } 50% { opacity:.15 } 100% { transform: translateY(16px); opacity:.8 } }
 
+  /* hero image carousel (6 slides, cross-fade) */
+  .hero-slide { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; opacity:0; animation:cmkHero 36s ease-in-out infinite; }
+  .hero-slide:nth-child(1){ animation-delay:0s; } .hero-slide:nth-child(2){ animation-delay:6s; }
+  .hero-slide:nth-child(3){ animation-delay:12s; } .hero-slide:nth-child(4){ animation-delay:18s; }
+  .hero-slide:nth-child(5){ animation-delay:24s; } .hero-slide:nth-child(6){ animation-delay:30s; }
+  @keyframes cmkHero { 0% { opacity:0 } 2.5% { opacity:1 } 14% { opacity:1 } 18% { opacity:0 } 100% { opacity:0 } }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-slide { animation:none; }
+    .hero-slide:nth-child(1){ opacity:1; }
+  }
+
   /* header (scroll state) */
   #siteHeader { position:fixed; top:0; left:0; right:0; z-index:60; transition:background .5s ease,color .5s ease,border-color .5s ease; background:transparent; color:#F4F1EA; border-bottom:1px solid rgba(244,241,234,0); }
   #siteHeader.scrolled { background:rgba(244,241,234,.94); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); color:#2A2622; border-bottom:1px solid rgba(42,38,34,.1); }
@@ -50,11 +61,6 @@
   .imgzoom { overflow:hidden; position:relative; }
   .imgzoom:hover img { transform:scale(1.05); filter:saturate(1.04) brightness(1.02); }
   .swap-wrap { position:relative; }
-  .portrait-swap { position:relative; }
-  .portrait-swap .ps-hover { position:absolute; inset:0; background:url('assets/founder-cho.jpg') center center/cover no-repeat; opacity:0; transition:opacity 1s ease; }
-  .portrait-swap:hover .ps-hover { opacity:1; }
-  .portrait-swap:hover .ps-base { opacity:0; }
-  .portrait-swap .ps-base { transition:opacity 1s ease, transform 1.3s cubic-bezier(.16,.72,.28,1), filter 1.3s ease; }
   .btn-outline { transition:background .3s,color .3s,border-color .3s; }
   .btn-outline:hover { background:#211C17; border-color:#211C17; color:#E5DDCB; }
   .ulink { transition:opacity .3s; }
@@ -137,9 +143,15 @@
 
   <!-- HERO -->
   <section id="top" data-screen-label="Hero" style="position:relative;height:100svh;min-height:620px;background:#0E0B07;overflow:hidden;">
-    <img src="assets/hero-grok.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;image-rendering:auto;">
-    <video autoplay muted loop playsinline poster="assets/hero-grok.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;transition:opacity 1.2s ease;"><source src="assets/hero-grok.webm" type="video/webm"><source src="assets/hero-grok.mp4" type="video/mp4"></video>
-    <div style="position:absolute;inset:0;z-index:2;background:linear-gradient(to top, rgba(8,6,4,.72) 0%, rgba(8,6,4,.14) 44%, rgba(8,6,4,.32) 100%);"></div>
+    <div style="position:absolute;inset:0;z-index:0;">
+      <img class="hero-slide" src="assets/hero1.jpg" alt="" fetchpriority="high">
+      <img class="hero-slide" src="assets/hero2.jpg" alt="" loading="lazy">
+      <img class="hero-slide" src="assets/hero3.jpg" alt="" loading="lazy">
+      <img class="hero-slide" src="assets/hero4.jpg" alt="" loading="lazy">
+      <img class="hero-slide" src="assets/hero5.jpg" alt="" loading="lazy">
+      <img class="hero-slide" src="assets/hero6.jpg" alt="" loading="lazy">
+    </div>
+    <div style="position:absolute;inset:0;z-index:2;background:linear-gradient(to top, rgba(8,6,4,.82) 0%, rgba(8,6,4,.42) 44%, rgba(8,6,4,.58) 100%);"></div>
     <div style="position:absolute;inset:0;z-index:4;display:flex;flex-direction:column;justify-content:flex-end;max-width:1500px;margin:0 auto;left:0;right:0;padding:0 clamp(20px,5vw,60px) clamp(58px,9vh,104px);color:#E5DDCB;">
       <div style="font-size:12px;font-weight:500;letter-spacing:.2em;color:rgba(244,241,234,.75);margin-bottom:26px;">CMK IMAGE KOREA&nbsp;&nbsp;·&nbsp;&nbsp;SINCE 2008</div>
       <h1 style="font-weight:600;font-size:clamp(38px,5.6vw,88px);line-height:1.14;letter-spacing:-0.01em;margin:0;max-width:18ch;">The Standard of<br>Image Consulting</h1>
@@ -155,9 +167,8 @@
   <!-- ABOUT -->
   <section id="about" data-screen-label="About" style="background:#E5DDCB;padding:clamp(64px,10vh,130px) clamp(20px,5vw,60px);">
     <div class="grid-2" style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(40px,6vw,96px);align-items:center;">
-      <div class="imgzoom portrait-swap">
-        <img src="assets/about-studio-modern.jpg" alt="CMK Image Korea 스튜디오" class="ps-base" style="display:block;width:100%;aspect-ratio:4/5;object-fit:cover;">
-        <div class="ps-hover" aria-hidden="true"></div>
+      <div class="imgzoom">
+        <img src="assets/founder-cho.jpg" alt="CMK Image Korea 창립자 조미경" style="display:block;width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;">
       </div>
       <div>
         <div style="font-size:11px;font-weight:500;letter-spacing:.2em;color:#8A8276;">ABOUT</div>
@@ -250,7 +261,7 @@
         </div>
         <a href="#contact" class="btn-outline" style="display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(33,28,23,.5);color:#211C17;text-decoration:none;padding:13px 30px;font-size:13px;font-weight:400;letter-spacing:.05em;background:transparent;margin-top:32px;">더보기</a>
       </div>
-      <div class="swap-wrap" style="order:2;overflow:hidden;position:relative;aspect-ratio:4/5;border-radius:6px;box-shadow:0 24px 60px -28px rgba(33,28,23,.5);"><img class="swap-base" src="assets/female2.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><img class="swap-lively" src="assets/female2-lively.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></div>
+      <div class="swap-wrap" style="order:2;overflow:hidden;position:relative;aspect-ratio:4/5;border-radius:6px;box-shadow:0 24px 60px -28px rgba(33,28,23,.5);"><img src="assets/personal.jpg" alt="개인 이미지 컨설팅" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></div>
     </div>
   </section>
 
