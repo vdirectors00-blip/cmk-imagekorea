@@ -96,6 +96,12 @@
     .navcontact { display:none !important; }
     /* 모바일 1단 배치 시 데스크탑 지그재그(order)가 순서를 뒤섞음 → 전 섹션 사진 먼저로 통일 */
     .grid-2 .swap-wrap { order:-1 !important; }
+    /* Hero: 가로(4:3) 사진이 세로 화면에서 과도하게 줌인되지 않도록 높이 축소해 가로를 더 노출 */
+    #top { height:74svh !important; min-height:500px !important; }
+    /* Hero 슬라이드별: 피사체 위치에 맞춰 모바일 세로 크롭 위치 개별 조정 (4·5·6번은 중앙이 적절해 기본값 유지) */
+    .hero-slide:nth-child(1) { object-position:86% center !important; } /* 강사 우측 */
+    .hero-slide:nth-child(2) { object-position:30% center !important; } /* 강사 좌측 */
+    .hero-slide:nth-child(3) { object-position:60% center !important; } /* 의상 랙 중앙~우측 */
   }
 </style>
 </head>
