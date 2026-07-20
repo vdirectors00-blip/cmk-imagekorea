@@ -47,7 +47,7 @@
   @keyframes cmkFall { 0% { transform: translateY(0); opacity:.8 } 50% { opacity:.15 } 100% { transform: translateY(16px); opacity:.8 } }
 
   /* hero image carousel (6 slides, cross-fade) */
-  .hero-slide { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; opacity:0; animation:cmkHero 36s ease-in-out infinite; }
+  .hero-slide { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; opacity:0; filter:brightness(1.17) contrast(0.96) saturate(1.03); animation:cmkHero 36s ease-in-out infinite; }
   .hero-slide:nth-child(1){ animation-delay:0s; } .hero-slide:nth-child(2){ animation-delay:6s; }
   .hero-slide:nth-child(3){ animation-delay:12s; } .hero-slide:nth-child(4){ animation-delay:18s; }
   .hero-slide:nth-child(5){ animation-delay:24s; } .hero-slide:nth-child(6){ animation-delay:30s; }
@@ -179,11 +179,11 @@
       <img class="hero-slide" src="assets/hero5.jpg" alt="" loading="lazy">
       <img class="hero-slide" src="assets/hero6.jpg" alt="" loading="lazy">
     </div>
-    <div style="position:absolute;inset:0;z-index:2;background:linear-gradient(to top, rgba(8,6,4,.82) 0%, rgba(8,6,4,.42) 44%, rgba(8,6,4,.58) 100%);"></div>
+    <div style="position:absolute;inset:0;z-index:2;background:linear-gradient(to top, rgba(8,6,4,.74) 0%, rgba(8,6,4,.24) 46%, rgba(8,6,4,.40) 100%);"></div>
     <div style="position:absolute;inset:0;z-index:4;display:flex;flex-direction:column;justify-content:flex-end;max-width:1500px;margin:0 auto;left:0;right:0;padding:0 clamp(20px,5vw,60px) clamp(58px,9vh,104px);color:#E5DDCB;">
-      <div style="font-size:12px;font-weight:500;letter-spacing:.2em;color:rgba(244,241,234,.75);margin-bottom:26px;">CMK IMAGE KOREA&nbsp;&nbsp;·&nbsp;&nbsp;SINCE 2008</div>
-      <h1 style="font-weight:600;font-size:clamp(38px,5.6vw,88px);line-height:1.14;letter-spacing:-0.01em;margin:0;max-width:18ch;">The Standard of<br>Image Consulting</h1>
-      <p style="font-weight:500;font-size:clamp(16px,1.4vw,20px);line-height:1.7;color:rgba(244,241,234,.92);margin:30px 0 8px;max-width:46ch;">Leadership is seen before it is spoken.</p>
+      <div style="font-size:12px;font-weight:500;letter-spacing:.2em;color:rgba(244,241,234,.75);margin-bottom:26px;">IMAGE CONSULTING GROUP&nbsp;&nbsp;·&nbsp;&nbsp;SINCE 2008</div>
+      <h1 style="font-weight:600;font-size:clamp(38px,5.6vw,88px);line-height:1.10;letter-spacing:-0.01em;margin:0;max-width:18ch;">CMK IMAGE<br>KOREA</h1>
+      <p style="font-weight:500;font-size:clamp(16px,1.4vw,20px);line-height:1.7;color:rgba(244,241,234,.92);margin:30px 0 8px;max-width:46ch;">The image partner for Korea&rsquo;s leaders and institutions.</p>
       <p style="font-weight:300;font-size:clamp(13px,1vw,15px);line-height:1.85;color:rgba(244,241,234,.66);margin:0;max-width:44ch;">CMK는 20여 년간 기업·금융·공공기관 리더의 인상, 태도, 언어를 하나의 전략으로 설계해 왔습니다.</p>
     </div>
     <div style="position:absolute;z-index:4;right:clamp(20px,5vw,60px);bottom:clamp(58px,9vh,104px);display:flex;flex-direction:column;align-items:center;gap:11px;">
@@ -192,6 +192,7 @@
     </div>
   </section>
 
+  <!-- (규모감/고객사 로고 섹션은 페이지 하단(footer 앞)으로 이동) -->
   <!-- ABOUT -->
   <section id="about" data-screen-label="About" style="background:#E5DDCB;padding:clamp(60px,8vh,104px) clamp(20px,5vw,60px);">
     <div class="grid-2" style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(40px,6vw,96px);align-items:center;">
@@ -236,6 +237,52 @@
           <h3 style="font-weight:500;font-size:20px;margin:0 0 12px;">Communication</h3>
           <p style="font-weight:300;font-size:14px;line-height:1.9;color:rgba(229,221,203,.72);margin:0;">인상을 신뢰로 바꾸는 언어와 태도를 함께 완성합니다.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTS (규모감) — 시안4 · Philosophy 다음 배치 · 24개 전체 · 더보기=세부페이지(미구축) 버튼만 -->
+  <style>
+    .cli-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:clamp(44px,5.5vw,66px);}
+    .cli-grid .tile{background:#FBF9F4;border:1px solid rgba(42,38,34,.06);border-radius:10px;height:clamp(58px,5vw,78px);display:flex;align-items:center;justify-content:center;padding:0 clamp(10px,1.1vw,18px);}
+    .cli-grid .tile img{max-width:82%;max-height:60%;object-fit:contain;}
+    @media (max-width:900px){ .cli-grid{grid-template-columns:repeat(4,1fr);} }
+    @media (max-width:560px){ .cli-grid{grid-template-columns:repeat(2,1fr);} }
+  </style>
+  <section id="clients" data-screen-label="Clients" style="background:#E5DDCB;padding:clamp(60px,8vh,104px) clamp(20px,5vw,60px);">
+    <div style="max-width:1400px;margin:0 auto;">
+      <div style="max-width:720px;margin:0 auto;text-align:center;">
+        <div style="font-size:11px;font-weight:500;letter-spacing:.2em;color:#8A8276;">CLIENTS</div>
+        <h2 style="font-weight:400;font-size:clamp(26px,3.4vw,44px);line-height:1.4;letter-spacing:-0.01em;margin:22px 0 0;color:#211C17;">주요 교육 &amp; 컨설팅 기관</h2>
+      </div>
+      <div class="cli-grid">
+        <div class="tile"><img src="assets/reflogos-hd/samsung_e.svg" alt="삼성전자"></div>
+        <div class="tile"><img src="assets/reflogos-hd/hyundai.svg" alt="현대"></div>
+        <div class="tile"><img src="assets/reflogos/ban8.gif" alt="SK"></div>
+        <div class="tile"><img src="assets/reflogos/ban23.gif" alt="코오롱인더스트리"></div>
+        <div class="tile"><img src="assets/reflogos-hd/motorola.png" alt="모토로라"></div>
+        <div class="tile"><img src="assets/reflogos-hd/hana.svg" alt="하나은행"></div>
+        <div class="tile"><img src="assets/reflogos-hd/sc.svg" alt="SC제일은행"></div>
+        <div class="tile"><img src="assets/reflogos/ban6.gif" alt="중소기업중앙회"></div>
+        <div class="tile"><img src="assets/reflogos/ban7.gif" alt="이화여자대학교"></div>
+        <div class="tile"><img src="assets/reflogos/ban13.gif" alt="에듀윌"></div>
+        <div class="tile"><img src="assets/reflogos/ban19.gif" alt="한국여성정책연구원"></div>
+        <div class="tile"><img src="assets/reflogos-hd/mcst.svg" alt="문화체육관광부"></div>
+        <div class="tile"><img src="assets/reflogos/ban14.gif" alt="국무총리실"></div>
+        <div class="tile"><img src="assets/reflogos-hd/mois.svg" alt="행정안전부"></div>
+        <div class="tile"><img src="assets/reflogos-hd/moj.svg" alt="법무부"></div>
+        <div class="tile"><img src="assets/reflogos-hd/mogef.png" alt="여성가족부"></div>
+        <div class="tile"><img src="assets/reflogos-hd/kostat.png" alt="통계청"></div>
+        <div class="tile"><img src="assets/reflogos/ban4.gif" alt="합동참모본부"></div>
+        <div class="tile"><img src="assets/reflogos-hd/police.svg" alt="경찰청"></div>
+        <div class="tile"><img src="assets/reflogos/ban18.gif" alt="국토해양부"></div>
+        <div class="tile"><img src="assets/reflogos/ban20.gif" alt="지역발전위원회"></div>
+        <div class="tile"><img src="assets/reflogos/ban5.gif" alt="국가경쟁력강화위원회"></div>
+        <div class="tile"><img src="assets/reflogos-hd/saenuri.svg" alt="새누리당"></div>
+        <div class="tile"><img src="assets/reflogos/ban3.gif" alt="민주통합당"></div>
+      </div>
+      <div style="display:flex;justify-content:center;margin-top:clamp(36px,4.5vw,52px);">
+        <button type="button" class="btn-outline" style="display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(33,28,23,.5);color:#211C17;padding:13px 32px;font-size:13px;font-weight:400;letter-spacing:.06em;background:transparent;cursor:pointer;">더보기</button>
       </div>
     </div>
   </section>
