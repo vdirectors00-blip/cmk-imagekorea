@@ -1,0 +1,110 @@
+/* ============================================================
+   CMK Image Korea — shared styles for sub-pages
+   (home page keeps its own inline styles; this drives detail pages)
+   ============================================================ */
+
+@font-face {
+  font-family: 'Cafe24Classictype';
+  src: url('Cafe24Classictype-v1.1.woff2') format('woff2'),
+       url('Cafe24Classictype-v1.1.woff') format('woff');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+body {
+  margin: 0;
+  background: #FFFFFF;
+  color: #211C17;
+  font-family: 'Pretendard',-apple-system,BlinkMacSystemFont,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  word-break: keep-all;
+  text-wrap: pretty;
+}
+::selection { background: #211C17; color: #FFFFFF; }
+img { max-width: 100%; }
+
+/* 제목은 나눔명조 볼드 */
+h1, h2 { font-family: 'Nanum Myeongjo','Pretendard',serif; font-weight: 700; margin: 0; }
+h3, h4 { margin: 0; }
+
+/* ---------- layout helpers ---------- */
+.wrap { max-width: 1500px; margin: 0 auto; padding-left: clamp(20px,5vw,60px); padding-right: clamp(20px,5vw,60px); }
+.wrap-narrow { max-width: 1080px; }
+.section { padding: clamp(60px,8vh,104px) 0; }
+.section-band { background: #CEC4AF; }
+.eyebrow { font-size: 11px; font-weight: 500; letter-spacing: .2em; color: #8A8276; text-transform: uppercase; }
+.lead { font-weight: 300; font-size: clamp(15px,1.2vw,16.5px); line-height: 1.95; color: #5F5849; }
+.divider { height: 1px; background: rgba(42,38,34,.14); border: 0; margin: 0; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px,6vw,90px); align-items: center; }
+.grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: clamp(20px,3vw,44px); }
+.grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: clamp(18px,2.4vw,32px); }
+
+/* ---------- page hero ---------- */
+.page-hero { padding: clamp(140px,19vh,210px) 0 clamp(44px,6vh,72px); }
+.page-hero .eyebrow { color: #8A8276; }
+.page-hero h1 { font-size: clamp(34px,5vw,66px); line-height: 1.14; letter-spacing: -0.02em; margin: 18px 0 0; color: #211C17; }
+.page-hero .lead { margin: 22px 0 0; max-width: 52ch; }
+.crumb { font-size: 12px; letter-spacing: .04em; color: #8A8276; }
+.crumb a { color: inherit; text-decoration: none; }
+.crumb a:hover { opacity: .6; }
+
+/* ---------- cards ---------- */
+.card h3 { font-weight: 500; font-size: 19px; line-height: 1.4; color: #211C17; margin: 22px 0 8px; }
+.card p { font-weight: 300; font-size: 14px; line-height: 1.85; color: #5F5849; margin: 0; }
+.card .kicker { font-size: 11px; font-weight: 500; letter-spacing: .12em; color: #8A8276; }
+.imgbox { overflow: hidden; position: relative; border-radius: 6px; background: #EFEADF; }
+.imgbox img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 1.3s cubic-bezier(.16,.72,.28,1), filter 1.3s ease; }
+.imgzoom { overflow: hidden; position: relative; }
+.imgzoom:hover img { transform: scale(1.05); filter: saturate(1.04) brightness(1.02); }
+.ph { aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: #A89E88; font-size: 12px; letter-spacing: .1em; }
+
+/* ---------- buttons / links ---------- */
+.btn-outline { display: inline-flex; align-items: center; justify-content: center; border: 1px solid rgba(33,28,23,.5); color: #211C17; text-decoration: none; padding: 13px 30px; font-size: 13px; font-weight: 400; letter-spacing: .05em; background: transparent; cursor: pointer; transition: background .3s,color .3s,border-color .3s; }
+.btn-outline:hover { background: #211C17; border-color: #211C17; color: #FFFFFF; }
+.ulink { transition: opacity .3s; color: inherit; text-decoration: none; border-bottom: 1px solid rgba(42,38,34,.35); padding-bottom: 3px; }
+.ulink:hover { opacity: .55; }
+
+/* ---------- header ---------- */
+#siteHeader { position: fixed; top: 0; left: 0; right: 0; z-index: 60; transition: background .5s ease,color .5s ease,border-color .5s ease; background: transparent; color: #F4F1EA; border-bottom: 1px solid rgba(244,241,234,0); }
+#siteHeader.scrolled { background: rgba(244,241,234,.94); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); color: #2A2622; border-bottom: 1px solid rgba(42,38,34,.1); }
+.navlink { transition: opacity .3s; } .navlink:hover { opacity: .5; }
+.navlink.active { opacity: .5; }
+.navcontact { transition: opacity .3s; } .navcontact:hover { opacity: .55; }
+.langswitch { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 500; letter-spacing: .05em; }
+.langswitch a { color: inherit; text-decoration: none; transition: opacity .3s; }
+.langswitch a:hover { opacity: .55; }
+.langswitch .sep { opacity: .4; }
+
+/* ---------- mobile menu ---------- */
+.menu-toggle { display: none; }
+.mobile-menu { position: fixed; inset: 0; z-index: 80; background: rgba(14,11,7,.98); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px; opacity: 0; visibility: hidden; transition: opacity .35s ease; }
+.mobile-menu.open { opacity: 1; visibility: visible; }
+.mobile-menu .m-link { color: #EDE7DA; text-decoration: none; font-size: 25px; font-weight: 500; letter-spacing: .01em; transition: opacity .25s; }
+.mobile-menu .m-link:active { opacity: .5; }
+.menu-close { position: absolute; top: 24px; right: 22px; background: none; border: none; color: #EDE7DA; padding: 8px; cursor: pointer; }
+
+/* ---------- footer ---------- */
+.social { transition: background .25s,color .25s,transform .25s; }
+.social:hover { background: #211C17; color: #FFFFFF; transform: translateY(-3px); }
+
+/* ---------- reveal ---------- */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .9s ease, transform .9s cubic-bezier(.16,.72,.28,1); }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+/* ---------- responsive ---------- */
+@media (max-width: 900px) {
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr !important; }
+  #siteNav { display: none !important; }
+  #siteHeader > div { grid-template-columns: 1fr auto !important; }
+  #siteHeader .langswitch { display: none !important; }
+  #siteHeader > div > a > span:last-child { white-space: nowrap; }
+  .menu-toggle { display: inline-flex !important; position: absolute; top: 0; right: clamp(20px,5vw,60px); height: 88px; z-index: 61; align-items: center; }
+  .navcontact { display: none !important; }
+  .page-hero h1 { font-size: clamp(30px,8vw,44px); }
+}
+@media (max-width: 600px) {
+  .grid-foot { grid-template-columns: 1fr !important; gap: 28px !important; }
+}
