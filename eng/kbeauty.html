@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>K-Beauty · CMK Image Korea</title>
+<meta name="description" content="Customized beauty solutions by face type. Across the 8 face types — determined by the mix of generational feel and form — we propose the makeup, hair, and style that suit you.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+  /* 8가지 얼굴 타입: 데스크탑 4열 · 모바일 2열(2×4) */
+  .facetypes-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(14px,1.8vw,26px); }
+  @media (max-width:900px) { .facetypes-grid { grid-template-columns:repeat(2,1fr); gap:14px; } }
+</style>
+</head>
+<body data-page="kbeauty">
+
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; K-Beauty</div>
+      <div class="eyebrow" style="margin-top:20px;">GLOBAL · K-BEAUTY</div>
+      <h1>Face-Type<br>Beauty Solutions</h1>
+      <p class="lead">K-Beauty no longer imposes a single standard of beauty.</p>
+      <p class="lead" style="margin-top:12px;">Across the 8 face types — set by the mix of generational feel (child vs. adult) and form (straight vs. curved) — the ideal makeup, hair, and style differ.</p>
+    </div>
+  </section>
+  <div class="wrap"><hr class="divider"></div>
+
+  <!-- SELF DIAGNOSIS -->
+  <section class="section">
+    <div class="wrap">
+      <div style="max-width:720px;margin:0 auto;text-align:center;">
+        <div class="eyebrow reveal">SELF DIAGNOSIS</div>
+        <h2 class="reveal" style="font-size:clamp(24px,3vw,38px);margin:16px 0 0;">Face-Type Self Diagnosis</h2>
+        <p class="lead reveal" style="margin:16px auto 0;max-width:52ch;">With the “Face Type Diagnosis” book and the QR code, you can diagnose your own face type.</p>
+      </div>
+      <div class="reveal" style="margin-top:clamp(36px,5vw,56px);"><img src="../assets/kb-self.png" alt="Face-Type Self Diagnosis — “Face Type Diagnosis” book and QR code (kaotype.jp)" style="display:block;width:100%;max-width:1100px;margin:0 auto;height:auto;border-radius:8px;"></div>
+      <div style="display:flex;justify-content:center;margin-top:clamp(28px,3.5vw,40px);">
+        <a href="http://kaotype.jp/" target="_blank" rel="noopener" class="btn-outline reveal">Start Self Diagnosis</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOK -->
+  <section class="section section-band">
+    <div class="wrap">
+      <div class="reveal" style="max-width:620px;">
+        <div class="eyebrow">BOOK</div>
+        <h2 style="font-size:clamp(24px,3vw,38px);line-height:1.4;margin:16px 0 0;">“Face Type Diagnosis”</h2>
+        <p class="lead" style="margin-top:22px;">Clothes that truly suit you, found through face-type diagnosis.</p>
+        <p class="lead" style="margin-top:8px;font-size:14px;color:#8A8276;">By Okada Jitsuko · translated by Cho Mi-kyung & Oh Moo-seon.</p>
+        <p class="lead" style="margin-top:16px;">No trends, no techniques required.</p>
+        <p class="lead" style="margin-top:8px;">Matching your own face type is a styling secret you can use for life.</p>
+      </div>
+      <div class="reveal" style="display:flex;justify-content:center;align-items:center;gap:clamp(24px,3.5vw,56px);margin-top:clamp(36px,5vw,60px);flex-wrap:wrap;">
+        <div style="perspective:1600px;flex:0 0 auto;width:clamp(150px,22vw,210px);">
+          <img src="../assets/book.jpg" alt="“Face Type Diagnosis” book" style="display:block;width:100%;height:auto;transform:rotateY(-15deg);transform-origin:center center;border-radius:2px 4px 4px 2px;box-shadow:18px 26px 46px -18px rgba(33,28,23,.5);">
+        </div>
+        <img src="../assets/k-1.png" alt="Face Type Diagnosis — face type chart" style="flex:1 1 380px;min-width:0;max-width:760px;height:auto;">
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="wrap" style="text-align:center;">
+      <h2 class="reveal" style="font-size:clamp(24px,3.2vw,40px);">K-Beauty Inquiry</h2>
+      <p class="lead reveal" style="margin:18px auto 30px;max-width:44ch;">Leave an inquiry about lectures, collaborations, or solutions.</p>
+      <a href="index.html#contact" class="btn-outline reveal">Contact</a>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

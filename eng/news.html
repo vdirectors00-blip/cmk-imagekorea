@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>News &amp; Media · CMK Image Korea</title>
+<meta name="description" content="CMK Image Korea · An archive of CEO Cho Mi-kyung’s columns, interviews, and broadcast & media activity.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+  .news-card { display:flex; flex-direction:column; height:100%; text-decoration:none; color:inherit; }
+  .news-card .thumb { overflow:hidden; border-radius:6px; background:#EFEADF; aspect-ratio:3/2; margin-bottom:18px; box-shadow:0 18px 40px -30px rgba(33,28,23,.5); }
+  .news-card .thumb img { display:block; width:100%; height:100%; object-fit:cover; transition:transform 1.1s cubic-bezier(.16,.72,.28,1),filter 1.1s ease; }
+  .news-card:hover .thumb img { transform:scale(1.05); filter:saturate(1.05) brightness(1.02); }
+  .news-card .tag { font-size:11px; font-weight:600; letter-spacing:.1em; color:#8A8276; }
+  .news-card h3 { font-family:'Nanum Myeongjo','Pretendard',serif; font-weight:700; font-size:18.5px; line-height:1.45; margin:10px 0 0; color:#211C17; transition:opacity .3s; }
+  .news-card:hover h3 { opacity:.6; }
+  .news-card .date { margin-top:auto; padding-top:14px; font-size:12.5px; color:#8A8276; }
+  /* archive */
+  .arch-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:clamp(30px,3.5vw,44px); }
+  .arch-card { display:flex; flex-direction:column; gap:10px; min-height:104px; padding:18px 20px; background:#fff; border-radius:8px; text-decoration:none; transition:transform .25s, box-shadow .25s; }
+  .arch-card:hover { transform:translateY(-2px); box-shadow:0 14px 30px -20px rgba(33,28,23,.5); }
+  .arch-card:hover .arch-title { opacity:.62; }
+  .arch-title { font-size:14px; font-weight:500; line-height:1.5; color:#211C17; transition:opacity .3s; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .arch-meta { font-size:11.5px; color:#8A8276; margin-top:auto; }
+  @media (max-width:900px){ .arch-grid{ grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .arch-grid{ grid-template-columns:1fr;} }
+  /* video */
+  .vid-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(14px,1.8vw,24px); margin-top:clamp(30px,3.5vw,44px); }
+  .vid-card { display:block; text-decoration:none; }
+  .vid-thumb { position:relative; overflow:hidden; border-radius:8px; aspect-ratio:16/9; background:#000; box-shadow:0 18px 40px -30px rgba(33,28,23,.5); }
+  .vid-thumb img { display:block; width:100%; height:100%; object-fit:cover; transition:transform 1s cubic-bezier(.16,.72,.28,1),filter 1s ease; }
+  .vid-card:hover .vid-thumb img { transform:scale(1.06); filter:brightness(.9); }
+  .vid-play { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:0; height:0; border-style:solid; border-width:11px 0 11px 19px; border-color:transparent transparent transparent #fff; filter:drop-shadow(0 2px 6px rgba(0,0,0,.5)); }
+  .vid-play::before { content:""; position:absolute; left:-31px; top:-25px; width:50px; height:50px; border-radius:50%; background:rgba(20,17,14,.55); z-index:-1; }
+  @media (max-width:900px){ .vid-grid{ grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .vid-grid{ grid-template-columns:1fr;} }
+</style>
+</head>
+<body data-page="news">
+
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; News &amp; Media</div>
+      <div class="eyebrow" style="margin-top:20px;">NEWS &amp; MEDIA</div>
+      <h1>News &amp; Media</h1>
+    </div>
+  </section>
+  <div class="wrap"><hr class="divider"></div>
+
+  <!-- FEATURED PRESS -->
+  <section class="section">
+    <div class="wrap">
+      <div class="eyebrow reveal">COLUMN &amp; PRESS</div>
+      <h2 class="reveal" style="font-size:clamp(24px,3vw,38px);margin:16px 0 clamp(36px,5vw,52px);">Featured Columns & Press</h2>
+      <div class="grid-3" style="gap:clamp(30px,3.4vw,48px) clamp(24px,3vw,44px);">
+        <a class="news-card reveal" href="https://www.k-trendynews.com/news/articleView.html?idxno=203855" target="_blank" rel="noopener">
+          <div class="thumb"><img src="../assets/news/203855.jpg" alt="" loading="lazy"></div>
+          <div class="tag">K-Trendy News</div>
+          <h3>[몸짓의 경제학④] 고객 접점의 바디랭귀지, 서비스 생산성을 바꾸는 몸의 신호</h3>
+          <div class="date">2026.07.10</div>
+        </a>
+        <a class="news-card reveal" href="https://www.k-trendynews.com/news/articleView.html?idxno=203854" target="_blank" rel="noopener">
+          <div class="thumb"><img src="../assets/news/203854.jpg" alt="" loading="lazy"></div>
+          <div class="tag">K-Trendy News</div>
+          <h3>[몸짓의 경제학③] 자세와 걸음걸이, 리더십이 공간에 남기는 신뢰</h3>
+          <div class="date">2026.07.09</div>
+        </a>
+        <a class="news-card reveal" href="https://www.k-trendynews.com/news/articleView.html?idxno=203480" target="_blank" rel="noopener">
+          <div class="thumb"><img src="../assets/news/203480.jpg" alt="" loading="lazy"></div>
+          <div class="tag">K-Trendy News</div>
+          <h3>[퍼스널컬러와 색의 언어⑤] 색의 확장, 옷장을 넘어 행사와 공간까지</h3>
+          <div class="date">2026.06.29</div>
+        </a>
+        <a class="news-card reveal" href="https://www.k-trendynews.com/news/articleView.html?idxno=203471" target="_blank" rel="noopener">
+          <div class="thumb"><img src="../assets/news/203471.jpg" alt="" loading="lazy"></div>
+          <div class="tag">K-Trendy News</div>
+          <h3>[이미지 커뮤니케이션①] 이미지, 외모를 넘어 사회적 언어로</h3>
+          <div class="date">2026.06.20</div>
+        </a>
+        <a class="news-card reveal" href="https://www.k-trendynews.com/news/articleView.html?idxno=196938" target="_blank" rel="noopener">
+          <div class="thumb"><img src="../assets/news/196938.jpg" alt="" loading="lazy"></div>
+          <div class="tag">K-Trendy News</div>
+          <h3>[2026 컬러 트렌드②] 화이트, 가장 까다로운 컬러가 되다</h3>
+          <div class="date">2025.12.27</div>
+        </a>
+        <a class="news-card reveal" href="https://www.k-trendynews.com/news/articleView.html?idxno=191060" target="_blank" rel="noopener">
+          <div class="thumb"><img src="../assets/news/191060.jpg" alt="" loading="lazy"></div>
+          <div class="tag">K-Trendy News</div>
+          <h3>[K-BEAUTY TREND④] 내 얼굴, 나의 브랜드</h3>
+          <div class="date">2025.09.04</div>
+        </a>
+        <a class="news-card reveal" href="https://www.k-trendynews.com/news/articleView.html?idxno=189918" target="_blank" rel="noopener">
+          <div class="thumb"><img src="../assets/news/189918.jpg" alt="" loading="lazy"></div>
+          <div class="tag">K-Trendy News</div>
+          <h3>[이미지 경제학①] 퍼스널 브랜딩, ‘나를 관리하는 시대’</h3>
+          <div class="date">2025.08.06</div>
+        </a>
+        <a class="news-card reveal" href="https://www.k-trendynews.com/news/articleView.html?idxno=188358" target="_blank" rel="noopener">
+          <div class="thumb"><img src="../assets/news/188358.jpg" alt="" loading="lazy"></div>
+          <div class="tag">K-Trendy News</div>
+          <h3>[이미지의 경제학①] 퍼스널 컬러가 바꾸는 소비 결정</h3>
+          <div class="date">2025.07.14</div>
+        </a>
+        <a class="news-card reveal" href="https://www.k-trendynews.com/news/articleView.html?idxno=183563" target="_blank" rel="noopener">
+          <div class="thumb"><img src="../assets/news/183563.jpg" alt="" loading="lazy"></div>
+          <div class="tag">K-Trendy News</div>
+          <h3>[뷰티 트렌드①] 퍼스널 컬러 경제, K-뷰티 권력을 다시 쓴다</h3>
+          <div class="date">2025.04.29</div>
+        </a>
+        <a class="news-card reveal" href="https://www.k-trendynews.com/news/articleView.html?idxno=180645" target="_blank" rel="noopener">
+          <div class="thumb"><img src="../assets/news/180645.jpg" alt="" loading="lazy"></div>
+          <div class="tag">K-Trendy News</div>
+          <h3>[기획특집] ‘어울림’의 미학, 얼굴에서 시작되는 스타일링</h3>
+          <div class="date">2025.03.22</div>
+        </a>
+        <a class="news-card reveal" href="https://www.k-trendynews.com/news/articleView.html?idxno=180592" target="_blank" rel="noopener">
+          <div class="thumb"><img src="../assets/news/180592.jpg" alt="" loading="lazy"></div>
+          <div class="tag">K-Trendy News</div>
+          <h3>[KtN 기획] 럭셔리 향수의 귀환, 하이엔드 브랜드의 전략</h3>
+          <div class="date">2025.03.21</div>
+        </a>
+        <a class="news-card reveal" href="https://www.k-trendynews.com/news/articleView.html?idxno=180119" target="_blank" rel="noopener">
+          <div class="thumb"><img src="../assets/news/180119.jpg" alt="" loading="lazy"></div>
+          <div class="tag">K-Trendy News</div>
+          <h3>[컬러 트렌드] 퍼스널 컬러를 활용한 브랜딩 전략</h3>
+          <div class="date">2025.03.17</div>
+        </a>
+        <a class="news-card reveal" href="https://www.k-trendynews.com/news/articleView.html?idxno=180117" target="_blank" rel="noopener">
+          <div class="thumb"><img src="../assets/news/180117.jpg" alt="" loading="lazy"></div>
+          <div class="tag">K-Trendy News</div>
+          <h3>[컬러 트렌드] 2025년 퍼스널 컬러 트렌드</h3>
+          <div class="date">2025.03.12</div>
+        </a>
+        <a class="news-card reveal" href="https://www.k-trendynews.com/news/articleView.html?idxno=179474" target="_blank" rel="noopener">
+          <div class="thumb"><img src="../assets/news/179474.jpg" alt="" loading="lazy"></div>
+          <div class="tag">K-Trendy News</div>
+          <h3>[비즈니스 & 이미지 리포트] 첫인상을 결정하는 스타일링</h3>
+          <div class="date">2025.02.16</div>
+        </a>
+        <a class="news-card reveal" href="https://www.k-trendynews.com/news/articleView.html?idxno=179414" target="_blank" rel="noopener">
+          <div class="thumb"><img src="../assets/news/179414.jpg" alt="" loading="lazy"></div>
+          <div class="tag">K-Trendy News</div>
+          <h3>퍼스널 스타일링의 새로운 기준, 『Face Type 얼굴 타입 진단』 출간</h3>
+          <div class="date">2025.02.15</div>
+        </a>
+        <a class="news-card reveal" href="https://www.k-trendynews.com/news/articleView.html?idxno=61410" target="_blank" rel="noopener">
+          <div class="thumb"><img src="../assets/lab-color.jpg" alt="" loading="lazy"></div>
+          <div class="tag">K-Trendy News</div>
+          <h3>[칼럼] 비주얼 커뮤니케이션의 첫 시작 ‘퍼스널 컬러’</h3>
+          <div class="date">2021.01.05</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FULL ARCHIVE -->
+  <section class="section section-band">
+    <div class="wrap">
+      <div class="eyebrow reveal">ARCHIVE</div>
+      <h2 class="reveal" style="font-size:clamp(24px,3vw,38px);margin:16px 0 0;">Press Archive</h2>
+      <p class="lead reveal" style="margin:14px 0 0;">Press features and columns on CMK Image Korea and CEO Cho Mi-kyung — a total of <strong style="font-weight:500;color:#211C17;">112</strong>.</p>
+      <div class="arch-grid">
+        <a class="arch-card" href="https://cooknchefnews.com/news/view/1065593208211253" target="_blank" rel="noopener"><span class="arch-title">Cook&Chef News article</span><span class="arch-meta">Cook&Chef News · 2026.09.04</span></a>
+        <a class="arch-card" href="https://www.asiatoday.co.kr/kn/view.php?key=20170626010013255" target="_blank" rel="noopener"><span class="arch-title">[인터뷰] 조미경 CMK이미지코리아 대표 “사람의 첫인상, 비언어적 커뮤니케이션 93%가 결정한다“</span><span class="arch-meta">Asia Today</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=170620" target="_blank" rel="noopener"><span class="arch-title">[KtN 현장] 민주평통 김포시협의회, '이탈주민의 날' 기념 특별 행사 개최!</span><span class="arch-meta">K-Trendy News · 2024.07.09</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=179477" target="_blank" rel="noopener"><span class="arch-title">[패션 리포트] 나에게 맞는 패션 브랜드 찾기 – 얼굴 타입별 스타일 가이드</span><span class="arch-meta">K-Trendy News · 2025.02.18</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=179476" target="_blank" rel="noopener"><span class="arch-title">[이미지 컨설팅 리포트] 퍼스널 컬러·골격 진단을 넘어서 – 얼굴 타입 진단이 중요한 이유</span><span class="arch-meta">K-Trendy News · 2025.02.17</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=179481" target="_blank" rel="noopener"><span class="arch-title">[글로벌 패션 리포트] 얼굴 타입별 패션 스타일의 글로벌 트렌드 – 한·일·서구권 스타일 비교</span><span class="arch-meta">K-Trendy News · 2025.02.22</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=179753" target="_blank" rel="noopener"><span class="arch-title">[이미지 트렌드] 퍼스널 컬러, 공간 디자인의 새로운 패러다임</span><span class="arch-meta">K-Trendy News · 2025.02.27</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=179789" target="_blank" rel="noopener"><span class="arch-title">[이미지 트렌드] 사계절 컬러 시스템, 인테리어 전략으로 자리 잡다</span><span class="arch-meta">K-Trendy News · 2025.02.28</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=179904" target="_blank" rel="noopener"><span class="arch-title">[이미지 트렌드] 색채 심리학과 인테리어, 공간이 감정을 지배한다</span><span class="arch-meta">K-Trendy News · 2025.03.03</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=179997" target="_blank" rel="noopener"><span class="arch-title">[이미지 트렌드] 색의 결정권은 인간이 아닌 AI에게 넘어가는가?</span><span class="arch-meta">K-Trendy News · 2025.03.06</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=179998" target="_blank" rel="noopener"><span class="arch-title">[컬러 트렌드] 2025 컬러 트렌드, 퍼스널 컬러의 재해석: 감각적 브랜딩의 시대가 열린다</span><span class="arch-meta">K-Trendy News · 2025.03.06</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=180116" target="_blank" rel="noopener"><span class="arch-title">[컬러 트렌드] 2025 컬러 트렌드 심층 분석: 퍼스널 컬러와 글로벌 색채 흐름의 융합</span><span class="arch-meta">K-Trendy News · 2025.03.10</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=179909" target="_blank" rel="noopener"><span class="arch-title">[이미지 트렌드] 퍼스널 컬러가 소비자 경험(CX)에 미치는 영향</span><span class="arch-meta">K-Trendy News · 2025.03.10</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=180076" target="_blank" rel="noopener"><span class="arch-title">[이미지 트렌드] 웰니스 &amp; 힐링 인테리어, 색이 주는 치유의 힘</span><span class="arch-meta">K-Trendy News · 2025.03.08</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=180118" target="_blank" rel="noopener"><span class="arch-title">[컬러 트렌드] AI 퍼스널 컬러 컨설팅, 신뢰할 수 있을까?</span><span class="arch-meta">K-Trendy News · 2025.03.14</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=180120" target="_blank" rel="noopener"><span class="arch-title">[컬러 트렌드] 사계절 퍼스널 컬러 팔레트, 실제 적용 사례 분석</span><span class="arch-meta">K-Trendy News · 2025.03.15</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=180121" target="_blank" rel="noopener"><span class="arch-title">[컬러 트렌드] 퍼스널 컬러와 향기, 감각적 브랜딩의 시대</span><span class="arch-meta">K-Trendy News · 2025.03.17</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=180631" target="_blank" rel="noopener"><span class="arch-title">[트렌드 기획 ①] 퍼스널 컬러 시대, ‘어울리는 색’이 새로운 권력이 되다</span><span class="arch-meta">K-Trendy News · 2025.03.22</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=180632" target="_blank" rel="noopener"><span class="arch-title">[트렌드 기획 ②] 퍼스널 컬러의 심리학: 색이 자아를 말하다</span><span class="arch-meta">K-Trendy News · 2025.03.22</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=180633" target="_blank" rel="noopener"><span class="arch-title">[트렌드 기획 ③] 퍼스널 컬러와 패션 산업의 전략적 결합: 컬러 큐레이션의 경제학</span><span class="arch-meta">K-Trendy News · 2025.03.22</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=180634" target="_blank" rel="noopener"><span class="arch-title">[트렌드 기획 ④] 퍼스널 컬러를 넘어서: 초개인화 뷰티 전략의 시대</span><span class="arch-meta">K-Trendy News · 2025.03.22</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=180644" target="_blank" rel="noopener"><span class="arch-title">[기획특집] 맞춤형 이미지 구축 시대, 조형미의 정제와 자기 해석 사이에서</span><span class="arch-meta">K-Trendy News · 2025.03.22</span></a>
+        <a class="arch-card" href="https://www.munhaknews.com/news/articleView.html?idxno=79139" target="_blank" rel="noopener"><span class="arch-title">조미경의 색채 전략, 퍼스널 컬러가 브랜딩이 되는 순간</span><span class="arch-meta">Munhak News · 2025.04.01</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=180590" target="_blank" rel="noopener"><span class="arch-title">[KtN 기획] 조향 트렌드의 변화, ‘맞춤형 향수’ 시대의 도래</span><span class="arch-meta">K-Trendy News · 2025.03.21</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=183748" target="_blank" rel="noopener"><span class="arch-title">[뷰티 트렌드②] 색채의 경제학, 한국 소비자를 다시 정의하다</span><span class="arch-meta">K-Trendy News · 2025.05.01</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=183753" target="_blank" rel="noopener"><span class="arch-title">[칼럼] 퍼스널 컬러 이후의 시대: 감각의 상품화, 개성의 기획화</span><span class="arch-meta">K-Trendy News · 2025.05.01</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=183786" target="_blank" rel="noopener"><span class="arch-title">[라이프스타일 트렌드①] 진단에서 큐레이션으로: 얼굴 타입의 정밀화가 바꾸는 소비 패턴</span><span class="arch-meta">K-Trendy News · 2025.05.02</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=183789" target="_blank" rel="noopener"><span class="arch-title">[라이프스타일 트렌드③] 얼굴형 진단은 어떻게 감정 자본이 되었는가</span><span class="arch-meta">K-Trendy News · 2025.05.02</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=183787" target="_blank" rel="noopener"><span class="arch-title">[라이프스타일 트렌드②] 얼굴형은 새로운 데이터다: 스타일링 추천 알고리즘의 진화</span><span class="arch-meta">K-Trendy News · 2025.05.02</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=183894" target="_blank" rel="noopener"><span class="arch-title">[뷰티 경제①] 감정의 색, 소비를 움직이다</span><span class="arch-meta">K-Trendy News · 2025.05.04</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=180589" target="_blank" rel="noopener"><span class="arch-title">[KtN 기획] 후각의 과학, 향기가 인간에게 미치는 영향</span><span class="arch-meta">K-Trendy News · 2025.03.21</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=180593" target="_blank" rel="noopener"><span class="arch-title">[KtN 기획] 디지털 조향 시대, AI와 기술이 바꾸는 조향 산업</span><span class="arch-meta">K-Trendy News · 2025.03.21</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=180594" target="_blank" rel="noopener"><span class="arch-title">[KtN 기획] 글로벌 향수 시장 전망, 아시아 시장의 부상</span><span class="arch-meta">K-Trendy News · 2025.03.21</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=180595" target="_blank" rel="noopener"><span class="arch-title">[칼럼] 향기의 시대, 나를 찾아가는 여정</span><span class="arch-meta">K-Trendy News · 2025.03.21</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=188359" target="_blank" rel="noopener"><span class="arch-title">[이미지의 경제학②] 이미지 컨설팅 산업의 성장, 퍼스널 브랜딩은 왜 돈이 되는가</span><span class="arch-meta">K-Trendy News · 2025.07.14</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=188362" target="_blank" rel="noopener"><span class="arch-title">[이미지의 경제학⑤] 지속가능성과 퍼스널 컬러: 윤리적 미학은 누구의 얼굴인가</span><span class="arch-meta">K-Trendy News · 2025.07.17</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=188361" target="_blank" rel="noopener"><span class="arch-title">[이미지의 경제학④] AI 이미지 컨설팅과 데이터 기반 퍼스널 브랜딩</span><span class="arch-meta">K-Trendy News · 2025.07.16</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=188360" target="_blank" rel="noopener"><span class="arch-title">[이미지의 경제학③] 문화 트렌드와 이미지 산업의 교차점: '나'를 재현하는 소비</span><span class="arch-meta">K-Trendy News · 2025.07.15</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=191057" target="_blank" rel="noopener"><span class="arch-title">[K-BEAUTY TREND①] K-뷰티, 유행을 넘어 진단으로</span><span class="arch-meta">K-Trendy News · 2025.08.28</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=189921" target="_blank" rel="noopener"><span class="arch-title">[이미지 경제②] 퍼스널 컬러, ‘나를 기억하게 하는 색의 힘’</span><span class="arch-meta">K-Trendy News · 2025.08.07</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=191058" target="_blank" rel="noopener"><span class="arch-title">[K-BEAUTY TREND②] 귀여움의 힘, Z세대와 아이타입</span><span class="arch-meta">K-Trendy News · 2025.08.31</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=192576" target="_blank" rel="noopener"><span class="arch-title">[컬러 경제②] 불안한 시대, 소비자는 파랑과 빨강을 찾는다</span><span class="arch-meta">K-Trendy News · 2025.10.03</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=192578" target="_blank" rel="noopener"><span class="arch-title">[컬러 경제③] 옐로와 그린, 희망과 회복의 색이 돌아오다</span><span class="arch-meta">K-Trendy News · 2025.10.04</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=192582" target="_blank" rel="noopener"><span class="arch-title">[컬러 경제⑦] 블랙, 권위와 저항의 이중 언어</span><span class="arch-meta">K-Trendy News · 2025.10.11</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=192583" target="_blank" rel="noopener"><span class="arch-title">[컬러 경제⑧] 화이트, 순수와 리셋의 언어</span><span class="arch-meta">K-Trendy News · 2025.10.12</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=193035" target="_blank" rel="noopener"><span class="arch-title">[컬러 정치①] 블루 리더십, 신뢰의 심리와 전략</span><span class="arch-meta">K-Trendy News · 2025.10.12</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=193036" target="_blank" rel="noopener"><span class="arch-title">[컬러 정치②] 화이트 리더십, 공감의 구조와 절차의 언어</span><span class="arch-meta">K-Trendy News · 2025.10.13</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=193037" target="_blank" rel="noopener"><span class="arch-title">[컬러 정치 ③] 레드 리더십, 긴장을 질서로 바꾸는 기술</span><span class="arch-meta">K-Trendy News · 2025.10.14</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=193038" target="_blank" rel="noopener"><span class="arch-title">[컬러 정치 ④] 옐로 리더십, 실용으로 작동한 위기 대응</span><span class="arch-meta">K-Trendy News · 2025.10.15</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=193007" target="_blank" rel="noopener"><span class="arch-title">[칼럼]감정이 상품이 된 시대, 브랜드는 무엇을 잃고 있는가</span><span class="arch-meta">K-Trendy News · 2025.10.16</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=193020" target="_blank" rel="noopener"><span class="arch-title">[칼럼]브랜드의 설계도, 절제가 만들어내는 불평등의 구조</span><span class="arch-meta">K-Trendy News · 2025.10.19</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=203427" target="_blank" rel="noopener"><span class="arch-title">[USANA①] 건강기능식품, 2026년 루틴 소비로 재편</span><span class="arch-meta">K-Trendy News · 2026.06.18</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=203472" target="_blank" rel="noopener"><span class="arch-title">[이미지 커뮤니케이션②] 상품은 기능, 사람은 신뢰로 차별화</span><span class="arch-meta">K-Trendy News · 2026.06.21</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=203473" target="_blank" rel="noopener"><span class="arch-title">[이미지 커뮤니케이션③] 첫인상, 말보다 먼저 도착하는 정보</span><span class="arch-meta">K-Trendy News · 2026.06.22</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=203474" target="_blank" rel="noopener"><span class="arch-title">[이미지 커뮤니케이션④] 비주얼 커뮤니케이션, 설득의 출발점</span><span class="arch-meta">K-Trendy News · 2026.06.23</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=203475" target="_blank" rel="noopener"><span class="arch-title">[이미지 커뮤니케이션⑤] 어울림, 취향보다 정확한 자기 언어</span><span class="arch-meta">K-Trendy News · 2026.06.24</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=203476" target="_blank" rel="noopener"><span class="arch-title">[퍼스널컬러와 색의 언어①] 퍼스널컬러, 좋아하는 색보다 어울리는 색</span><span class="arch-meta">K-Trendy News · 2026.06.25</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=203477" target="_blank" rel="noopener"><span class="arch-title">[퍼스널컬러와 색의 언어②] 웜톤과 쿨톤, 얼굴빛을 가르는 색의 온도</span><span class="arch-meta">K-Trendy News · 2026.06.26</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=203478" target="_blank" rel="noopener"><span class="arch-title">[퍼스널컬러와 색의 언어③] 사계절 컬러, 얼굴빛에 남는 네 가지 색감</span><span class="arch-meta">K-Trendy News · 2026.06.27</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=203479" target="_blank" rel="noopener"><span class="arch-title">[퍼스널컬러와 색의 언어④] 컬러진단 천, 얼굴빛을 가르는 색의 반응</span><span class="arch-meta">K-Trendy News · 2026.06.28</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=203678" target="_blank" rel="noopener"><span class="arch-title">[이미지 컨설팅④] 조르지오 아르마니 SS27, 그레이와 화이트로 덜어낸 남성 이미지</span><span class="arch-meta">K-Trendy News · 2026.06.29</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=203852" target="_blank" rel="noopener"><span class="arch-title">[몸짓의 경제학①] 말보다 먼저 읽히는 신뢰, 거래를 움직이는 몸의 신호</span><span class="arch-meta">K-Trendy News · 2026.07.07</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=203836" target="_blank" rel="noopener"><span class="arch-title">[얼굴형·오픈 페이스·헤어스타일①] 얼굴형, 머리보다 먼저 보이는 얼굴선</span><span class="arch-meta">K-Trendy News · 2026.07.07</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=203853" target="_blank" rel="noopener"><span class="arch-title">[몸짓의 경제학②] 악수와 손동작, 협상 테이블의 힘의 균형</span><span class="arch-meta">K-Trendy News · 2026.07.08</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=203837" target="_blank" rel="noopener"><span class="arch-title">[얼굴형·오픈 페이스·헤어스타일②] 오픈 페이스, 가르마가 바꾸는 얼굴의 방향</span><span class="arch-meta">K-Trendy News · 2026.07.08</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=203909" target="_blank" rel="noopener"><span class="arch-title">Schiaparelli FW27 이미지컨설팅, 강한 옷이 사람을 고르는 순간</span><span class="arch-meta">K-Trendy News · 2026.07.08</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=203910" target="_blank" rel="noopener"><span class="arch-title">[샤넬 ‘Gaby and the Beanstalk’①] 마티유 블라지, 콩나무 아래에서 다시 쓴 샤넬 오트쿠튀르</span><span class="arch-meta">K-Trendy News · 2026.07.08</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=203839" target="_blank" rel="noopener"><span class="arch-title">[얼굴형·오픈 페이스·헤어스타일④] 직선과 곡선, 얼굴선에 맞는 헤어 라인</span><span class="arch-meta">K-Trendy News · 2026.07.10</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=203928" target="_blank" rel="noopener"><span class="arch-title">[샤넬 이미지컨설팅①] 샤넬 오트쿠튀르, 어울리는 사람의 조건</span><span class="arch-meta">K-Trendy News · 2026.07.10</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=203856" target="_blank" rel="noopener"><span class="arch-title">[몸짓의 경제학⑤] 비언어 신호, 브랜드 가치가 되는 조직의 태도</span><span class="arch-meta">K-Trendy News · 2026.07.11</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=203840" target="_blank" rel="noopener"><span class="arch-title">[얼굴형·오픈 페이스·헤어스타일⑤] 헤어스타일, 사진과 대면 자리에서 남는 얼굴</span><span class="arch-meta">K-Trendy News · 2026.07.11</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=203932" target="_blank" rel="noopener"><span class="arch-title">[샤넬 이미지컨설팅④] 시스루와 플루, 복합형 이미지가 안정적으로 소화하는 샤넬 드레스</span><span class="arch-meta">K-Trendy News · 2026.07.13</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=203846" target="_blank" rel="noopener"><span class="arch-title">[자세·걸음걸이·바디랭귀지①] 자세, 말보다 먼저 보이는 신뢰</span><span class="arch-meta">K-Trendy News · 2026.07.12</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=203841" target="_blank" rel="noopener"><span class="arch-title">[스타일 시스템과 비즈니스 이미지①] 스타일, 옷차림보다 먼저 읽히는 질서</span><span class="arch-meta">K-Trendy News · 2026.07.12</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=203843" target="_blank" rel="noopener"><span class="arch-title">[스타일 시스템과 비즈니스 이미지③] 소재와 패턴, 옷의 질감이 남기는 인상</span><span class="arch-meta">K-Trendy News · 2026.07.14</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=203933" target="_blank" rel="noopener"><span class="arch-title">[샤넬 이미지컨설팅⑤] 블랙 피날레와 퍼스널 컬러, 샤넬식 고급 이미지의 조건</span><span class="arch-meta">K-Trendy News · 2026.07.14</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=203848" target="_blank" rel="noopener"><span class="arch-title">[자세·걸음걸이·바디랭귀지③] 손동작과 악수, 가까운 거리에서 드러나는 태도</span><span class="arch-meta">K-Trendy News · 2026.07.14</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=204453" target="_blank" rel="noopener"><span class="arch-title">[뷰티경제①] K뷰티, 제품 다음의 시장</span><span class="arch-meta">K-Trendy News · 2026.08.03</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=204455" target="_blank" rel="noopener"><span class="arch-title">[뷰티경제③] 맞춤형 뷰티, 추천에서 생산까지</span><span class="arch-meta">K-Trendy News · 2026.08.05</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=204457" target="_blank" rel="noopener"><span class="arch-title">[뷰티경제④] 외국인이 예약한 한국의 아름다움</span><span class="arch-meta">K-Trendy News · 2026.08.06</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=204454" target="_blank" rel="noopener"><span class="arch-title">[뷰티경제②] 퍼스널컬러, 세분화가 만든 프리미엄</span><span class="arch-meta">K-Trendy News · 2026.08.04</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=204458" target="_blank" rel="noopener"><span class="arch-title">[뷰티경제⑤] 얼굴 데이터, 뷰티산업의 새 원료</span><span class="arch-meta">K-Trendy News · 2026.08.07</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=204643" target="_blank" rel="noopener"><span class="arch-title">CMK 이미지코리아, THE MOST Valuables 2026 참가…퍼스널 컬러 세미나·개인 진단 운영</span><span class="arch-meta">K-Trendy News · 2026.08.11</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=204729" target="_blank" rel="noopener"><span class="arch-title">[이미지컨설팅] 길고 넓어진 실루엣, 누구에게 잘 어울릴까</span><span class="arch-meta">K-Trendy News · 2026.08.14</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=204757" target="_blank" rel="noopener"><span class="arch-title">[THE MOST Valuables 2026①] 파인 주얼리 넘어 기술·유통·체험까지…전시장의 경계 넓힌 5회째 THE MOST</span><span class="arch-meta">K-Trendy News · 2026.08.16</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=204764" target="_blank" rel="noopener"><span class="arch-title">[THE MOST Valuables 2026⑥] 퍼스널 컬러·골격·얼굴선까지…주얼리 선택 기준 세분화</span><span class="arch-meta">K-Trendy News · 2026.08.16</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=204774" target="_blank" rel="noopener"><span class="arch-title">[주얼리경제②] 금값 37% 높고 은도 큰 변동…골드·실버 선택에 ‘퍼스널 컬러’</span><span class="arch-meta">K-Trendy News · 2026.08.17</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=197048" target="_blank" rel="noopener"><span class="arch-title">[얼굴 인사이트②] 흐릿한 얼굴은 선택받지 않는다</span><span class="arch-meta">K-Trendy News · 2025.12.29</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=197052" target="_blank" rel="noopener"><span class="arch-title">[얼굴 인사이트⑥] AI 시대, 얼굴은 더 중요해졌다</span><span class="arch-meta">K-Trendy News · 2025.12.28</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=196941" target="_blank" rel="noopener"><span class="arch-title">[2026 컬러 트렌드⑤] 색은 줄고, 농도는 낮아졌다</span><span class="arch-meta">K-Trendy News · 2025.12.30</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=196942" target="_blank" rel="noopener"><span class="arch-title">[2026 컬러 트렌드⑥] 색보다 먼저 보이는 것은 질감이다</span><span class="arch-meta">K-Trendy News · 2025.12.31</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=197049" target="_blank" rel="noopener"><span class="arch-title">[얼굴 인사이트③] 동안의 퇴장, 안정감의 부상</span><span class="arch-meta">K-Trendy News · 2025.12.30</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=197053" target="_blank" rel="noopener"><span class="arch-title">[칼럼] 얼굴이 말하는 것</span><span class="arch-meta">K-Trendy News · 2025.12.28</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=197051" target="_blank" rel="noopener"><span class="arch-title">[얼굴 인사이트⑤] 자연스러움의 재정의</span><span class="arch-meta">K-Trendy News · 2026.01.01</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=196943" target="_blank" rel="noopener"><span class="arch-title">[2026 컬러 트렌드⑦] 컬러가 물러난 자리에서 브랜드는 무엇으로 말하는가</span><span class="arch-meta">K-Trendy News · 2026.01.01</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=199766" target="_blank" rel="noopener"><span class="arch-title">[이미지 정치②] 치밀하게 계산된 찰나의 미학</span><span class="arch-meta">K-Trendy News · 2026.02.16</span></a>
+        <a class="arch-card" href="https://www.k-trendynews.com/news/articleView.html?idxno=199771" target="_blank" rel="noopener"><span class="arch-title">[이미지 정치⑥] 포장이라는 편견의 함정</span><span class="arch-meta">K-Trendy News · 2026.02.20</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section class="section">
+    <div class="wrap">
+      <div class="eyebrow reveal">VIDEO</div>
+      <h2 class="reveal" style="font-size:clamp(24px,3vw,38px);margin:16px 0 0;">Video & Broadcast</h2>
+      <p class="lead reveal" style="margin:14px 0 0;">Lectures, broadcasts, and content videos from CMK Image Korea.</p>
+      <div class="vid-grid">
+        <a class="vid-card reveal" href="https://www.youtube.com/watch?v=pLgqXFjpVkw" target="_blank" rel="noopener">
+          <div class="vid-thumb"><img src="https://i.ytimg.com/vi/pLgqXFjpVkw/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
+        </a>
+        <a class="vid-card reveal" href="https://www.youtube.com/shorts/-07a8yuMm44" target="_blank" rel="noopener">
+          <div class="vid-thumb"><img src="https://i.ytimg.com/vi/-07a8yuMm44/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
+        </a>
+        <a class="vid-card reveal" href="https://www.youtube.com/watch?v=RBKYN2YdLa4" target="_blank" rel="noopener">
+          <div class="vid-thumb"><img src="https://i.ytimg.com/vi/RBKYN2YdLa4/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
+        </a>
+        <a class="vid-card reveal" href="https://www.youtube.com/watch?v=HkkELaL2yu8" target="_blank" rel="noopener">
+          <div class="vid-thumb"><img src="https://i.ytimg.com/vi/HkkELaL2yu8/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
+        </a>
+        <a class="vid-card reveal" href="https://www.youtube.com/watch?v=WHBMyGuVogA" target="_blank" rel="noopener">
+          <div class="vid-thumb"><img src="https://i.ytimg.com/vi/WHBMyGuVogA/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
+        </a>
+        <a class="vid-card reveal" href="https://www.youtube.com/watch?v=FA1fYE1z3Fk" target="_blank" rel="noopener">
+          <div class="vid-thumb"><img src="https://i.ytimg.com/vi/FA1fYE1z3Fk/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
+        </a>
+        <a class="vid-card reveal" href="https://www.youtube.com/watch?v=fcKwxJl8KaI" target="_blank" rel="noopener">
+          <div class="vid-thumb"><img src="https://i.ytimg.com/vi/fcKwxJl8KaI/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
+        </a>
+        <a class="vid-card reveal" href="https://www.youtube.com/watch?v=XdEebCIax4k" target="_blank" rel="noopener">
+          <div class="vid-thumb"><img src="https://i.ytimg.com/vi/XdEebCIax4k/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
+        </a>
+        <a class="vid-card reveal" href="https://www.youtube.com/watch?v=mImHLVxN4pA" target="_blank" rel="noopener">
+          <div class="vid-thumb"><img src="https://i.ytimg.com/vi/mImHLVxN4pA/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
+        </a>
+        <a class="vid-card reveal" href="https://www.youtube.com/watch?v=R3rNK58bMBE" target="_blank" rel="noopener">
+          <div class="vid-thumb"><img src="https://i.ytimg.com/vi/R3rNK58bMBE/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
+        </a>
+        <a class="vid-card reveal" href="https://www.youtube.com/watch?v=JH2FsKsnP_U" target="_blank" rel="noopener">
+          <div class="vid-thumb"><img src="https://i.ytimg.com/vi/JH2FsKsnP_U/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
+        </a>
+        <a class="vid-card reveal" href="https://www.youtube.com/watch?v=NogTJLGtj6U" target="_blank" rel="noopener">
+          <div class="vid-thumb"><img src="https://i.ytimg.com/vi/NogTJLGtj6U/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
+        </a>
+        <a class="vid-card reveal" href="https://www.youtube.com/watch?v=2QwoQxDBJZE" target="_blank" rel="noopener">
+          <div class="vid-thumb"><img src="https://i.ytimg.com/vi/2QwoQxDBJZE/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
+        </a>
+        <a class="vid-card reveal" href="https://www.youtube.com/watch?v=VdmIwHrcE7w" target="_blank" rel="noopener">
+          <div class="vid-thumb"><img src="https://i.ytimg.com/vi/VdmIwHrcE7w/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
+        </a>
+        <a class="vid-card reveal" href="https://www.youtube.com/watch?v=FH6n00zTqIQ" target="_blank" rel="noopener">
+          <div class="vid-thumb"><img src="https://i.ytimg.com/vi/FH6n00zTqIQ/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
+        </a>
+        <a class="vid-card reveal" href="https://www.youtube.com/watch?v=4Zpj7EfEdCA" target="_blank" rel="noopener">
+          <div class="vid-thumb"><img src="https://i.ytimg.com/vi/4Zpj7EfEdCA/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
+        </a>
+        <a class="vid-card reveal" href="https://www.youtube.com/watch?v=Usv1DEVCFWc" target="_blank" rel="noopener">
+          <div class="vid-thumb"><img src="https://i.ytimg.com/vi/Usv1DEVCFWc/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
+        </a>
+        <a class="vid-card reveal" href="https://www.youtube.com/watch?v=DC2CjTownGA" target="_blank" rel="noopener">
+          <div class="vid-thumb"><img src="https://i.ytimg.com/vi/DC2CjTownGA/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
+        </a>
+        <a class="vid-card reveal" href="https://www.youtube.com/watch?v=Z1pGowHc76A" target="_blank" rel="noopener">
+          <div class="vid-thumb"><img src="https://i.ytimg.com/vi/Z1pGowHc76A/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
+        </a>
+        <a class="vid-card reveal" href="https://www.youtube.com/watch?v=h2n2-jhfzoc" target="_blank" rel="noopener">
+          <div class="vid-thumb"><img src="https://i.ytimg.com/vi/h2n2-jhfzoc/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
+        </a>
+        <a class="vid-card reveal" href="https://www.youtube.com/watch?v=2dnI0I6e-dg" target="_blank" rel="noopener">
+          <div class="vid-thumb"><img src="https://i.ytimg.com/vi/2dnI0I6e-dg/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
+        </a>
+        <a class="vid-card reveal" href="https://www.youtube.com/watch?v=yHJ9LHoCboQ" target="_blank" rel="noopener">
+          <div class="vid-thumb"><img src="https://i.ytimg.com/vi/yHJ9LHoCboQ/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
+        </a>
+        <a class="vid-card reveal" href="https://www.youtube.com/watch?v=KbQqFLORS2I" target="_blank" rel="noopener">
+          <div class="vid-thumb"><img src="https://i.ytimg.com/vi/KbQqFLORS2I/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
+        </a>
+        <a class="vid-card reveal" href="https://www.youtube.com/watch?v=VDLo0rlztnU" target="_blank" rel="noopener">
+          <div class="vid-thumb"><img src="https://i.ytimg.com/vi/VDLo0rlztnU/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
+        </a>
+        <a class="vid-card reveal" href="https://www.youtube.com/watch?v=V2NYmgw-UZ8" target="_blank" rel="noopener">
+          <div class="vid-thumb"><img src="https://i.ytimg.com/vi/V2NYmgw-UZ8/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
+        </a>
+        <a class="vid-card reveal" href="https://www.youtube.com/watch?v=8xyr4yl1ZrE" target="_blank" rel="noopener">
+          <div class="vid-thumb"><img src="https://i.ytimg.com/vi/8xyr4yl1ZrE/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
+        </a>
+        <a class="vid-card reveal" href="https://www.youtube.com/watch?v=LnM3J_st3SQ" target="_blank" rel="noopener">
+          <div class="vid-thumb"><img src="https://i.ytimg.com/vi/LnM3J_st3SQ/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
+        </a>
+        <a class="vid-card reveal" href="https://youtu.be/S8GQ-Sauj1k" target="_blank" rel="noopener">
+          <div class="vid-thumb"><img src="https://i.ytimg.com/vi/S8GQ-Sauj1k/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
+        </a>
+      </div>
+      <div style="margin-top:clamp(36px,4.5vw,52px);">
+        <a href="https://www.youtube.com/results?search_query=cmk+이미지코리아" target="_blank" rel="noopener" class="btn-outline reveal">More on YouTube</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="section section-band">
+    <div class="wrap" style="text-align:center;">
+      <div class="eyebrow reveal">BLOG</div>
+      <h2 class="reveal" style="font-size:clamp(24px,3vw,38px);margin:16px 0 0;">Official Blog</h2>
+      <p class="lead reveal" style="margin:14px auto 30px;max-width:44ch;">Find news and notices from CMK Image Korea.</p>
+      <a href="https://blog.naver.com/cmkimage" target="_blank" rel="noopener" class="btn-outline reveal">Visit Naver Blog</a>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

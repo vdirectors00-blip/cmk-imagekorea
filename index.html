@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CMK Image Korea · 리더의 이미지를 전략으로 설계합니다</title>
-<meta name="description" content="CMK Image Korea는 20여 년간 기업·금융·공공기관 리더의 인상, 태도, 언어를 하나의 전략으로 설계해 온 이미지 컨설팅 그룹입니다.">
+<meta name="description" content="CMK Image Korea는 25여 년간 기업·금융·공공기관 리더의 인상, 태도, 언어를 하나의 전략으로 설계해 온 이미지 컨설팅 그룹입니다.">
 <meta property="og:title" content="CMK Image Korea">
 <meta property="og:description" content="대한민국 대표 이미지컨설턴트로서 Creative Expert Group의 자긍심을 이어갑니다.">
 <meta property="og:type" content="website">
@@ -51,20 +51,40 @@
   }
   @keyframes cmkFall { 0% { transform: translateY(0); opacity:.8 } 50% { opacity:.15 } 100% { transform: translateY(16px); opacity:.8 } }
 
-  /* hero image carousel (6 slides, cross-fade) */
-  .hero-slide { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; opacity:0; filter:brightness(1.17) contrast(0.96) saturate(1.03); animation:cmkHero 30s ease-in-out infinite; }
-  .hero-slide:nth-child(1){ animation-delay:0s; } .hero-slide:nth-child(2){ animation-delay:6s; }
-  .hero-slide:nth-child(3){ animation-delay:12s; } .hero-slide:nth-child(4){ animation-delay:18s; }
-  .hero-slide:nth-child(5){ animation-delay:24s; }
-  @keyframes cmkHero { 0% { opacity:0 } 3% { opacity:1 } 16% { opacity:1 } 22% { opacity:0 } 100% { opacity:0 } }
+  /* HERO — 좌측 화이트 멘트 / 우측 사진, 4장 슬라이드 */
+  .hero { position:relative; height:100svh; min-height:640px; overflow:hidden; background:#FFFFFF; }
+  .hero-bg { position:absolute; inset:0; z-index:0; }
+  .hero-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; opacity:0; }
+  .hero-img.is-active { opacity:1; }
+  .hero-img.is-in { opacity:1; z-index:2; transition:opacity 1.2s ease; }
+  .hero-fade { position:absolute; inset:0; z-index:1; background:linear-gradient(100deg, #FFFFFF 0%, #FFFFFF 25%, rgba(255,255,255,.78) 36%, rgba(255,255,255,.26) 50%, rgba(255,255,255,0) 62%); }
+  .hero-topscrim { position:absolute; top:0; left:0; right:0; height:160px; z-index:1; background:linear-gradient(to bottom, rgba(255,255,255,.9), rgba(255,255,255,0)); }
+  .hero-inner { position:relative; z-index:3; height:100%; max-width:1500px; margin:0 auto; padding:0 clamp(20px,5vw,60px); display:flex; align-items:center; }
+  .hero-text { max-width:500px; }
+  .hero-main { font-family:'Nanum Myeongjo','Pretendard',serif; font-weight:800; font-size:clamp(30px,4.2vw,60px); line-height:1.2; letter-spacing:-0.015em; color:#211C17; margin:0; }
+  .hero-sub { font-weight:400; font-size:clamp(14px,1.25vw,17.5px); line-height:1.85; color:#5F5849; margin:24px 0 0; }
+  .hero-main, .hero-sub { opacity:0; }
+  @keyframes rvUp   { from { opacity:0; transform:translateY(30px); }  to { opacity:1; transform:none; } }
+  @keyframes rvDown { from { opacity:0; transform:translateY(-30px); } to { opacity:1; transform:none; } }
+  @keyframes rvLeft { from { opacity:0; transform:translateX(-36px); } to { opacity:1; transform:none; } }
+  @keyframes rvRight{ from { opacity:0; transform:translateX(36px); }  to { opacity:1; transform:none; } }
+  .hero-dots { position:absolute; z-index:3; bottom:clamp(26px,5vh,48px); left:clamp(20px,5vw,60px); display:flex; gap:11px; }
+  .hero-dot { width:9px; height:9px; padding:0; border-radius:50%; border:1px solid rgba(33,28,23,.55); background:transparent; cursor:pointer; transition:background .3s,border-color .3s; }
+  .hero-dot.on { background:#211C17; border-color:#211C17; }
   @media (prefers-reduced-motion: reduce) {
-    .hero-slide { animation:none; }
-    .hero-slide:nth-child(1){ opacity:1; }
+    .hero-img.is-in { transition:none; }
+    .hero-main, .hero-sub { opacity:1 !important; transform:none !important; animation:none !important; }
+  }
+  @media (max-width: 760px) {
+    .hero-fade { background:linear-gradient(145deg, #FFFFFF 0%, #FFFFFF 26%, rgba(255,255,255,.8) 50%, rgba(255,255,255,.4) 76%, rgba(255,255,255,.18) 100%); }
+    .hero-main { font-size:clamp(27px,7.5vw,40px); }
+    .hero-text { max-width:100%; }
   }
 
   /* header (scroll state) */
-  #siteHeader { position:fixed; top:0; left:0; right:0; z-index:60; transition:background .5s ease,color .5s ease,border-color .5s ease; background:transparent; color:#F4F1EA; border-bottom:1px solid rgba(244,241,234,0); }
+  #siteHeader { position:fixed; top:0; left:0; right:0; z-index:60; transition:background .5s ease,color .5s ease,border-color .5s ease; background:transparent; color:#211C17; border-bottom:1px solid rgba(244,241,234,0); }
   #siteHeader.scrolled { background:rgba(244,241,234,.94); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); color:#2A2622; border-bottom:1px solid rgba(42,38,34,.1); }
+  @media (max-width: 600px) { #siteHeader img { height:42px !important; } }
 
   /* interactions ported from style-hover / style-focus */
   .navlink { transition:opacity .3s; }
@@ -113,14 +133,11 @@
     #siteHeader > div > a > span:last-child { white-space:nowrap; }
     .menu-toggle { display:inline-flex !important; position:absolute; top:0; right:clamp(20px,5vw,60px); height:88px; z-index:61; }
     .navcontact { display:none !important; }
+    .navshop { display:none !important; }
     /* 모바일 1단 배치 시 데스크탑 지그재그(order)가 순서를 뒤섞음 → 전 섹션 사진 먼저로 통일 */
     .grid-2 .swap-wrap { order:-1 !important; }
     /* Hero: 가로(4:3) 사진이 세로 화면에서 과도하게 줌인되지 않도록 높이 축소해 가로를 더 노출 */
     #top { height:74svh !important; min-height:500px !important; }
-    /* Hero 슬라이드별: 피사체 위치에 맞춰 모바일 세로 크롭 위치 개별 조정 (4·5·6번은 중앙이 적절해 기본값 유지) */
-    /* 순서: 1=hero5(첫,기본 center), 2=hero1, 3=hero2, 4=hero4, 5=hero6 */
-    .hero-slide:nth-child(2) { object-position:86% center !important; } /* hero1 강사 우측 */
-    .hero-slide:nth-child(3) { object-position:30% center !important; } /* hero2 강사 좌측 */
   }
 
   /* 좁은 화면(≤480px): 푸터 1단 — FOLLOW 아이콘이 화면 밖으로 잘리던 문제 */
@@ -135,9 +152,8 @@
 
   <header id="siteHeader">
     <div style="max-width:1500px;margin:0 auto;padding:0 clamp(20px,5vw,60px);height:88px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;">
-      <a href="#top" style="justify-self:start;color:inherit;text-decoration:none;display:flex;align-items:baseline;gap:13px;">
-        <span class="brand-script" style="font-family:'Cafe24Classictype',serif;font-weight:400;font-size:34px;line-height:.9;letter-spacing:.02em;">CMK</span>
-        <span style="font-size:11px;font-weight:500;letter-spacing:.26em;opacity:.55;">IMAGE KOREA</span>
+      <a href="#top" style="justify-self:start;display:inline-flex;align-items:center;text-decoration:none;">
+        <img src="assets/logo.png" alt="CMK IMAGE KOREA" style="height:52px;width:auto;display:block;">
       </a>
       <nav id="siteNav" style="justify-self:center;display:flex;align-items:center;gap:clamp(16px,2.2vw,36px);">
         <a href="about.html" class="navlink" style="color:inherit;text-decoration:none;font-size:14px;font-weight:400;letter-spacing:.02em;">About</a>
@@ -149,7 +165,8 @@
         <a href="news.html" class="navlink" style="color:inherit;text-decoration:none;font-size:14px;font-weight:400;letter-spacing:.02em;">News</a>
       </nav>
       <div style="justify-self:end;display:flex;align-items:center;gap:20px;">
-        <span class="langswitch"><a class="cur" href="#top">KO</a><span class="sep">/</span><a class="alt" href="eng/">EN</a></span>
+        <span class="langswitch"><a class="cur" href="#top">KO</a><span class="sep">/</span><a class="alt" href="eng/index.html">EN</a></span>
+        <a href="https://smartstore.naver.com/cmkimage" target="_blank" rel="noopener" class="navshop" style="color:inherit;text-decoration:none;font-size:14px;font-weight:600;letter-spacing:.02em;padding-bottom:2px;border-bottom:1px solid currentColor;">SHOP&nbsp;&#8599;</a>
         <a href="#contact" class="navcontact" style="color:inherit;text-decoration:none;font-size:14px;font-weight:400;letter-spacing:.02em;padding-bottom:2px;border-bottom:1px solid currentColor;">Contact</a>
         <button id="menuToggle" class="menu-toggle" aria-label="메뉴 열기" style="background:none;border:none;color:inherit;padding:4px;cursor:pointer;align-items:center;justify-content:center;">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
@@ -170,30 +187,28 @@
     <a href="lab.html" class="m-link">Image Lab</a>
     <a href="kbeauty.html" class="m-link">K-Beauty</a>
     <a href="news.html" class="m-link">News</a>
+    <a href="https://smartstore.naver.com/cmkimage" target="_blank" rel="noopener" class="m-link">SHOP&nbsp;&#8599;</a>
     <a href="#contact" class="m-link">Contact</a>
-    <a href="eng/" class="m-link" style="font-size:16px;opacity:.6;letter-spacing:.08em;">English</a>
+    <a href="eng/index.html" class="m-link" style="font-size:16px;opacity:.6;letter-spacing:.08em;">English</a>
   </div>
 
   <!-- HERO -->
-  <section id="top" data-screen-label="Hero" style="position:relative;height:100svh;min-height:620px;background:#0E0B07;overflow:hidden;">
-    <div style="position:absolute;inset:0;z-index:0;">
-      <img class="hero-slide" src="assets/hero5.jpg" alt="" fetchpriority="high">
-      <img class="hero-slide" src="assets/hero1.jpg" alt="" loading="lazy">
-      <img class="hero-slide" src="assets/hero2.jpg" alt="" loading="lazy">
-      <img class="hero-slide" src="assets/hero4.jpg" alt="" loading="lazy">
-      <img class="hero-slide" src="assets/hero6.jpg" alt="" loading="lazy">
+  <section id="top" data-screen-label="Hero" class="hero">
+    <div class="hero-bg">
+      <img class="hero-img is-active" src="assets/hero-new1.jpg" alt="" fetchpriority="high">
+      <img class="hero-img" src="assets/hero-new2.jpg" alt="" loading="lazy">
+      <img class="hero-img" src="assets/hero-new3.jpg" alt="" loading="lazy">
+      <img class="hero-img" src="assets/hero-new4.jpg" alt="" loading="lazy">
     </div>
-    <div style="position:absolute;inset:0;z-index:2;background:linear-gradient(to top, rgba(8,6,4,.74) 0%, rgba(8,6,4,.24) 46%, rgba(8,6,4,.40) 100%);"></div>
-    <div style="position:absolute;inset:0;z-index:4;display:flex;flex-direction:column;justify-content:flex-end;max-width:1500px;margin:0 auto;left:0;right:0;padding:0 clamp(20px,5vw,60px) clamp(58px,9vh,104px);color:#FFFFFF;">
-      <div style="font-size:12px;font-weight:500;letter-spacing:.2em;color:rgba(244,241,234,.75);margin-bottom:26px;">IMAGE CONSULTING GROUP&nbsp;&nbsp;·&nbsp;&nbsp;SINCE 2008</div>
-      <h1 style="font-weight:600;font-size:clamp(38px,5.6vw,88px);line-height:1.10;letter-spacing:-0.01em;margin:0;max-width:18ch;">CMK IMAGE<br>KOREA</h1>
-      <p style="font-weight:500;font-size:clamp(16px,1.4vw,20px);line-height:1.7;color:rgba(244,241,234,.92);margin:30px 0 8px;max-width:46ch;">The image partner for Korea&rsquo;s leaders and institutions.</p>
-      <p style="font-weight:300;font-size:clamp(13px,1vw,15px);line-height:1.85;color:rgba(244,241,234,.66);margin:0;max-width:44ch;">CMK는 20여 년간 기업·금융·공공기관 리더의 인상, 태도, 언어를 하나의 전략으로 설계해 왔습니다.</p>
+    <div class="hero-fade"></div>
+    <div class="hero-topscrim"></div>
+    <div class="hero-inner">
+      <div class="hero-text show" id="heroText">
+        <h1 class="hero-main" id="heroMain">CREATIVE PARTNER<br>CMK IMAGE KOREA</h1>
+        <p class="hero-sub" id="heroSub">CMK 이미지코리아는 지금껏 경험하지 못한<br>Creative Service로 소통하겠습니다.</p>
+      </div>
     </div>
-    <div style="position:absolute;z-index:4;right:clamp(20px,5vw,60px);bottom:clamp(58px,9vh,104px);display:flex;flex-direction:column;align-items:center;gap:11px;">
-      <span style="font-size:10px;font-weight:500;letter-spacing:.22em;color:rgba(244,241,234,.55);writing-mode:vertical-rl;">SCROLL</span>
-      <span style="width:1px;height:44px;background:linear-gradient(to bottom, rgba(244,241,234,.55), rgba(244,241,234,0));animation:cmkFall 2.4s ease-in-out infinite;"></span>
-    </div>
+    <div class="hero-dots" id="heroDots" aria-label="히어로 슬라이드"></div>
   </section>
 
   <!-- (규모감/고객사 로고 섹션은 페이지 하단(footer 앞)으로 이동) -->
@@ -201,12 +216,12 @@
   <section id="about" data-screen-label="About" style="background:#FFFFFF;padding:clamp(60px,8vh,104px) clamp(20px,5vw,60px);">
     <div class="grid-2" style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(40px,6vw,96px);align-items:center;">
       <div class="imgzoom">
-        <img src="assets/founder-cho.jpg" alt="CMK Image Korea 창립자 조미경" style="display:block;width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;">
+        <img src="assets/about-main.jpg" alt="CMK Image Korea" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;">
       </div>
       <div>
         <div style="font-size:11px;font-weight:500;letter-spacing:.2em;color:#8A8276;">ABOUT</div>
         <h2 style="font-weight:400;font-size:clamp(28px,3.6vw,50px);line-height:1.32;letter-spacing:-0.02em;margin:22px 0 0;color:#211C17;">Creative Partner<br>CMK Image Korea</h2>
-        <p style="font-weight:300;font-size:15.5px;line-height:1.95;color:#5F5849;margin:28px 0 0;max-width:44ch;">20여 년간의 현장 컨설팅을 바탕으로, CMK Image Korea는 기업·금융·공공기관 리더의 이미지를 하나의 전략으로 설계합니다. 창립자 조미경을 중심으로 축적된 노하우로, 개인과 조직의 인상을 신뢰의 자산으로 만듭니다.</p>
+        <p style="font-weight:300;font-size:15.5px;line-height:1.95;color:#5F5849;margin:28px 0 0;max-width:44ch;">25여 년간의 현장 컨설팅을 바탕으로, CMK Image Korea는 기업·금융·공공기관 리더의 이미지를 하나의 전략으로 설계합니다. 축적된 노하우로, 개인과 조직의 인상을 신뢰의 자산으로 만듭니다.</p>
         <div style="margin-top:clamp(32px,4vw,44px);padding-top:28px;border-top:1px solid rgba(42,38,34,.16);">
           <blockquote style="font-weight:400;font-size:clamp(17px,1.6vw,21px);line-height:1.62;letter-spacing:-0.01em;margin:0;color:#211C17;">“개인의 이미지는 특별한 사람들만의 것이 아닙니다. 현대인 모두에게 필요한 전략입니다.”</blockquote>
           <div style="margin-top:18px;font-size:12px;font-weight:500;letter-spacing:.14em;color:#57503F;">조미경 · CHO MI-KYUNG, FOUNDER</div>
@@ -223,7 +238,7 @@
     <div style="position:relative;z-index:2;max-width:1160px;margin:0 auto;color:#FFFFFF;">
       <div style="max-width:720px;margin:0 auto;text-align:center;">
         <div style="font-size:11px;font-weight:500;letter-spacing:.22em;color:rgba(229,221,203,.58);">PHILOSOPHY</div>
-        <h2 style="font-weight:400;font-size:clamp(26px,3.5vw,48px);line-height:1.36;letter-spacing:-0.015em;margin:22px 0 0;">이미지를 브랜드처럼 설계합니다.</h2>
+        <h2 style="font-weight:400;font-size:clamp(26px,3.5vw,48px);line-height:1.36;letter-spacing:-0.015em;margin:22px 0 0;">이미지를 넘어, 브랜드를 설계합니다.</h2>
       </div>
       <div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(28px,4.5vw,68px);margin-top:clamp(56px,7vw,96px);align-items:start;">
         <div style="border-top:1px solid rgba(229,221,203,.26);padding-top:26px;">
@@ -247,11 +262,11 @@
 
   <!-- CLIENTS (규모감) — 시안4 · Philosophy 다음 배치 · 24개 전체 · 더보기=세부페이지(미구축) 버튼만 -->
   <style>
-    .cli-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:clamp(44px,5.5vw,66px);}
-    .cli-grid .tile{background:#fff;border:1px solid rgba(42,38,34,.06);border-radius:10px;height:clamp(58px,5vw,78px);display:flex;align-items:center;justify-content:center;padding:0 clamp(12px,1.3vw,20px);}
-    .cli-grid .tile img{max-width:80%;max-height:52%;object-fit:contain;}
+    .cli-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(18px,2.2vw,34px);margin-top:clamp(44px,5.5vw,66px);}
+    .cli-grid .tile{background:#fff;border-radius:8px;height:clamp(72px,6.6vw,104px);display:flex;align-items:center;justify-content:center;padding:0 clamp(6px,0.9vw,14px);}
+    .cli-grid .tile img{max-width:96%;max-height:88%;object-fit:contain;}
     @media (max-width:900px){ .cli-grid{grid-template-columns:repeat(4,1fr);} }
-    @media (max-width:560px){ .cli-grid{grid-template-columns:repeat(2,1fr);} }
+    @media (max-width:560px){ .cli-grid{grid-template-columns:repeat(3,1fr);} }
   </style>
   <section id="clients" data-screen-label="Clients" style="background:#CEC4AF;padding:clamp(60px,8vh,104px) clamp(20px,5vw,60px);">
     <div style="max-width:1400px;margin:0 auto;">
@@ -260,33 +275,115 @@
         <h2 style="font-weight:400;font-size:clamp(26px,3.4vw,44px);line-height:1.4;letter-spacing:-0.01em;margin:22px 0 0;color:#211C17;">주요 교육 &amp; 컨설팅 기관</h2>
       </div>
       <div class="cli-grid">
-        <div class="tile"><img src="assets/reflogos-clean/ban10.png" alt="삼성전자"></div>
-        <div class="tile"><img src="assets/reflogos-clean/ban11.png" alt="현대"></div>
-        <div class="tile"><img src="assets/reflogos-clean/ban8.png" alt="SK"></div>
-        <div class="tile"><img src="assets/reflogos-clean/ban23.png" alt="코오롱인더스트리"></div>
-        <div class="tile"><img src="assets/reflogos-clean/ban9.png" alt="모토로라"></div>
-        <div class="tile"><img src="assets/reflogos-clean/ban12.png" alt="하나은행"></div>
-        <div class="tile"><img src="assets/reflogos-clean/ban24.png" alt="SC제일은행"></div>
-        <div class="tile"><img src="assets/reflogos-clean/ban6.png" alt="중소기업중앙회"></div>
-        <div class="tile"><img src="assets/reflogos-clean/ban7.png" alt="이화여자대학교"></div>
-        <div class="tile"><img src="assets/reflogos-clean/ban13.png" alt="에듀윌"></div>
-        <div class="tile"><img src="assets/reflogos-clean/ban19.png" alt="한국여성정책연구원"></div>
-        <div class="tile"><img src="assets/reflogos-clean/ban1.png" alt="문화체육관광부"></div>
-        <div class="tile"><img src="assets/reflogos-clean/ban14.png" alt="국무총리실"></div>
-        <div class="tile"><img src="assets/reflogos-clean/ban16.png" alt="행정안전부"></div>
-        <div class="tile"><img src="assets/reflogos-clean/ban17.png" alt="법무부"></div>
-        <div class="tile"><img src="assets/reflogos-clean/ban21.png" alt="여성가족부"></div>
-        <div class="tile"><img src="assets/reflogos-clean/ban22.png" alt="통계청"></div>
-        <div class="tile"><img src="assets/reflogos-clean/ban4.png" alt="합동참모본부"></div>
-        <div class="tile"><img src="assets/reflogos-clean/ban15.png" alt="경찰청"></div>
-        <div class="tile"><img src="assets/reflogos-clean/ban18.png" alt="국토해양부"></div>
-        <div class="tile"><img src="assets/reflogos-clean/ban20.png" alt="지역발전위원회"></div>
-        <div class="tile"><img src="assets/reflogos-clean/ban5.png" alt="국가경쟁력강화위원회"></div>
-        <div class="tile"><img src="assets/reflogos-clean/ban2.png" alt="새누리당"></div>
-        <div class="tile"><img src="assets/reflogos-clean/ban3.png" alt="민주통합당"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_1_ban1.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_1_ban2.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_1_ban3.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_1_ban4.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_1_ban5.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_1_ban6.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_1_ban7.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_1_ban8.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_1_ban9.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_1_ban10.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_1_ban11.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_1_ban12.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_1_ban13.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_1_ban14.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_1_ban15.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_1_ban16.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_1_ban17.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_1_ban18.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_1_ban19.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_1_ban20.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_1_ban21.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_1_ban22.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_1_ban23.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_1_ban24.png" alt="" loading="lazy"></div>
+      </div>
+      <div class="cli-grid" id="cliMore" style="display:none;">
+        <div class="tile"><img src="assets/reflogos-crop/s13_1_ban25.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_2_ban1.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_2_ban2.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_2_ban3.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_2_ban4.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_2_ban5.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_2_ban6.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_2_ban7.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_2_ban8.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_2_ban9.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_2_ban10.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_2_ban11.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_2_ban12.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_2_ban13.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_2_ban14.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_2_ban15.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_2_ban16.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_2_ban17.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_2_ban18.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_2_ban19.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_2_ban20.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_3_ban1.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_3_ban2.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_3_ban3.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_3_ban4.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_3_ban5.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_3_ban6.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_3_ban7.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_3_ban8.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_3_ban9.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_3_ban10.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_3_ban11.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_3_ban12.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_3_ban13.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_3_ban14.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_3_ban15.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_3_ban16.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_3_ban17.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_3_ban18.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_3_ban19.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_3_ban20.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_4_ban1.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_4_ban2.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_4_ban3.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_4_ban4.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_4_ban5.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_4_ban6.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_4_ban7.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_4_ban8.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_4_ban9.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_4_ban10.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_4_ban11.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_4_ban12.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_4_ban13.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_4_ban14.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_4_ban15.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_4_ban16.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_4_ban17.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_4_ban18.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_4_ban19.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_5_ban1.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_5_ban2.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_5_ban3.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_5_ban4.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_5_ban5.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_5_ban6.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_5_ban7.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_5_ban8.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_5_ban9.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_5_ban10.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_5_ban11.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_5_ban12.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_5_ban13.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_5_ban14.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_5_ban15.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_5_ban16.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_5_ban17.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_5_ban18.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_5_ban19.png" alt="" loading="lazy"></div>
+        <div class="tile"><img src="assets/reflogos-crop/s13_5_ban20.png" alt="" loading="lazy"></div>
       </div>
       <div style="display:flex;justify-content:center;margin-top:clamp(36px,4.5vw,52px);">
-        <button type="button" class="btn-outline" style="display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(33,28,23,.5);color:#211C17;padding:13px 32px;font-size:13px;font-weight:400;letter-spacing:.06em;background:transparent;cursor:pointer;">더보기</button>
+        <button type="button" id="cliMoreBtn" class="btn-outline" style="display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(33,28,23,.5);color:#211C17;padding:13px 32px;font-size:13px;font-weight:400;letter-spacing:.06em;background:transparent;cursor:pointer;" onclick="var m=document.getElementById('cliMore');var show=m.style.display==='none';m.style.display=show?'grid':'none';this.textContent=show?'접기':'더보기';">더보기</button>
       </div>
     </div>
   </section>
@@ -300,21 +397,21 @@
     </div>
     <div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.6vw,36px);">
       <div>
-        <div class="imgzoom"><img src="assets/personal-wardrobe.jpg" alt="" style="display:block;width:100%;aspect-ratio:3/4;object-fit:cover;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>
+        <div class="imgzoom"><img src="assets/corp-1.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>
         <div style="text-align:center;padding-top:24px;">
           <h3 style="font-weight:500;font-size:19px;margin:0 0 8px;color:#211C17;">임원 · VVIP 컨설팅</h3>
           <p style="font-weight:300;font-size:13.5px;line-height:1.8;color:#6B6353;margin:0;">CEO·장차관·고액 자산가를 위한 프라이빗 1:1 컨설팅</p>
         </div>
       </div>
       <div>
-        <div class="imgzoom"><img src="assets/corp-financial.jpg" alt="" style="display:block;width:100%;aspect-ratio:3/4;object-fit:cover;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>
+        <div class="imgzoom"><img src="assets/corp-2.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>
         <div style="text-align:center;padding-top:24px;">
           <h3 style="font-weight:500;font-size:19px;margin:0 0 8px;color:#211C17;">기업 · 금융 PI</h3>
           <p style="font-weight:300;font-size:13.5px;line-height:1.8;color:#6B6353;margin:0;">기업·금융 조직과 임원을 위한 이미지 전략</p>
         </div>
       </div>
       <div>
-        <div class="imgzoom"><img src="assets/gov-building.jpg" alt="" style="display:block;width:100%;aspect-ratio:3/4;object-fit:cover;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>
+        <div class="imgzoom"><img src="assets/corp-3.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>
         <div style="text-align:center;padding-top:24px;">
           <h3 style="font-weight:500;font-size:19px;margin:0 0 8px;color:#211C17;">공공기관 · 공기업</h3>
           <p style="font-weight:300;font-size:13.5px;line-height:1.8;color:#6B6353;margin:0;">장·차관, 공공기관 리더의 공적 이미지 자문</p>
@@ -350,11 +447,9 @@
         </div>
         <a href="personal.html" class="btn-outline" style="display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(33,28,23,.5);color:#211C17;text-decoration:none;padding:13px 30px;font-size:13px;font-weight:400;letter-spacing:.05em;background:transparent;margin-top:32px;">더보기</a>
       </div>
-      <div class="swap-wrap pcard" style="order:2;">
-        <img class="pcard-slide" src="assets/personal-slide1.jpg" alt="개인 이미지 컨설팅">
-        <img class="pcard-slide" src="assets/personal-slide2.jpg" alt="">
-        <img class="pcard-slide" src="assets/personal-slide3.jpg" alt="">
-        <img class="pcard-slide" src="assets/personal-slide4.jpg" alt="">
+      <div style="order:2;">
+        <div class="pcard"><img src="assets/personal-main.jpg" alt="미국 캘리포니아 부에나팍 조이스안 시장" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center 15%;"></div>
+        <div style="text-align:center;margin-top:14px;font-size:13px;font-weight:400;color:#57503F;letter-spacing:.02em;">미국 캘리포니아 부에나팍 조이스안 시장</div>
       </div>
     </div>
   </section>
@@ -362,11 +457,16 @@
   <!-- ACADEMY -->
   <section id="academy" data-screen-label="Academy" style="max-width:1500px;margin:0 auto;padding:clamp(60px,8vh,104px) clamp(20px,5vw,60px);">
     <div class="grid-2" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,100px);align-items:center;">
-      <div class="swap-wrap" style="overflow:hidden;position:relative;aspect-ratio:4/5;"><img class="swap-base" src="assets/academy-modern.jpg" alt="" style="display:block;width:100%;height:100%;object-fit:cover;"><img class="swap-lively" src="assets/corp-lecture.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(8px,1vw,14px);">
+        <div class="imgzoom" style="border-radius:4px;"><img src="assets/academy-1.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>
+        <div class="imgzoom" style="border-radius:4px;"><img src="assets/academy-2.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>
+        <div class="imgzoom" style="border-radius:4px;"><img src="assets/academy-3.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>
+        <div class="imgzoom" style="border-radius:4px;"><img src="assets/academy-4.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>
+      </div>
       <div style="text-align:left;padding:0 clamp(0px,2vw,32px);">
         <div style="font-size:11px;font-weight:500;letter-spacing:.2em;color:#8A8276;">ACADEMY</div>
         <h2 style="font-weight:400;font-size:clamp(24px,3.2vw,40px);line-height:1.4;letter-spacing:-0.01em;margin:20px 0 0;color:#211C17;">CMK Academy</h2>
-        <p style="font-weight:300;font-size:15px;line-height:1.95;color:#6B6353;margin:24px 0 0;max-width:38ch;">현장의 전문가를 양성하는 교육 과정. 20여 년의 컨설팅 노하우를 체계화한 커리큘럼입니다.</p>
+        <p style="font-weight:300;font-size:15px;line-height:1.95;color:#6B6353;margin:24px 0 0;max-width:38ch;">현장의 전문가를 양성하는 교육 과정. 25여 년의 컨설팅 노하우를 체계화한 커리큘럼입니다.</p>
         <div style="display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-top:34px;font-size:15px;font-weight:400;color:#211C17;">
           <span style="color:inherit;">Taste Image Scale</span>
           <span style="color:inherit;">이미지컨설턴트 전략과정</span>
@@ -387,17 +487,20 @@
       </div>
       <div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,44px);">
         <div style="text-align:center;">
-          <div class="imgzoom"><img src="assets/lab-color.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>
+          <div class="imgzoom"><img src="assets/lab-color-n.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>
           <h3 style="font-weight:500;font-size:18px;margin:22px 0 6px;color:#211C17;">퍼스널 컬러 연구</h3>
           <p style="font-weight:300;font-size:13.5px;line-height:1.85;color:#6B6353;margin:0;">4계절 16타입, 어울리는 색을 진단합니다.</p>
         </div>
         <div style="text-align:center;">
-          <div class="imgzoom"><img src="assets/lab-style.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>
+          <div class="imgzoom"><img src="assets/lab-style-n.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>
           <h3 style="font-weight:500;font-size:18px;margin:22px 0 6px;color:#211C17;">스타일 연구</h3>
           <p style="font-weight:300;font-size:13.5px;line-height:1.85;color:#6B6353;margin:0;">어울리는 소재와 실루엣, 패턴을 분석합니다.</p>
         </div>
         <div style="text-align:center;">
-          <div class="imgzoom"><img src="assets/lab-hair.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;aspect-ratio:4/3;border-radius:6px;overflow:hidden;">
+            <div class="imgzoom" style="height:100%;"><img src="assets/lab-bone.jpg" alt="골격 연구" style="display:block;width:100%;height:100%;object-fit:cover;object-position:58% center;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>
+            <div class="imgzoom" style="height:100%;"><img src="assets/lab-hair-n.jpg" alt="헤어 연구" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>
+          </div>
           <h3 style="font-weight:500;font-size:18px;margin:22px 0 6px;color:#211C17;">골격과 헤어 연구</h3>
           <p style="font-weight:300;font-size:13.5px;line-height:1.85;color:#6B6353;margin:0;">얼굴형과 골격에 맞는 헤어를 연출합니다.</p>
         </div>
@@ -426,6 +529,14 @@
         </div>
       </div>
     </div>
+    <style>.kbadd{max-width:1500px;margin:clamp(30px,4vw,52px) auto 0;display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(8px,1vw,14px);}@media(max-width:760px){.kbadd{grid-template-columns:repeat(3,1fr);}}</style>
+    <div class="kbadd">
+      <div class="imgzoom" style="border-radius:6px;"><img src="assets/kb-add1.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>
+      <div class="imgzoom" style="border-radius:6px;"><img src="assets/kb-add2.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>
+      <div class="imgzoom" style="border-radius:6px;"><img src="assets/kb-add3.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>
+      <div class="imgzoom" style="border-radius:6px;"><img src="assets/kb-add4.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>
+      <div class="imgzoom" style="border-radius:6px;"><img src="assets/kb-add5.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>
+    </div>
   </section>
 
   <!-- COMMUNITY -->
@@ -436,17 +547,17 @@
     </div>
     <div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,44px);">
       <a href="https://blog.naver.com/cmkimage" style="text-decoration:none;color:inherit;display:block;text-align:center;">
-        <div class="imgzoom"><img src="assets/news-media.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>
+        <div class="imgzoom"><img src="assets/news-cmk.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>
         <div style="font-size:11px;font-weight:500;letter-spacing:.12em;color:#8A8276;margin:22px 0 8px;">CMK NEWS</div>
         <h3 style="font-weight:400;font-size:17px;line-height:1.5;color:#211C17;margin:0;">CMK 이미지코리아 소식과 공지</h3>
       </a>
       <a href="https://blog.naver.com/cmkimage" style="text-decoration:none;color:inherit;display:block;text-align:center;">
-        <div class="imgzoom"><img src="assets/community-lecture.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>
+        <div class="imgzoom"><img src="assets/news-lecture.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>
         <div style="font-size:11px;font-weight:500;letter-spacing:.12em;color:#8A8276;margin:22px 0 8px;">LECTURE</div>
         <h3 style="font-weight:400;font-size:17px;line-height:1.5;color:#211C17;margin:0;">대표·강사진의 강의와 특강</h3>
       </a>
       <a href="https://blog.naver.com/cmkimage" style="text-decoration:none;color:inherit;display:block;text-align:center;">
-        <div class="imgzoom"><img src="assets/community-media.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>
+        <div class="imgzoom" style="background:#F2EEE6;"><img src="assets/news-interview.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:contain;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>
         <div style="font-size:11px;font-weight:500;letter-spacing:.12em;color:#8A8276;margin:22px 0 8px;">MEDIA</div>
         <h3 style="font-weight:400;font-size:17px;line-height:1.5;color:#211C17;margin:0;">인터뷰 · 방송 · 기고 아카이브</h3>
       </a>
@@ -465,8 +576,9 @@
         <p style="font-weight:300;font-size:15px;line-height:1.95;color:#6B6353;margin:24px 0 0;max-width:36ch;">기업·기관, VVIP 상담은 소수의 클라이언트를 위해 프라이빗하게 진행됩니다. 아래로 내용을 남겨 주시면 순차적으로 회신드립니다.</p>
         <div style="margin-top:clamp(32px,4vw,44px);padding-top:26px;border-top:1px solid rgba(42,38,34,.16);display:flex;flex-direction:column;gap:14px;font-size:14px;color:#6B6353;">
           <a href="mailto:cmkimage@hanmail.net" class="cinfo" style="color:inherit;text-decoration:none;transition:opacity .3s;">cmkimage@hanmail.net</a>
-          <a href="tel:031-284-2566" class="cinfo" style="color:inherit;text-decoration:none;transition:opacity .3s;">031 284 2566</a>
-          <span style="font-weight:300;line-height:1.7;">경기 용인시 기흥구 탑실로 116</span>
+          <a href="tel:010-7269-8836" class="cinfo" style="color:inherit;text-decoration:none;transition:opacity .3s;">010 7269 8836</a>
+          <span style="color:inherit;">카카오톡 ID &nbsp;·&nbsp; cmkimage</span>
+          <span style="font-weight:300;line-height:1.7;">경기 용인시 기흥구 탑실로 152</span>
         </div>
       </div>
 
@@ -507,13 +619,14 @@
     <div style="max-width:1500px;margin:0 auto;">
       <div class="grid-foot" style="display:grid;grid-template-columns:1fr auto;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(42,38,34,.14);align-items:start;">
         <div>
-          <div style="display:flex;align-items:baseline;gap:9px;margin-bottom:16px;"><span style="font-family:'Cafe24Classictype',serif;font-weight:400;font-size:30px;line-height:.9;letter-spacing:.02em;color:#211C17;">CMK</span><span style="font-size:10px;font-weight:500;letter-spacing:.24em;color:#8A8276;">IMAGE KOREA · SINCE 2008</span></div>
+          <div style="margin-bottom:16px;"><img src="assets/logo.png" alt="CMK IMAGE KOREA" style="height:46px;width:auto;display:block;"></div>
           <p style="font-weight:300;font-size:13px;line-height:1.8;max-width:30ch;margin:0;">리더와 기관의 이미지를 전략으로 설계하는 이미지 컨설팅 그룹.</p>
         </div>
         <div>
           <div style="font-size:11px;font-weight:600;letter-spacing:.1em;color:#8A8276;margin-bottom:16px;">FOLLOW</div>
           <div style="display:flex;gap:11px;">
             <a href="https://blog.naver.com/cmkimage" aria-label="Naver Blog" class="social" style="width:42px;height:42px;border-radius:50%;border:1px solid rgba(42,38,34,.26);display:flex;align-items:center;justify-content:center;color:#211C17;text-decoration:none;"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M4 4h5.3l5 7.4V4H20v16h-5.3l-5-7.4V20H4z"/></svg></a>
+            <a href="https://smartstore.naver.com/cmkimage" target="_blank" rel="noopener" aria-label="Naver Smart Store" class="social" style="width:42px;height:42px;border-radius:50%;border:1px solid rgba(42,38,34,.26);display:flex;align-items:center;justify-content:center;color:#211C17;text-decoration:none;"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 8h13l-1 11.5H6.5z"/><path d="M9 8V6.2a3 3 0 0 1 6 0V8"/></svg></a>
             <a href="https://www.instagram.com/cmkimagekorea/" aria-label="Instagram" class="social" style="width:42px;height:42px;border-radius:50%;border:1px solid rgba(42,38,34,.26);display:flex;align-items:center;justify-content:center;color:#211C17;text-decoration:none;"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5.2"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></a>
             <a href="https://www.facebook.com/cmk.cho" aria-label="Facebook" class="social" style="width:42px;height:42px;border-radius:50%;border:1px solid rgba(42,38,34,.26);display:flex;align-items:center;justify-content:center;color:#211C17;text-decoration:none;"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M13.4 21v-8h2.4l.4-3h-2.8V8.1c0-.85.28-1.43 1.5-1.43h1.4V4.1c-.68-.09-1.5-.18-2.34-.18-2.32 0-3.9 1.42-3.9 4.02V10H7.7v3h2.4v8z"/></svg></a>
             <a href="https://www.youtube.com/channel/UCSl1lcjrHqWx8_QezQO5BTg" aria-label="YouTube" class="social" style="width:42px;height:42px;border-radius:50%;border:1px solid rgba(42,38,34,.26);display:flex;align-items:center;justify-content:center;color:#211C17;text-decoration:none;"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M22.5 7.3c-.25-1-1-1.75-2-2C18.7 4.8 12 4.8 12 4.8s-6.7 0-8.5.5c-1 .25-1.75 1-2 2C1 9.1 1 12 1 12s0 2.9.5 4.7c.25 1 1 1.75 2 2 1.8.5 8.5.5 8.5.5s6.7 0 8.5-.5c1-.25 1.75-1 2-2 .5-1.8.5-4.7.5-4.7s0-2.9-.5-4.7zM9.9 15.2V8.8l5.6 3.2z"/></svg></a>
@@ -522,7 +635,7 @@
       </div>
       <div style="padding-top:24px;font-size:11.5px;line-height:1.9;color:#8A8276;">
         <div style="margin-bottom:6px;">CMK Image Korea &nbsp;|&nbsp; 대표 조미경 &nbsp;|&nbsp; 사업자등록번호 107-91-45820</div>
-        <div style="margin-bottom:14px;">경기 용인시 기흥구 탑실로 116, 탑실마을 대주 피오레 2단지 215동 303호 &nbsp;|&nbsp; Tel 031-284-2566 &nbsp;|&nbsp; cmkimage@hanmail.net</div>
+        <div style="margin-bottom:14px;">경기 용인시 기흥구 탑실로 152, 탑실마을 대주 피오레 2단지 215동 303호 &nbsp;|&nbsp; Tel 010-7269-8836 &nbsp;|&nbsp; cmkimage@hanmail.net</div>
         <div>© 2008–2026 CMK IMAGE KOREA. All rights reserved.</div>
       </div>
     </div>
@@ -539,6 +652,66 @@
     shield.style.cssText = 'position:absolute;inset:0;z-index:5;';
     el.appendChild(shield);
   });
+
+  // --- HERO: 4장 슬라이드 + 메인/서브 멘트 리빌 ---
+  (function () {
+    var HERO = [
+      { main: 'CREATIVE PARTNER<br>CMK IMAGE KOREA', sub: 'CMK 이미지코리아는 지금껏 경험하지 못한<br>Creative Service로 소통하겠습니다.' },
+      { main: 'The image partner for<br>Korea’s leaders and institutions', sub: '25여 년간 기업·금융·공공기관 리더의 인상,<br>태도, 언어를 하나의 전략으로 설계해 왔습니다.' },
+      { main: 'CREATIVE EXPERT GROUP', sub: 'CMK 이미지코리아는 대한민국 최고의 이미지컨설턴트로<br>Creative Expert Group의 자긍심을 이어가겠습니다.' },
+      { main: 'Content and programs that keep<br>your image ahead of the times', sub: '시대의 흐름에 맞게 다양한 콘텐츠와<br>프로그램 개발을 통해 변화하는 기업의 이미지를 제고합니다.' }
+    ];
+    var imgs = document.querySelectorAll('.hero-img');
+    var main = document.getElementById('heroMain');
+    var sub = document.getElementById('heroSub');
+    var txt = document.getElementById('heroText');
+    var dotsWrap = document.getElementById('heroDots');
+    if (!imgs.length || !main || !sub || !txt || !dotsWrap) return;
+    var n = HERO.length, i = 0, timer;
+    HERO.forEach(function (_, k) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'hero-dot' + (k === 0 ? ' on' : '');
+      b.setAttribute('aria-label', '슬라이드 ' + (k + 1));
+      b.addEventListener('click', function () { go(k); restart(); });
+      dotsWrap.appendChild(b);
+    });
+    var dots = dotsWrap.querySelectorAll('.hero-dot');
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var DIR = { up: 'rvUp', down: 'rvDown', left: 'rvLeft', right: 'rvRight' };
+    // 슬라이드별로 [메인, 서브] 등장 방향을 섞음
+    var MOVES = [ ['up', 'down'], ['down', 'up'], ['left', 'right'], ['right', 'up'] ];
+    var swapT;
+    function paint() {
+      for (var d = 0; d < dots.length; d++) dots[d].classList.toggle('on', d === i);
+      main.innerHTML = HERO[i].main;
+      sub.innerHTML = HERO[i].sub;
+      if (reduce) return;
+      var mv = MOVES[i % MOVES.length];
+      main.style.animation = 'none'; sub.style.animation = 'none';
+      void main.offsetWidth; // reflow → 애니메이션 재생
+      main.style.animation = DIR[mv[0]] + ' .9s cubic-bezier(.16,.72,.28,1) forwards';
+      sub.style.animation = DIR[mv[1]] + ' .95s cubic-bezier(.16,.72,.28,1) .18s forwards';
+    }
+    function go(k) {
+      k = (k + n) % n; if (k === i) return;
+      clearTimeout(swapT);
+      // finalize any in-progress crossfade: keep only current as base layer
+      for (var c = 0; c < imgs.length; c++) { imgs[c].classList.remove('is-in'); imgs[c].classList.toggle('is-active', c === i); }
+      var incoming = imgs[k], prev = i;
+      i = k;
+      incoming.classList.add('is-in'); // fade in on top of the stable current image (no white gap)
+      swapT = setTimeout(function () {
+        imgs[prev].classList.remove('is-active');
+        incoming.classList.remove('is-in');
+        incoming.classList.add('is-active');
+      }, 1250);
+      paint();
+    }
+    function restart() { clearInterval(timer); timer = setInterval(function () { go(i + 1); }, 6000); }
+    paint(); restart();
+  })();
+
   // --- header nav now links to each section's own detail page (about.html 등).
   //     Contact(navcontact)만 홈 내 #contact 로 스크롤됩니다.
 

@@ -98,11 +98,13 @@ h3, h4 { margin: 0; }
 @media (max-width: 900px) {
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr !important; }
   #siteNav { display: none !important; }
+  #siteHeader img { height: 42px !important; }
   #siteHeader > div { grid-template-columns: 1fr auto !important; }
   #siteHeader .langswitch { display: none !important; }
   #siteHeader > div > a > span:last-child { white-space: nowrap; }
   .menu-toggle { display: inline-flex !important; position: absolute; top: 0; right: clamp(20px,5vw,60px); height: 88px; z-index: 61; align-items: center; }
   .navcontact { display: none !important; }
+  .navshop { display: none !important; }
   .page-hero h1 { font-size: clamp(30px,8vw,44px); }
 }
 @media (max-width: 600px) {
