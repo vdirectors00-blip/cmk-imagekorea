@@ -83,7 +83,7 @@
 
   /* header (scroll state) */
   #siteHeader { position:fixed; top:0; left:0; right:0; z-index:60; transition:background .5s ease,color .5s ease,border-color .5s ease; background:transparent; color:#211C17; border-bottom:1px solid rgba(244,241,234,0); }
-  #siteHeader.scrolled { background:rgba(244,241,234,.94); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); color:#2A2622; border-bottom:1px solid rgba(42,38,34,.1); }
+  #siteHeader.scrolled { background:rgba(255,255,255,.92); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); color:#2A2622; border-bottom:1px solid rgba(42,38,34,.1); }
   @media (max-width: 600px) { #siteHeader img { height:42px !important; } }
 
   /* interactions ported from style-hover / style-focus */
@@ -115,11 +115,11 @@
 
   /* mobile hamburger menu */
   .menu-toggle { display:none; }
-  .mobile-menu { position:fixed; inset:0; z-index:80; background:rgba(14,11,7,.98); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:22px; opacity:0; visibility:hidden; transition:opacity .35s ease; }
+  .mobile-menu { position:fixed; inset:0; z-index:80; background:rgba(18,19,22,.98); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:22px; opacity:0; visibility:hidden; transition:opacity .35s ease; }
   .mobile-menu.open { opacity:1; visibility:visible; }
-  .mobile-menu .m-link { color:#EDE7DA; text-decoration:none; font-size:25px; font-weight:500; letter-spacing:.01em; transition:opacity .25s; }
+  .mobile-menu .m-link { color:#EDEEF1; text-decoration:none; font-size:25px; font-weight:500; letter-spacing:.01em; transition:opacity .25s; }
   .mobile-menu .m-link:active { opacity:.5; }
-  .menu-close { position:absolute; top:24px; right:22px; background:none; border:none; color:#EDE7DA; padding:8px; cursor:pointer; }
+  .menu-close { position:absolute; top:24px; right:22px; background:none; border:none; color:#EDEEF1; padding:8px; cursor:pointer; }
 
   /* responsive: collapse two/three-column grids on tablet & phone */
   @media (max-width: 900px) {
@@ -268,7 +268,7 @@
     @media (max-width:900px){ .cli-grid{grid-template-columns:repeat(4,1fr);} }
     @media (max-width:560px){ .cli-grid{grid-template-columns:repeat(3,1fr);} }
   </style>
-  <section id="clients" data-screen-label="Clients" style="background:#CEC4AF;padding:clamp(60px,8vh,104px) clamp(20px,5vw,60px);">
+  <section id="clients" data-screen-label="Clients" style="background:#EDEEF1;padding:clamp(60px,8vh,104px) clamp(20px,5vw,60px);">
     <div style="max-width:1400px;margin:0 auto;">
       <div style="max-width:720px;margin:0 auto;text-align:center;">
         <div style="font-size:11px;font-weight:500;letter-spacing:.2em;color:#8A8276;">CLIENTS</div>
@@ -434,7 +434,7 @@
     @keyframes pcardFade{0%{opacity:0}3%{opacity:1}22%{opacity:1}25%{opacity:0}100%{opacity:0}}
     @media (prefers-reduced-motion:reduce){.pcard .pcard-slide{animation:none}.pcard .pcard-slide:nth-child(1){opacity:1}}
   </style>
-  <section id="personal" data-screen-label="Personal" style="background:#CEC4AF;padding:clamp(60px,8vh,104px) clamp(20px,5vw,60px);">
+  <section id="personal" data-screen-label="Personal" style="background:#EDEEF1;padding:clamp(60px,8vh,104px) clamp(20px,5vw,60px);">
     <div class="grid-2" style="max-width:1500px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,100px);align-items:center;">
       <div style="order:1;text-align:left;padding:0 clamp(0px,2vw,32px);">
         <div style="font-size:11px;font-weight:500;letter-spacing:.2em;color:#8A8276;">PERSONAL</div>
@@ -479,7 +479,7 @@
   </section>
 
   <!-- IMAGE LAB -->
-  <section id="lab" data-screen-label="Image Lab" style="background:#CEC4AF;padding:clamp(60px,8vh,104px) clamp(20px,5vw,60px);">
+  <section id="lab" data-screen-label="Image Lab" style="background:#EDEEF1;padding:clamp(60px,8vh,104px) clamp(20px,5vw,60px);">
     <div style="max-width:1500px;margin:0 auto;">
       <div style="max-width:720px;margin:0 auto clamp(52px,8vw,84px);text-align:center;">
         <div style="font-size:11px;font-weight:500;letter-spacing:.2em;color:#8A8276;">IMAGE LAB</div>
@@ -557,7 +557,7 @@
         <h3 style="font-weight:400;font-size:17px;line-height:1.5;color:#211C17;margin:0;">Lectures and talks by our director & instructors</h3>
       </a>
       <a href="https://blog.naver.com/cmkimage" style="text-decoration:none;color:inherit;display:block;text-align:center;">
-        <div class="imgzoom" style="background:#F2EEE6;"><img src="../assets/news-interview.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:contain;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>
+        <div class="imgzoom" style="background:#ECEEF1;"><img src="../assets/news-interview.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:contain;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>
         <div style="font-size:11px;font-weight:500;letter-spacing:.12em;color:#8A8276;margin:22px 0 8px;">MEDIA</div>
         <h3 style="font-weight:400;font-size:17px;line-height:1.5;color:#211C17;margin:0;">Interviews · broadcasts · contributed columns</h3>
       </a>
@@ -567,8 +567,20 @@
     </div>
   </section>
 
+  <!-- BLOG LATEST (auto-refreshed from Naver blog RSS via GitHub Action) -->
+  <section id="blog" data-screen-label="Blog" style="max-width:1500px;margin:0 auto;padding:clamp(60px,8vh,104px) clamp(20px,5vw,60px);">
+    <div style="max-width:720px;margin:0 auto clamp(44px,6vw,68px);text-align:center;">
+      <div style="font-size:11px;font-weight:500;letter-spacing:.2em;color:#8A8276;">BLOG</div>
+      <h2 style="font-weight:400;font-size:clamp(26px,3.4vw,44px);line-height:1.4;letter-spacing:-0.01em;margin:22px 0 0;color:#211C17;">Latest from the Blog</h2>
+    </div>
+    <div id="blogGrid" class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,44px);"></div>
+    <div style="display:flex;justify-content:center;margin-top:clamp(40px,4.5vw,58px);">
+      <a href="https://blog.naver.com/cmkimage" target="_blank" rel="noopener" class="btn-outline" style="display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(33,28,23,.5);color:#211C17;text-decoration:none;padding:13px 30px;font-size:13px;font-weight:400;letter-spacing:.05em;background:transparent;">Visit the Blog</a>
+    </div>
+  </section>
+
   <!-- CONTACT -->
-  <section id="contact" data-screen-label="Contact" style="background:#CEC4AF;padding:clamp(60px,8vh,104px) clamp(20px,5vw,60px);">
+  <section id="contact" data-screen-label="Contact" style="background:#EDEEF1;padding:clamp(60px,8vh,104px) clamp(20px,5vw,60px);">
     <div class="grid-2" style="max-width:1500px;margin:0 auto;display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(40px,7vw,96px);align-items:start;">
       <div style="text-align:left;">
         <div style="font-size:11px;font-weight:500;letter-spacing:.2em;color:#8A8276;">CONTACT</div>
@@ -615,7 +627,7 @@
   </section>
 
   <!-- FOOTER -->
-  <footer style="background:#BDB29B;color:#6B6353;padding:clamp(56px,8vh,88px) clamp(20px,5vw,60px) 40px;">
+  <footer style="background:#E3E5E9;color:#5F6570;padding:clamp(56px,8vh,88px) clamp(20px,5vw,60px) 40px;">
     <div style="max-width:1500px;margin:0 auto;">
       <div class="grid-foot" style="display:grid;grid-template-columns:1fr auto;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(42,38,34,.14);align-items:start;">
         <div>
@@ -733,6 +745,32 @@
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+
+  // --- latest blog posts (from ../assets/blog.json, auto-refreshed by GitHub Action) ---
+  (function () {
+    var grid = document.getElementById('blogGrid');
+    var sec = document.getElementById('blog');
+    if (!grid) return;
+    function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+    fetch('../assets/blog.json', { cache: 'no-cache' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d || !d.posts || !d.posts.length) { if (sec) sec.style.display = 'none'; return; }
+        grid.innerHTML = d.posts.slice(0, 3).map(function (p) {
+          var thumb = p.thumb
+            ? '<div class="imgzoom" style="background:#ECEEF1;border-radius:6px;overflow:hidden;"><img src="' + esc(p.thumb) + '" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.style.display=\'none\'" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform 1.3s cubic-bezier(.16,.72,.28,1),filter 1.3s ease;"></div>'
+            : '';
+          var cat = p.category
+            ? '<div style="font-size:11px;font-weight:500;letter-spacing:.12em;color:#8A8276;margin:20px 0 8px;">' + esc(p.category) + '</div>'
+            : '<div style="height:20px;"></div>';
+          return '<a href="' + esc(p.link) + '" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">' +
+            thumb + cat +
+            '<h3 style="font-weight:400;font-size:17px;line-height:1.5;color:#211C17;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + esc(p.title) + '</h3>' +
+            '<div style="font-size:12px;color:#8A8276;margin-top:10px;">' + esc(p.date || '') + '</div></a>';
+        }).join('');
+      })
+      .catch(function () { if (sec) sec.style.display = 'none'; });
+  })();
 
   // --- contact form (client-side confirmation) ---
   var form = document.getElementById('contactForm');

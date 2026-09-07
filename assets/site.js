@@ -69,7 +69,7 @@
   '</div>';
 
   var footer =
-  '<footer style="background:#BDB29B;color:#6B6353;padding:clamp(56px,8vh,88px) clamp(20px,5vw,60px) 40px;">' +
+  '<footer style="background:#E3E5E9;color:#5F6570;padding:clamp(56px,8vh,88px) clamp(20px,5vw,60px) 40px;">' +
     '<div style="max-width:1500px;margin:0 auto;">' +
       '<div class="grid-foot" style="display:grid;grid-template-columns:1fr auto;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(42,38,34,.14);align-items:start;">' +
         '<div>' +
