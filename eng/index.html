@@ -780,7 +780,7 @@
   })();
 
   // --- contact form (client-side confirmation) ---
-  var FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyBTtl1PRYTuQZD3KOGWs-ml6B1-7UXroqKgFp4-C8ZsPh94d4UcYAwex78UXd7qFZi/exec';
+  var FORM_KEY = 'ab43c4b8-e8bd-4566-910c-9f588c3a5550';
   var FORM_MSG = ['Please enter your name.','Please enter a valid phone number.','Consent to the collection and use of personal data is required.'];
   var FORM_ERR = 'Submission failed. Please call +82 31-284-2566.';
   var form = document.getElementById('contactForm');
@@ -795,24 +795,33 @@
       if (errBox) errBox.style.display = 'none';
       var fd = new FormData(form);
       var v = function (k) { return String(fd.get(k) || '').trim(); };
-      var payload = {
-        name: v('name'), title: v('title'), company: v('company'),
-        phone: v('phone'), message: v('message'), website: v('website'),
-        agree: !!fd.get('agree'), lang: 'en',
-        pagePath: location.pathname, submittedAt: new Date().toISOString()
-      };
-      if (!payload.name) return fail(FORM_MSG[0]);
-      if (!/^0\d{1,2}-?\d{3,4}-?\d{4}$/.test(payload.phone.replace(/\s/g, ''))) return fail(FORM_MSG[1]);
-      if (!payload.agree) return fail(FORM_MSG[2]);
+      // 허니팟: 봇이 채우면 전송 없이 접수 화면만 (CMK 폼은 company 가 실제 입력칸이라 website 사용)
+      if (v('website')) { form.style.display = 'none'; sent.style.display = 'flex'; return; }
+      var name = v('name'), phone = v('phone');
+      if (!name) return fail(FORM_MSG[0]);
+      if (!/^0\d{1,2}-?\d{3,4}-?\d{4}$/.test(phone.replace(/\s/g, ''))) return fail(FORM_MSG[1]);
+      if (!fd.get('agree')) return fail(FORM_MSG[2]);
       if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
-      fetch(FORM_ENDPOINT, {
+      var payload = {
+        access_key: FORM_KEY,
+        subject: '[CMK Website] New inquiry - ' + name,
+        from_name: 'CMK Image Korea',
+        Name: name, Title: v('title'), Company: v('company'),
+        Phone: phone, Message: v('message'),
+        Language: 'en', Page: location.pathname
+      };
+      // urlencoded = CORS 안전목록 → 프리플라이트(OPTIONS) 미발생.
+      // Web3Forms 는 OPTIONS 를 403 으로 막으므로 application/json 을 쓰면 안 됨.
+      var body = new URLSearchParams();
+      Object.keys(payload).forEach(function (k) { body.append(k, payload[k]); });
+      fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify(payload)
+        headers: { 'Accept': 'application/json' },
+        body: body
       })
         .then(function (r) { return r.json(); })
         .then(function (d) {
-          if (d && d.ok) { form.style.display = 'none'; sent.style.display = 'flex'; }
+          if (d && d.success) { form.style.display = 'none'; sent.style.display = 'flex'; }
           else { fail((d && d.message) || FORM_ERR); reset(); }
         })
         .catch(function () { fail(FORM_ERR); reset(); });
