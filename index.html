@@ -620,6 +620,14 @@
           <span style="font-size:11px;font-weight:500;letter-spacing:.14em;color:#57503F;">내용</span>
           <textarea name="message" rows="3" placeholder="문의하실 내용을 남겨 주세요." class="finput" style="width:100%;background:transparent;border:none;border-bottom:1px solid rgba(42,38,34,.28);padding:9px 0;font-size:14.5px;color:#211C17;outline:none;resize:none;line-height:1.7;transition:border-color .3s;"></textarea>
         </label>
+        <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
+          <label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+        </div>
+        <label style="grid-column:1 / -1;display:flex;align-items:flex-start;gap:9px;margin-top:4px;cursor:pointer;">
+          <input type="checkbox" name="agree" style="margin-top:3px;flex:none;accent-color:#211C17;">
+          <span style="font-size:12.5px;font-weight:300;line-height:1.7;color:#6B6353;">개인정보 수집 · 이용 동의 <span style="color:#8A8276;">항목 이름 · 직책 · 소속 · 연락처 · 문의내용 / 목적 문의 접수 및 회신 / 보유기간 회신 후 1년</span></span>
+        </label>
+        <div id="formErr" role="alert" style="grid-column:1 / -1;display:none;font-size:13px;color:#A8362B;"></div>
         <button type="submit" class="btn-solid" style="grid-column:1 / -1;justify-self:start;margin-top:8px;background:#211C17;color:#FFFFFF;border:none;padding:15px 40px;font-size:14px;font-weight:400;letter-spacing:.04em;cursor:pointer;">문의 보내기</button>
       </form>
     </div>
@@ -645,7 +653,7 @@
         </div>
       </div>
       <div style="padding-top:24px;font-size:11.5px;line-height:1.9;color:#8A8276;">
-        <div style="margin-bottom:6px;">CMK Image Korea &nbsp;|&nbsp; 대표 조미경 &nbsp;|&nbsp; 사업자등록번호 107-91-45820</div>
+        <div style="margin-bottom:6px;">CMK Image Korea &nbsp;|&nbsp; 대표 조미경 &nbsp;|&nbsp; 사업자등록번호 105-14-38813</div>
         <div style="margin-bottom:14px;">경기 용인시 기흥구 탑실로 152, 탑실마을 대주 피오레 2단지 215동 303호 &nbsp;|&nbsp; Tel 010-7269-8836 &nbsp;|&nbsp; cmkimage@hanmail.net</div>
         <div>© 2008–2026 CMK IMAGE KOREA. All rights reserved.</div>
       </div>
@@ -772,13 +780,41 @@
   })();
 
   // --- contact form (client-side confirmation) ---
+  var FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyBTtl1PRYTuQZD3KOGWs-ml6B1-7UXroqKgFp4-C8ZsPh94d4UcYAwex78UXd7qFZi/exec';
+  var FORM_MSG = ['이름을 입력해 주세요.','연락처를 정확히 입력해 주세요.','개인정보 수집 · 이용 동의가 필요합니다.'];
   var form = document.getElementById('contactForm');
   var sent = document.getElementById('sentMsg');
+  var errBox = document.getElementById('formErr');
   if (form) {
+    var btn = form.querySelector('button[type=submit]');
+    var fail = function (m) { if (errBox) { errBox.textContent = m; errBox.style.display = 'block'; } };
+    var reset = function () { if (btn) { btn.disabled = false; btn.textContent = '문의 보내기'; } };
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      form.style.display = 'none';
-      sent.style.display = 'flex';
+      if (errBox) errBox.style.display = 'none';
+      var fd = new FormData(form);
+      var v = function (k) { return String(fd.get(k) || '').trim(); };
+      var payload = {
+        name: v('name'), title: v('title'), company: v('company'),
+        phone: v('phone'), message: v('message'), website: v('website'),
+        agree: !!fd.get('agree'), lang: 'ko',
+        pagePath: location.pathname, submittedAt: new Date().toISOString()
+      };
+      if (!payload.name) return fail(FORM_MSG[0]);
+      if (!/^0\d{1,2}-?\d{3,4}-?\d{4}$/.test(payload.phone.replace(/\s/g, ''))) return fail(FORM_MSG[1]);
+      if (!payload.agree) return fail(FORM_MSG[2]);
+      if (btn) { btn.disabled = true; btn.textContent = '전송 중...'; }
+      fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      })
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          if (d && d.ok) { form.style.display = 'none'; sent.style.display = 'flex'; }
+          else { fail((d && d.message) || '전송에 실패했습니다. 031-284-2566 으로 연락해 주세요.'); reset(); }
+        })
+        .catch(function () { fail('전송에 실패했습니다. 031-284-2566 으로 연락해 주세요.'); reset(); });
     });
   }
 
