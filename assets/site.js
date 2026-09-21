@@ -27,8 +27,8 @@
     ? 'An image consulting group that designs the image of leaders and institutions into strategy.'
     : '리더와 기관의 이미지를 전략으로 설계하는 이미지 컨설팅 그룹.';
   var footBiz = inEng
-    ? 'CMK Image Korea &nbsp;|&nbsp; CEO Cho Mi-kyung &nbsp;|&nbsp; Business Reg. No. 107-91-45820'
-    : 'CMK Image Korea &nbsp;|&nbsp; 대표 조미경 &nbsp;|&nbsp; 사업자등록번호 107-91-45820';
+    ? 'CMK Image Korea &nbsp;|&nbsp; CEO Cho Mi-kyung &nbsp;|&nbsp; Business Reg. No. 105-14-38813'
+    : 'CMK Image Korea &nbsp;|&nbsp; 대표 조미경 &nbsp;|&nbsp; 사업자등록번호 105-14-38813';
   var footAddr = inEng
     ? '215-303, Daeju Fiore 2-danji, 152 Topsil-ro, Giheung-gu, Yongin-si, Gyeonggi-do &nbsp;|&nbsp; Tel 010-7269-8836 &nbsp;|&nbsp; cmkimage@hanmail.net'
     : '경기 용인시 기흥구 탑실로 152, 탑실마을 대주 피오레 2단지 215동 303호 &nbsp;|&nbsp; Tel 010-7269-8836 &nbsp;|&nbsp; cmkimage@hanmail.net';
