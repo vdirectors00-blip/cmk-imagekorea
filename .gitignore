@@ -3,3 +3,11 @@
 .supabase-token
 token.txt
 supabase/.temp/
+
+# 작업용 원본 소재 (사이트에서 쓰지 않음, 공개 저장소에 올리지 않는다)
+0907*.mp4
+K (*).png
+KakaoTalk_*.jpg
+미리보기 (*).png
+new/
+assets/reflogos-more/
