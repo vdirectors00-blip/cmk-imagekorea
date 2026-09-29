@@ -1,0 +1,4 @@
+project_id = "ulkwzwrajfzcuqwrcfws"
+
+[functions.cmk-lead]
+verify_jwt = false

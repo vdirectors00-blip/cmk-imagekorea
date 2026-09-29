@@ -1,0 +1,5 @@
+
+# 로컬 전용: Supabase 액세스 토큰 (절대 커밋 금지)
+.supabase-token
+token.txt
+supabase/.temp/

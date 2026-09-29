@@ -1,0 +1,33 @@
+name: Supabase keepalive + SMS health
+
+on:
+  schedule:
+    - cron: '0 0 */2 * *'    # every 2 days 00:00 UTC (09:00 KST)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wake project and check SMS failures
+        run: |
+          set -euo pipefail
+          URL="https://ulkwzwrajfzcuqwrcfws.supabase.co/functions/v1/cmk-lead"
+          resp=$(curl -sS --max-time 30 -X POST "$URL" -H "x-cmk-ping: 1")
+          echo "response: $resp"
+
+          if ! echo "$resp" | grep -q 'failed_7d'; then
+            echo "::error::health check returned an unexpected response (project paused?)"
+            exit 1
+          fi
+
+          failed=$(echo "$resp" | sed -n 's/.*"failed_7d"[: ]*\([0-9]*\).*/\1/p')
+          echo "SMS failures in the last 7 days: ${failed:-0}"
+
+          if [ "${failed:-0}" -gt 0 ]; then
+            echo "::error::${failed} inquiry SMS failed in the last 7 days — check Aligo balance / registered IP (15.165.4.219)."
+            exit 1
+          fi

@@ -780,9 +780,10 @@
   })();
 
   // --- contact form (client-side confirmation) ---
+  var LEAD_API = 'https://ulkwzwrajfzcuqwrcfws.supabase.co/functions/v1/cmk-lead';
   var FORM_KEY = 'ab43c4b8-e8bd-4566-910c-9f588c3a5550';
   var FORM_MSG = ['이름을 입력해 주세요.','연락처를 정확히 입력해 주세요.','개인정보 수집 · 이용 동의가 필요합니다.'];
-  var FORM_ERR = '전송에 실패했습니다. 031-284-2566 으로 연락해 주세요.';
+  var FORM_ERR = '전송에 실패했습니다. 010-7269-8836 으로 연락해 주세요.';
   var form = document.getElementById('contactForm');
   var sent = document.getElementById('sentMsg');
   var errBox = document.getElementById('formErr');
@@ -810,6 +811,18 @@
         연락처: phone, 문의내용: v('message'),
         언어: 'ko', 페이지: location.pathname
       };
+      // 문자 알림(Supabase Edge → DB → 알리고). 실패해도 메일 접수에는 영향 없음.
+      try {
+        fetch(LEAD_API, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: name, title: v('title'), company: v('company'),
+            phone: phone, message: v('message'),
+            lang: 'ko', page: location.pathname, website: v('website')
+          })
+        }).catch(function () {});
+      } catch (e) {}
       // urlencoded = CORS 안전목록 → 프리플라이트(OPTIONS) 미발생.
       // Web3Forms 는 OPTIONS 를 403 으로 막으므로 application/json 을 쓰면 안 됨.
       var body = new URLSearchParams();
