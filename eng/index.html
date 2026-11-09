@@ -60,8 +60,8 @@
   .hero-fade { position:absolute; inset:0; z-index:1; background:linear-gradient(100deg, #FFFFFF 0%, #FFFFFF 25%, rgba(255,255,255,.78) 36%, rgba(255,255,255,.26) 50%, rgba(255,255,255,0) 62%); }
   .hero-topscrim { position:absolute; top:0; left:0; right:0; height:160px; z-index:1; background:linear-gradient(to bottom, rgba(255,255,255,.9), rgba(255,255,255,0)); }
   .hero-inner { position:relative; z-index:3; height:100%; max-width:1500px; margin:0 auto; padding:0 clamp(20px,5vw,60px); display:flex; align-items:center; }
-  .hero-text { max-width:500px; }
-  .hero-main { font-family:'Nanum Myeongjo','Pretendard',serif; font-weight:800; font-size:clamp(30px,4.2vw,60px); line-height:1.2; letter-spacing:-0.015em; color:#211C17; margin:0; }
+  .hero-text { max-width:660px; }
+  .hero-main { font-family:'Nanum Myeongjo','Pretendard',serif; font-weight:800; font-size:clamp(30px,3.3vw,46px); line-height:1.2; letter-spacing:-0.015em; color:#211C17; margin:0; }
   .hero-sub { font-weight:400; font-size:clamp(14px,1.25vw,17.5px); line-height:1.85; color:#5F5849; margin:24px 0 0; }
   .hero-main, .hero-sub { opacity:0; }
   @keyframes rvUp   { from { opacity:0; transform:translateY(30px); }  to { opacity:1; transform:none; } }
@@ -77,7 +77,7 @@
   }
   @media (max-width: 760px) {
     .hero-fade { background:linear-gradient(145deg, #FFFFFF 0%, #FFFFFF 26%, rgba(255,255,255,.8) 50%, rgba(255,255,255,.4) 76%, rgba(255,255,255,.18) 100%); }
-    .hero-main { font-size:clamp(27px,7.5vw,40px); }
+    .hero-main { font-size:clamp(22px,6.3vw,30px); }
     .hero-text { max-width:100%; }
   }
 
@@ -424,7 +424,7 @@
 
   <!-- PERSONAL -->
   <style>
-    .pcard{position:relative;overflow:hidden;aspect-ratio:3/2;border-radius:6px;box-shadow:0 24px 60px -28px rgba(33,28,23,.5);}
+    .pcard{position:relative;overflow:hidden;aspect-ratio:4/5;border-radius:6px;box-shadow:0 24px 60px -28px rgba(33,28,23,.5);}
     .pcard .pcard-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;opacity:0;animation:pcardFade 24s ease-in-out infinite;}
     .pcard .pcard-slide:nth-child(1){animation-delay:0s;}
     .pcard .pcard-slide:nth-child(2){animation-delay:6s;}
@@ -447,7 +447,7 @@
         <a href="personal.html" class="btn-outline" style="display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(33,28,23,.5);color:#211C17;text-decoration:none;padding:13px 30px;font-size:13px;font-weight:400;letter-spacing:.05em;background:transparent;margin-top:32px;">More</a>
       </div>
       <div style="order:2;">
-        <div class="pcard"><img src="../assets/personal-vvip.jpg" alt="Joyce Ahn, Mayor of Buena Park, California, USA" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center;"></div>
+        <div class="pcard"><img src="../assets/personal-main.jpg" alt="Joyce Ahn, Mayor of Buena Park, California, USA" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center 15%;"></div>
         <div style="text-align:center;margin-top:14px;font-size:13px;font-weight:400;color:#57503F;letter-spacing:.02em;">Joyce Ahn, Mayor of Buena Park, California, USA</div>
         
       </div>
